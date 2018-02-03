@@ -1,0 +1,231 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<style>
+    .topPanel .search .input-group .btn {
+        padding: 0px 5px;
+        line-height: 27px;
+    }
+
+    ..topPanel {
+        padding-left: 4.7em;
+    }
+
+    .cxjl {
+        float: left;
+        font-size: 13px;
+        line-height: 30px;
+        font-weight: bold;
+    }
+     /*jqgrid折行*/
+    .ui-jqgrid tr.jqgrow td {
+      white-space: normal !important;
+      height:auto;
+      vertical-align:text-top;
+      padding-top:2px;
+     }
+</style>
+<script>
+    $(function () {
+        gridList();
+    })
+    //取得组名
+    function getgrupname(groupid) {
+        var GroupName = "";
+        var init = function () {
+            $.ajax({
+                url: "/OCManage/ManualReview/GetPheGrupDataJson",
+                data: { keyValue: groupid },
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    //alert(JSON.stringify(data));
+                    GroupName = data["PheGrup"]["GroupName"];
+                }
+            });
+        }
+        init();
+        return GroupName;
+    }
+   
+    function gridList() {
+        var $gridList = $("#gridList");
+        $gridList.dataGrid({
+            url: "/OCManage/ManualReview/GetGridJson",
+            height: $(window).height() - 128,
+            colModel: [
+                { label: 'ID', name: 'F_Id', hidden: true },
+                { label: '正则表达式', name: 'F_RegexContent', width: 300, align: 'left' },
+                { label: '通道ID', name: 'F_ChannelId', width: 200, align: 'center' },
+                { label: '用户ID', name: 'F_UserID', width: 80, align: 'center' },
+                { label: '祖宗ID', name: 'F_RootID', width: 80, align: 'center' },
+                { label: '父ID', name: 'F_ParentID', width: 80, align: 'center', formatter: function (cellvalue, optiopns, rowObject) { var retstr = getId(rowObject["F_ParentID"]); return retstr;} },
+                {
+                  label: '操作', name: 'm_operate', width: 150, align: 'center',
+                  formatter: function (cellvalue, options, rowObject) {
+                  var retstr = '<a onclick="btn_edit(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">修改</a>&nbsp;&nbsp;';
+                  retstr += '<a onclick="btn_delete(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">删除</a>';
+                  return retstr;
+                    }
+                }
+            ],
+            pager: "#gridPager",
+            sortname: 'F_CreatorTime desc',
+            rownumber: true,
+            multiselect: true,
+            multiboxonly: true,
+            beforeSelectRow: beforeSelectRow,//js方法
+            viewrecords: true
+        });
+
+        $("#btn_search").click(function () {
+            //查询参数
+            var queryJson = {
+                F_UserID: $("#F_UserID").val(),
+                F_RootID: $("#F_RootID").val(),
+                F_ParentID: $("#F_ParentID").val(),
+            }
+            $gridList.jqGrid('setGridParam', {
+                postData: { queryJson: JSON.stringify(queryJson) },
+            }).trigger('reloadGrid');
+        });
+    }
+    function beforeSelectRow() {
+        $("#jqgridId").jqGrid('resetSelection');
+        return (true);
+    }
+    function btn_add() {
+        $.modalOpen({
+            id: "Form",
+            title: "新增人工免审模板",
+            url: "/OCManage/ManualReview/Form",
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    function btn_edit(fid) {
+        var keyValue = $("#gridList").jqGridRowValue().F_Id;
+        if (fid !=undefined)
+            keyValue = fid;
+        $.modalOpen({
+            id: "Form",
+            title: "修改人工免审模板",
+            url: "/OCManage/ManualReview/Form?keyValue=" + keyValue,
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    function btn_delete(fid) {
+        var keyValue = rtn_grilid();
+        if (fid !=undefined)
+            keyValue = fid;
+        $.deleteForm({
+            url: "/OCManage/ManualReview/DeleteForm",
+            param: { keyValue: keyValue },
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+    function btn_details() {
+        var keyValue = $("#gridList").jqGridRowValue().F_Id;
+        $.modalOpen({
+            id: "Details",
+            title: "查看用户",
+            url: "/OCManage/ManualReview/Details?keyValue=" + keyValue,
+            width: "700px",
+            height: "550px",
+            btn: null,
+        });
+    }
+    function btn_exp() {
+        //查询参数 
+        var F_UserID = $("#F_UserID").val();
+        var F_RootID = $("#F_RootID").val();
+        var F_ParentID = $("#F_ParentID").val(); 
+        // console.log(JSON.stringify(queryJson));  
+        //Json后台封装 （前台待修改）
+        $.download("/OCManage/ManualReview/Export", "F_UserID=" + F_UserID + "&F_RootID=" + F_RootID + "&F_ParentID=" + F_ParentID, 'post');
+    }
+    //返回多选的记录id
+    function rtn_grilid() {
+        var selarrrow = $("#gridList").jqGrid('getGridParam', 'selarrrow'); //取得多选行号
+        var keyValue = "";
+        var ret;
+        //取得多选项目的F_Id
+        selarrrow.forEach(function (e) {
+            ret = $("#gridList").jqGrid('getRowData', e);
+            keyValue += ret.F_Id + ",";
+        })
+        return keyValue;
+    }
+
+    //parentId，F_ID转换成Id
+    function getId(F_Id)
+    {
+        var Id="";
+        $.ajax({
+            url: "/SystemManage/User/GetUserIDsJson",
+            data: { F_ID: F_Id },
+            dataType: "text",
+            async: false,
+            success: function (data) {
+                Id=data;
+            }
+        });
+        return Id;
+    }
+</script>
+<div class="topPanel">
+    <div class="toolbar">
+        <div class="btn-group">
+            <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+        </div>
+        <div class="btn-group">
+            <a id="NG-add" authorize="yes" class="btn btn-primary dropdown-text" onclick="btn_add()"><i class="fa fa-plus"></i>添加模板</a>
+        </div>
+        <div class="btn-group">
+            <a id="NG-exp" authorize="yes" class="btn btn-primary" onclick="btn_exp()"><i class="fa fa-plus"></i>导出</a>
+        </div>
+        <div class="operate">
+            <ul class="nav nav-pills">
+                <li><a id="NG-delete" authorize="yes" onclick="btn_delete()"><i class="fa fa-trash-o"></i>删除模板</a></li>
+            </ul>
+            <a href="javascript:;" class="close"></a>
+        </div>
+        <script>$('.toolbar').authorizeButton()</script>
+    </div>
+    <div class="search">
+        <table>
+            <tr>
+                <td>
+                    <div class="input-group">
+                        <span style="float:left;position:relative;">&nbsp;&nbsp;用户id:&nbsp;&nbsp;</span>
+                        <input type="text" class="form-control" style="width: 100px;float:left;" id="F_UserID" />
+                        <span style="float:left;position:relative;">&nbsp;&nbsp;祖宗id:&nbsp;&nbsp;</span>
+                        <input type="text" class="form-control" style="width: 100px;float:left;" id="F_RootID" />
+                        <span style="float:left;position:relative;">&nbsp;&nbsp;父id:&nbsp;&nbsp;</span>
+                        <input type="text" class="form-control" style="width: 100px;float:left;" id="F_ParentID" />                        
+                        <div style="width:50px;float:left;margin-left:5px;">
+                            <a class="btn btn-primary" id="btn_search">查询</a>
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="gridPanel" id="gridPanel">
+    <table id="gridList"></table>
+    <div id="gridPager"></div>
+</div>
+
+

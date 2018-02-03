@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+<script>
+    var keyValue = $.request("keyValue");
+    $(function () {
+        initControl();
+    });
+    function initControl() {
+        $("#F_ManagerId").bindSelect({
+            url: "/SystemManage/User/GetSalesJson"
+        });
+    }
+    function submitForm() {
+        if (!$('#form1').formValid()) {
+            return false;
+        }
+        var queryJson = {
+            F_UserId: keyValue,//用户id
+            F_ManagerId: $("#F_ManagerId").val(),//祖宗id
+        }
+        //alert(postData);
+        if (queryJson["F_ManagerId"] == "")
+        {
+            alert("请选择业务员!");
+            return false;
+        }
+        $.ajax({
+            url: "/OCManage/UserInfo/batchMove?keyValue=" + keyValue,
+            data: { queryJson: JSON.stringify(queryJson) },
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                if (data.state == "Error") {
+                    alert(data.message);
+                }
+                else {
+                    alert(data.message);
+                    $.currentWindow().$("#gridList").trigger("reloadGrid");
+                }
+            }
+        })
+    }
+</script>
+<form id="form1">
+    <div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+            <select id="F_ManagerId" name="F_ManagerId" class="form-control required">
+                <option value="">==请选择==</option>
+            </select>
+    </div>
+</form>

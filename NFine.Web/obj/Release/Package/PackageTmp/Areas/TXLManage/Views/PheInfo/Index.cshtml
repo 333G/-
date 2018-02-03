@@ -1,0 +1,390 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<style>
+    .topPanel .search .input-group .btn {
+        padding: 0px 5px;
+        line-height: 27px;
+    }
+
+    .topPanel .search .input-group .form-control {
+        margin-left: 7px;
+    }
+
+    .topPanel .btn-group {
+        margin-left :1px;
+    }
+
+    .cxjl {
+        float: left;
+        font-size: 13px;
+        line-height: 30px;
+        font-weight: bold;
+    }
+</style>
+<script>
+    var groupId = $.request("groupId");
+    //根据组编号取得组名&&根据编号取得省份名
+    $(function () {
+        var userid = "@NFine.Code.OperatorProvider.Provider.GetCurrent().UserId";//取得userid
+        $("#GroupId").bindSelect({
+            url: "/TXLManage/PheGrup/GetTreeSelectJson?groupId=" + groupId + "&t=true"
+        });
+        $("#Province").bindSelect({ url: "/SystemManage/Area/GetProvinceJson" });
+        gridList();
+    })
+
+    function getgrupname(groupid) {
+        var GroupName = "";
+        var init = function () {
+            $.ajax({
+                url: "/TXLManage/PheGrup/GetPheGrupDataJson",
+                data: { keyValue: groupid },
+                dataType: "json",
+                async: true,
+                success: function (data) {
+                    //alert(JSON.stringify(data));
+                    GroupName = data["PheGrup"]["GroupName"];
+                }
+            });
+        }
+        init();
+        return GroupName;
+    }
+
+    function getFullName(Province) {
+        var F_FullName = "";
+        var init = function () {
+            $.ajax({
+                url: "/SystemManage/Area/GetProvinceDataJson",
+                data: { keyValue: Province },
+                datatype: "json",
+                async: true,
+                success: function (data) {
+                    var jsondata = JSON.parse(data); //这里传来的是json字符串，所以还要再转成json。这里的值是不对的。
+                    F_FullName = jsondata["ProGrup"]["FullName"];
+                }
+            })
+        }
+        init();
+        return F_FullName;
+    }
+
+    function gridList() {
+        var $gridList = $("#gridList");
+        $gridList.dataGrid({
+            url: "/TXLManage/PheInfo/GetGridJson",
+            height: $(window).height() - 128,
+            colModel: [
+                { label: '主键', name: 'F_Id', hidden: true },
+                { label: '手机', name: 'Mobile', width: 100, align: 'center' },
+                {
+                    label: '组名', name: 'GroupId', width: 80, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var grupname = getgrupname(cellvalue);//转为组名
+                        return grupname;
+                    }
+                },
+                { label: '姓名', name: 'Name', width: 80, align: 'center' },
+                {
+                    label: '性别', name: 'Sex', width: 60, align: 'center'
+                },
+                {
+                    label: '省', name: 'Province', width: 60, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var F_FullName = getFullName(cellvalue);//转为省份名
+                        return F_FullName;
+                    }
+                },
+                { label: '市', name: 'City', width: 60, align: 'center' },
+                { label: '运营商', name: 'Operator', width: 60, align: 'center' },
+                {
+                    label: '操作', name: 'm_operate', width: 100, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var retstr = '<a onclick="btn_edit(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">修改</a>&nbsp;&nbsp;';
+                        retstr += '<a onclick="btn_delete(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">删除</a>';
+                        return retstr;
+                    }
+                },
+                {
+                    label: "状态", name: "State", width: 60, align: "center",
+                    formatter: function (cellvalue, options, rowObject) {
+                        if (cellvalue == 1) {
+                            return '<span class=\"label label-success\">正常</span>';
+                        } else if (cellvalue == 0) {
+                            return '<span class=\"label label-default\">未知</span>';
+                        }
+                    }
+                },
+                { label: '备注', name: 'F_Description', width: 200, align: 'center' }
+            ],
+            pager: "#gridPager",
+            sortname: 'F_CreatorTime desc',
+            rownumber: true,
+            multiselect: true,
+            beforeSelectRow: beforeSelectRow,//js方法
+            viewrecords: true
+        });
+
+        $("#btn_search").click(function () {
+            //查询参数
+            var queryJson = {
+                GroupId: $("#GroupId").val(), //分组ID
+                Sex: $("#Sex").val(),   //性别
+                Age: $("#Age").val(),   //年龄
+                Province: $("#Province").val(),//省份
+                Operator: $("#Operator").val(), //运营商
+                State: $("#F_StateId").val(),   //状态
+                keyword: $("#txt_keyword").val()    //关键词
+            }
+            $gridList.jqGrid('setGridParam', {
+                postData: { queryJson: JSON.stringify(queryJson) },
+            }).trigger('reloadGrid');
+        });
+    }
+
+    function beforeSelectRow() {
+        $("#jqgridId").jqGrid('resetSelection');
+        return (true);
+    }
+
+    function btn_add() {
+        $.modalOpen({
+            id: "Form",
+            title: "新增用户",
+            url: "/TXLManage/PheInfo/Form",
+            width: "700px",
+            height: "650px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+
+    function btn_edit(fid) {        
+        var keyValue = $("#gridList").jqGridRowValue().F_Id;
+        if (fid != undefined)
+            keyValue = fid;
+        $.modalOpen({
+            id: "Form",
+            title: "修改用户",
+            url: "/TXLManage/PheInfo/Form?keyValue=" + keyValue,
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+
+    function btn_delete(fid) {
+        var keyValue = rtn_grilid();
+        if (fid != undefined)
+            keyValue = fid;
+        $.deleteForm({
+            url: "/TXLManage/PheInfo/DeleteForm",
+            param: { keyValue: keyValue },
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+
+    function btn_details() {
+        var keyValue = $("#gridList").jqGridRowValue().F_Id;
+        $.modalOpen({
+            id: "Details",
+            title: "查看用户",
+            url: "/TXLManage/PheInfo/Details?keyValue=" + keyValue,
+            width: "700px",
+            height: "550px",
+            btn: null,
+        });
+    }
+
+    function btn_exp() {
+        var GroupId = $("#GroupId").val(); //分组ID
+        var Sex = $("#Sex").val(),   //性别
+        Operator = $("#Operator").val(), //运营商
+        State = $("#F_StateId").val(),   //状态
+        keyword = $("#txt_keyword").val()    //关键词
+        $.download("/TXLManage/PheInfo/Export", "GroupId=" + GroupId + "&Sex=" + Sex + "&Operator=" + Operator + "&State=" + State + "&keyword=" + keyword, 'post');
+    }
+
+    //导出用户信息
+    function btn_inset() {
+        $.modalOpen({
+            id: "inset",
+            title: "批量导入",
+            url: "/TXLManage/PheInfo/AddMore",
+            width: "700px",
+            height: "550px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].addmore();
+            }
+        });
+
+    }
+
+    function rtn_grilid() {
+        var selarrrow = $("#gridList").jqGrid('getGridParam', 'selarrrow'); //取得多选行号
+        var keyValue = "";
+        var ret;
+        //取得多选项目的F_Id
+        selarrrow.forEach(function (e) {
+            ret = $("#gridList").jqGrid('getRowData', e);
+            keyValue += ret.F_Id + ",";
+        })
+        return keyValue;
+    }
+
+    function rtn_grilField(fieldname) {                      //取到选择字段值，可多选
+        var selarrrow = $("#gridList").jqGrid('getGridParam', 'selarrrow');//取得多选行号
+        var keyValue = "";
+        var ret;
+        //取得多选项目的Mobile
+        selarrrow.forEach(function (e) {
+            ret = $("#gridList").jqGrid('getRowData', e);
+            keyValue += ret[fieldname] + ",";
+            // alert(keyValue); 能获取到数据
+        })
+        keyValue = keyValue.substr(0, keyValue.length - 1);//去掉最后一位字符
+        return keyValue;
+    }
+
+    function btn_send() {
+        var value2 = rtn_grilField("Mobile");
+        if (value2 != "") {
+            $.modalOpen({
+                id: "send",
+                title: "发送短信",
+                url: "/TXLManage/PheInfo/SendSMS?MobileList=" + value2,//value2 是index中获取到的mobile值;
+                width: "700px",
+                height: "550px",
+                callBack: function (iframeId) {
+                    //top.frames[iframeId].close();
+                }
+            });
+        }
+        else alert("请选择用户再发送短信！");
+    }
+
+    function btn_Move() {
+        var keyvalue = rtn_grilid();//获取的值是F_ID，每个成员的ID
+        if (keyvalue != "") {
+            $.modalOpen({
+                id: "Move",
+                title: "批量移动",
+                url: "/TXLManage/PheInfo/MoveMember?Id=" + keyvalue,
+                width: "450px",
+                height: "400px",
+                callBack: function (iframeId) {
+                    top.frames[iframeId].submitForm();
+                }
+            });
+        }
+        else alert("请选择成员再移动!");
+    }
+
+</script>
+<div class="topPanel">
+    @*<div class="toolbar">
+        <div class="btn-group">
+            <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+        </div>
+        <span>
+            <button id="btn_exp" type="button" class="btn btn-primary" onclick="btn_exp()"><i class="fa fa-cloud-download"></i>批量导出</button>
+        </span>
+    </div>*@
+    <div class="search">
+        <table>
+            <tr>
+                <td>
+                    <div class="input-group">
+                        <select id="GroupId" name="GroupId" class="form-control required" style="width: 90px;">
+                            <option value="">请选择分组</option>
+                        </select>
+                        <input id="txt_keyword" type="text" class="form-control" placeholder="请输入姓名或电话" style="width: 100px;">
+                        <select id="Sex" name="Sex" class="form-control required" style="width: 45px;">
+                            <option value="">性别</option>
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                        </select>
+                        <select id="Province" name="Province" class="form-control required" style="width: 130px;">
+                            <option value="">全部省份</option>
+                        </select>
+                        <select id="Age" name="Age" class="form-control required" style="width: 70px;">
+                            <option value="">年龄段</option>
+                            <option value="0">小于15</option>
+                            <option value="1">15-25</option>
+                            <option value="2">25-35</option>
+                            <option value="3">35-45</option>
+                            <option value="4">45-55</option>
+                            <option value="5">大于55</option>
+                        </select>
+                        <select id="F_StateId" name="F_StateId" class="form-control" style="width: 90px;">
+                            <option value="">手机状态</option>
+                            <option value="1">正常</option>
+                            <option value="0">未知</option>
+                        </select>
+                        <select id="Operator" name="Operator" class="form-control" style="width: 90px;">
+                            <option value="">号码类型</option>
+                            <option value="移动">移动</option>
+                            <option value="联通">联通</option>
+                            <option value="电信">电信</option>
+                        </select>
+                        @*<span class="input-group-btn">
+                                <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i></button>
+                            </span>*@
+                        <span class="input-group-btn" style="float:left;">
+                            <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="topPanel">
+    <div class="toolbar">
+        <table>
+            <tr>
+                <td>
+                    <div class="btn-group">
+                        <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+                    </div>
+                    <div class="btn-group">
+                        <a id="NU-add" authorize="yes" class="btn btn-primary dropdown-text" onclick="btn_add()"><i class="fa fa-plus"></i>新建人员</a>
+                    </div>
+                    <div class="btn-group">
+                        <a id="NU-edit" authorize="yes" class="btn btn-primary dropdown-text" onclick="btn_edit()"><i class="fa fa-pencil-square-o"></i>修改人员</a>
+                    </div>
+                    <div class="btn-group">
+                        <a id="NU-send" authorize="yes" class="btn btn-primary dropdown-text" onclick="btn_send()"><i class="fa fa-mail-reply"></i>发送短信</a>
+                    </div>
+                    <div class="btn-group">
+                        <a id="NU-delete" authorize="yes" class="btn btn-primary dropdown-text" onclick="btn_delete()"><i class="fa fa-trash-o"></i>批量删除</a>
+                    </div>
+                    <div class="btn-group">
+                        <a id="NU-move" authorize="yes" class="btn btn-primary dropdown-text" onclick="btn_Move()"><i class="fa fa-refresh"></i>批量移动</a>
+                    </div>
+                    <div class="btn-group">
+                        <a id="NU-import" authorize="yes" class="btn btn-primary dropdown-text" onclick="btn_inset()"><i class="fa fa-inbox"></i>批量导入</a>
+                    </div>
+                    <div class="btn-group">
+                        <a id="NU-export" authorize="yes" class="btn btn-primary dropdown-text" onclick="btn_exp()"><i class="fa fa-cloud-download"></i>批量导出</a>
+                    </div>
+                    <div class="toolbar">
+                        <script>$('.toolbar').authorizeButton()</script>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="gridPanel" id="gridPanel">
+    <table id="gridList"></table>
+    <div id="gridPager"></div>
+</div>

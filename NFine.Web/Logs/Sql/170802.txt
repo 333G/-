@@ -1,0 +1,2189 @@
+2017/8/2 10:09:58
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"262"}]
+2017/8/2 10:09:58
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"262"}]
+2017/8/2 10:09:58
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--OC_UserInfo
+select F_Id from OC_UserInfo  参数：
+2017/8/2 10:11:08
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--OC_BaseChannel
+select Id,F_Id,F_ChannelName,F_ChannelState from OC_BaseChannel 参数：
+2017/8/2 10:11:08
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [Sev_FinalSendDetail]   WHERE 1=1    参数：
+2017/8/2 10:11:09
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--VSevFinalSendDetail
+select * from ( select row_number() over(order by F_Id) as rownum, * from VSevFinalSendDetail where 1=1)aa where rownum between 0 and 50 参数：
+2017/8/2 10:11:11
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"110100"}]
+2017/8/2 10:11:11
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"110000"}]
+2017/8/2 10:11:11
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"130600"}]
+2017/8/2 10:11:11
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"130000"}]
+2017/8/2 10:11:11
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"511600"}]
+2017/8/2 10:11:11
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"510000"}]
+2017/8/2 10:11:11
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"141100"}]
+2017/8/2 10:11:11
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140000"}]
+2017/8/2 10:11:11
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140500"}]
+2017/8/2 10:11:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140000"}]
+2017/8/2 10:11:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140400"}]
+2017/8/2 10:11:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140000"}]
+2017/8/2 10:11:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140100"}]
+2017/8/2 10:11:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140000"}]
+2017/8/2 10:11:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"610700"}]
+2017/8/2 10:11:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"610000"}]
+2017/8/2 10:11:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140800"}]
+2017/8/2 10:11:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140000"}]
+2017/8/2 10:11:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"430100"}]
+2017/8/2 10:11:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"430000"}]
+2017/8/2 10:11:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"441600"}]
+2017/8/2 10:11:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"440000"}]
+2017/8/2 10:11:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"130300"}]
+2017/8/2 10:11:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"130000"}]
+2017/8/2 10:11:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"141000"}]
+2017/8/2 10:11:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140000"}]
+2017/8/2 10:11:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"610300"}]
+2017/8/2 10:11:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"610000"}]
+2017/8/2 10:11:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"610100"}]
+2017/8/2 10:11:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"610000"}]
+2017/8/2 10:11:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"510100"}]
+2017/8/2 10:11:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"510000"}]
+2017/8/2 10:11:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"610800"}]
+2017/8/2 10:11:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"610000"}]
+2017/8/2 10:11:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"441900"}]
+2017/8/2 10:11:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"441900"}]
+2017/8/2 10:11:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"430700"}]
+2017/8/2 10:11:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"430000"}]
+2017/8/2 10:11:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"220100"}]
+2017/8/2 10:11:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"220000"}]
+2017/8/2 10:11:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140200"}]
+2017/8/2 10:11:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140000"}]
+2017/8/2 10:11:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"130200"}]
+2017/8/2 10:11:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"130000"}]
+2017/8/2 10:11:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140600"}]
+2017/8/2 10:11:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140000"}]
+2017/8/2 10:13:47
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [Sev_FinalSendDetail]   WHERE 1=1    参数：
+2017/8/2 10:13:47
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--VSevFinalSendDetail
+select * from ( select row_number() over(order by F_Id) as rownum, * from VSevFinalSendDetail where 1=1 and F_Operator=3)aa where rownum between 0 and 50 参数：
+2017/8/2 10:13:47
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140800"}]
+2017/8/2 10:13:47
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140000"}]
+2017/8/2 10:13:47
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140500"}]
+2017/8/2 10:13:47
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140000"}]
+2017/8/2 10:13:47
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140100"}]
+2017/8/2 10:13:47
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140000"}]
+2017/8/2 10:13:47
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140400"}]
+2017/8/2 10:13:47
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140000"}]
+2017/8/2 10:13:48
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140900"}]
+2017/8/2 10:13:48
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140000"}]
+2017/8/2 10:13:48
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"211300"}]
+2017/8/2 10:13:48
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"210000"}]
+2017/8/2 10:13:48
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"141100"}]
+2017/8/2 10:13:48
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140000"}]
+2017/8/2 10:13:48
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"620300"}]
+2017/8/2 10:13:48
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"620000"}]
+2017/8/2 10:13:48
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"130200"}]
+2017/8/2 10:13:48
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"130000"}]
+2017/8/2 10:13:48
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"220100"}]
+2017/8/2 10:13:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"220000"}]
+2017/8/2 10:13:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"440400"}]
+2017/8/2 10:13:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"440000"}]
+2017/8/2 10:13:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140600"}]
+2017/8/2 10:13:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140000"}]
+2017/8/2 10:13:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140200"}]
+2017/8/2 10:13:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140000"}]
+2017/8/2 10:13:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"141000"}]
+2017/8/2 10:13:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"140000"}]
+2017/8/2 10:13:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"150100"}]
+2017/8/2 10:13:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"150000"}]
+2017/8/2 10:13:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"211400"}]
+2017/8/2 10:13:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"210000"}]
+2017/8/2 10:13:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"341300"}]
+2017/8/2 10:13:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"340000"}]
+2017/8/2 10:14:11
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:select F_Price ,F_SendTime,F_SmsContent from Sev_SendDateDetail where F_Operator=1 and F_SendTime>'2017-07-30'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 10:14:11
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price,F_SendTime,F_SmsContent from Sev_SendDateDetail where F_Operator=2 and F_SendTime>'2017-07-30' and F_SendTime<'2017-08-02'  参数：
+2017/8/2 10:14:11
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price,F_SendTime,F_SmsContent from Sev_SendDateDetail where F_Operator=3 and F_SendTime>'2017-07-30'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 11:31:42
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"262"}]
+2017/8/2 11:31:42
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"262"}]
+2017/8/2 11:31:42
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--OC_UserInfo
+select F_Id from OC_UserInfo  参数：
+2017/8/2 11:54:52
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"262"}]
+2017/8/2 11:54:53
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"262"}]
+2017/8/2 11:54:53
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--OC_UserInfo
+select F_Id from OC_UserInfo  参数：
+2017/8/2 11:55:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-30'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 11:55:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-30'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 11:55:21
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-30'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 11:58:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 11:58:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 11:58:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 13:59:55
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"262"}]
+2017/8/2 13:59:56
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"262"}]
+2017/8/2 13:59:56
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--OC_UserInfo
+select F_Id from OC_UserInfo  参数：
+2017/8/2 14:00:09
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-30'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 14:00:09
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-30'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 14:00:09
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-30'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 14:01:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 14:01:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 14:01:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 14:03:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 14:03:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 14:03:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 14:03:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 14:03:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 14:03:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 14:07:43
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"262"}]
+2017/8/2 14:07:43
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"262"}]
+2017/8/2 14:07:43
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--OC_UserInfo
+select F_Id from OC_UserInfo  参数：
+2017/8/2 14:07:51
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 14:07:51
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 14:07:51
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 14:14:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 14:14:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 14:14:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-02'  参数：
+2017/8/2 14:28:39
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:28:40
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:28:40
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:38:42
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:38:43
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:38:43
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:39:16
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:39:16
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:39:16
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:40:27
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:40:27
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:40:27
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:41:10
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:41:10
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:41:10
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:44:42
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:44:42
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:44:43
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:45:31
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"262"}]
+2017/8/2 14:45:31
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"262"}]
+2017/8/2 14:45:31
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--OC_UserInfo
+select F_Id from OC_UserInfo  参数：
+2017/8/2 14:45:35
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:45:35
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:45:35
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:46:48
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:46:48
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:46:48
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:47:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:47:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:47:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:48:45
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:48:45
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:48:45
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:50:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:50:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:50:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:54:09
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:54:09
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 14:54:10
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:06:24
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"262"}]
+2017/8/2 15:06:24
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"262"}]
+2017/8/2 15:06:24
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--OC_UserInfo
+select F_Id from OC_UserInfo  参数：
+2017/8/2 15:06:30
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:06:30
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:06:30
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:07:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:07:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:07:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:07:23
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:07:23
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:07:23
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:21:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:21:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:21:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:22:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:22:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:22:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:22:52
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:22:52
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:22:52
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:23:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:23:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:23:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:23:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:23:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:23:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:23:54
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:23:54
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:23:54
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:25:41
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:25:41
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:25:41
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:26:38
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:26:38
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:26:38
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:26:45
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:26:45
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:26:45
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:27:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:27:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:27:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:28:25
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:28:25
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:28:25
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:30:30
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:30:30
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:30:30
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:31:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:31:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:31:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:33:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:33:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:33:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:36:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:36:22
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:36:22
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:36:55
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:36:58
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:36:58
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:37:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:37:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:37:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:49:41
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"262"}]
+2017/8/2 15:49:41
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"262"}]
+2017/8/2 15:49:41
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--OC_UserInfo
+select F_Id from OC_UserInfo  参数：
+2017/8/2 15:50:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:50:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:50:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:51:22
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:51:22
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:51:22
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:52:00
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:52:00
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:52:00
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:52:28
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:52:28
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:52:28
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:53:21
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:53:21
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:53:21
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:53:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:53:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:53:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:53:38
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:53:38
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:53:38
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:55:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:55:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:55:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:55:26
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:55:26
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:55:26
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:56:37
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:56:37
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:56:37
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:58:25
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:58:25
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:58:26
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:59:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:59:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:59:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:59:41
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:59:41
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 15:59:41
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:00:27
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:00:27
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:00:27
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:01:57
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"262"}]
+2017/8/2 16:01:57
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"262"}]
+2017/8/2 16:01:57
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--OC_UserInfo
+select F_Id from OC_UserInfo  参数：
+2017/8/2 16:02:02
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:02:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:02:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:02:38
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:02:38
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:02:38
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:03:15
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:03:15
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:03:15
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:03:52
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:03:52
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:03:52
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:08:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:08:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:08:14
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:08:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:08:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:08:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:14:08
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:14:08
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:14:08
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:16:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:16:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:16:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:17:42
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:17:42
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:17:42
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:19:14
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:19:14
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:19:14
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:30:08
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:30:08
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:30:08
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:31:40
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:31:40
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:31:40
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:32:28
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:32:28
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:32:28
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:35:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:35:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:35:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:35:38
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:35:38
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:35:38
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:36:40
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:36:40
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:36:40
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:36:59
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:37:00
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:37:00
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:38:09
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:38:09
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:38:09
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:46:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:46:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:46:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:46:38
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:46:38
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:46:38
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:46:46
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:46:46
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:46:46
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:48:24
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:48:24
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:48:24
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:54:26
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:54:26
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:54:26
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:58:36
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:58:36
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 16:58:36
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:02:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"262"}]
+2017/8/2 17:02:50
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"262"}]
+2017/8/2 17:02:50
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--OC_UserInfo
+select F_Id from OC_UserInfo  参数：
+2017/8/2 17:03:02
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:03:02
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:03:02
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:04:44
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:04:44
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:04:44
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:19:37
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:19:37
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:19:37
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:36:46
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:36:46
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:36:46
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:37:38
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:37:38
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:37:38
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:38:29
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:38:29
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:38:29
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:38:41
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:38:41
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:38:42
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:38:52
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:38:52
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:38:52
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:39:15
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:39:15
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:39:15
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:40:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=1 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:40:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=2 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：
+2017/8/2 17:40:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sev_SendDateDetail
+select F_Price ,F_SendTime from Sev_SendDateDetail where F_CreatorUserId='9f2ec079-7d0f-4fe2-90ab-8b09a8302aba'and F_Operator=3 and F_SendTime>'2017-07-27'and F_SendTime<'2017-08-01'  参数：

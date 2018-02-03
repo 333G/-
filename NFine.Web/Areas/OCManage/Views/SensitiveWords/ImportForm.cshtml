@@ -1,0 +1,115 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+@section header{
+
+    <script src="~/Content/js/jquery-form/jquery.form.js"></script>
+    <script>
+        $(function () {
+            var userid = "@NFine.Code.OperatorProvider.Provider.GetCurrent().UserId";//取得userid
+            $("#F_ChannelId").bindSelect({ url: "/OCManage/SendDateDetail/GetAllChannelJson" });
+        })
+        $(function () {
+            $("#form1").ajaxForm
+                ({
+                    success: function (data) {
+                        var json = JSON.parse(data);
+                        $.modalAlert(json.message, json.type);
+                        $("#form1").resetForm();//重置form表单
+                        $.reload();
+                    },
+                    error: function (data) {
+                        var json = JSON.parse(data);
+                        $.modelAlert(json.message, json.type);
+                    }
+                });
+        });
+
+        function funcTest() {
+            //每隔0.001秒执行一次checkValue方法
+            window.setInterval("checkValue()", 1);
+        }
+        function checkValue() {//选为系统敏感词时，隐藏通道下拉框
+            var channel = document.getElementById("F_ChannelId");
+            if (document.getElementById("F_IsChannelKeyWord").value == 'true')
+                channel.disabled = false;
+                //channel.disabled = false;
+            //else if (document.getElementById("F_IsChannelKeyWord").value == false)
+            else
+                channel.disabled = true;
+        }
+        window.onload = funcTest;
+    </script>
+}
+<form id="form1" action="/OCManage/SensitiveWords/UploadFile" enctype="multipart/form-data" method="post">
+    <div style="margin-left:10px; margin-right:10px;">
+        <table class="form">
+            <tr>
+                <th class="formTitle">敏感词分类</th>
+                <td class="formValue">
+                    <div class="ckbox">
+                        <select id="F_IsChannelKeyWord" name="F_IsChannelKeyWord" class="form-control" style="width: 150px;margin-left:6px;">
+                            <option value="">请选择敏感词类别</option>
+                            <option value="false">系统敏感词</option>
+                            <option value="true">通道敏感词</option>
+                        </select>
+                    </div>
+                    <div style="padding:5px"><font color="red">*</font> 一次性只能导入一种类型的敏感词</div>
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle"></th>
+                <td class="formValue">
+                    <div class="formValue">
+                        <select id="F_ChannelId" name="F_ChannelId" class="form-control" style="width: 90px;">
+                            <option value="">全部通道</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">文件模板</th>
+                <td class="formValue">
+                    <div style="padding:5px" id="showFileName">
+                        <span>
+                            <br /><a href="/Content/resource/SensitiveWord.xlsx" target="_blank" class="label label-warning">
+                                点击下载Excel模板
+                            </a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                        </span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">选择文件</th>
+                <td class="formValue">
+                    <!--
+                         <div class="file">
+                        点击这里选择EXCEL文件
+                        <input id="F_SelXls" name="file" type="file" />
+                    </div>
+                         -->
+                    <div class="col-md-12">
+                        <input id="file" type="file" name="file" class="btn btn-upload" />
+                    </div>
+
+                </td>
+            </tr>
+
+        </table>
+
+        <div class="mail-body" style="text-align: right;">
+            <input id="ButtonUpload" type="submit" value="确认导入" class="btn btn-primary" style="margin-right: 5px;" />
+            <!--
+                <a onclick="submitForm()" class="btn btn-primary" style="margin-right: 5px;">确认</a>
+            -->
+        </div>
+        <div>
+            注意事项:<br />
+            一、本功能主要为大量用户批量上传提供途径；<br />
+            二、请上传excel格式文件，请参照模版说明<br />
+        </div>
+
+    </div>
+</form>

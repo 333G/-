@@ -1,0 +1,1 @@
+﻿select F_Id,F_MobileList,F_CreatorUserId,F_MobileCount,F_SmsContent,F_RootId,F_GroupChannelId,F_DealState,F_SendState,F_Priority from SMC_SendSms where F_DealState=9 and F_SendState=0 and F_OperateState=0 ORDER BY F_Priority DESC

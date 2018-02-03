@@ -1,0 +1,15 @@
+D:\svn\NFine.SMS\NFine.Entity\bin\Debug\NFine.Entity.dll
+D:\svn\NFine.SMS\NFine.Entity\bin\Debug\NFine.Entity.pdb
+D:\svn\NFine.SMS\NFine.Entity\bin\Debug\SqlSugar.dll
+D:\svn\NFine.SMS\NFine.Entity\bin\Debug\SqlSugar.pdb
+D:\svn\NFine.SMS\NFine.Entity\bin\Debug\SqlSugar.xml
+D:\svn\NFine.SMS\NFine.Entity\obj\Debug\NFine.Entity.dll
+D:\svn\NFine.SMS\NFine.Entity\obj\Debug\NFine.Entity.pdb
+D:\svn\NFine.SMS\NFine.Entity\obj\Debug\NFine.Entity.csprojResolveAssemblyReference.cache
+E:\17_2_20\Project1\NFine.Entity\bin\Debug\NFine.Entity.dll
+E:\17_2_20\Project1\NFine.Entity\bin\Debug\NFine.Entity.pdb
+E:\17_2_20\Project1\NFine.Entity\bin\Debug\SqlSugar.dll
+E:\17_2_20\Project1\NFine.Entity\bin\Debug\SqlSugar.pdb
+E:\17_2_20\Project1\NFine.Entity\bin\Debug\SqlSugar.xml
+E:\17_2_20\Project1\NFine.Entity\obj\Debug\NFine.Entity.dll
+E:\17_2_20\Project1\NFine.Entity\obj\Debug\NFine.Entity.pdb

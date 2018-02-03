@@ -1,0 +1,208 @@
+﻿@{
+    ViewBag.Title = "PhoneNumAreaInfoIndex";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<style>
+    .topPanel, .search, .input-group, .form-control {
+        margin-left: 7px;
+    }
+
+    .topPanel, .search {
+        margin-left: -7px;
+    }
+</style>
+<script>
+    $(function () {
+        gridList();
+    })
+
+    function gridList() {
+        var $gridList = $("#gridList");
+        $gridList.dataGrid({
+            url: "/OCManage/PhoneNumAreaInfo/GetGridJson",
+            height: $(window).height() - 128,
+            colModel: [
+                { label: '主键', name: 'F_Id', hidden: true },
+                { label: '号码段', name: 'F_NumSegment', width: 200, align: 'center' },
+
+                { label: '省份', name: 'F_Province', width: 100, align: 'center' },
+                { label: '城市', name: 'F_City', width: 100, align: 'center' },
+                { label: '号码类型', name: 'F_Operator', width: 100, align: 'center' },
+                { label: '区域编号', name: 'F_AreaCode', width: 100, align: 'center' },
+                { label: '邮编', name: 'F_PostCode', width: 100, align: 'center' },
+                   ],
+            pager: "#gridPager",
+            sortname: 'F_Id desc',
+            rownumber: true,
+            multiselect: true,
+            multiboxonly: true,
+            beforeSelectRow: beforeSelectRow,//js方法
+            viewrecords: true
+        });
+
+        $("#btn_search").click(function () {
+            //查询参数
+            var queryJson = {
+                F_NumSegment: $("#F_NumSegment").val(),
+                F_Province: $("#F_Province").val(),
+                F_City: $("#F_City").val(),
+                F_Operator: $("#F_Operator").val(),
+                F_PostCode: $("#F_AreaCode").val(),
+                F_AreaCode: $("#F_PostCode").val()
+            }
+            $gridList.jqGrid('setGridParam', {
+                postData: { queryJson: JSON.stringify(queryJson) },
+            }).trigger('reloadGrid');
+        });
+    }
+    function beforeSelectRow() {
+        $("#jqgridId").jqGrid('resetSelection');
+        return (true);
+    }
+    function btn_add() {
+        $.modalOpen({
+            id: "AddForm",
+            title: "导入敏感词",
+            url: "/OCManage/SensitiveWords/InsertForm",
+            width: "700px",
+            height: "410px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+
+    function btn_edit(fid) {
+        var keyValue = $("#gridList").jqGridRowValue().F_Id;
+        if (fid != undefined)
+            keyValue = fid;
+        $.modalOpen({
+            id: "Form",
+            title: "修改敏感词",
+            url: "/OCManage/SensitiveWords/Form?keyValue=" + keyValue,
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    function btn_delete(fid) {
+        var keyValue = rtn_grilid();
+        if (fid != undefined)
+            keyValue = fid;
+        $.deleteForm({
+            url: "/OCManage/SensitiveWords/DeleteForm",
+            param: { keyValue: keyValue },
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+    function btn_details() {
+        var id = $("#gridList").jqGridRowValue().Id;
+        $.modalOpen({
+            id: "Details",
+            title: "查看敏感词",
+            url: "/OCManage/SensitiveWords/Details?id=" + id,
+            width: "700px",
+            height: "550px",
+            btn: null,
+        });
+    }
+
+    function btn_insert()
+    {
+        $.modalOpen({
+            id: "insertForm",
+            title: "导入号码归属地",
+            url: "/OCManage/PhoneNumAreaInfo/ImportForm",
+            width: "700px",
+            height: "410px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+
+    //敏感词去重
+    function btn_RemoveRepetition() {
+        $.ajax({
+            url: "/OCManage/SensitiveWords/RemoveRepetition",
+            data: {},
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                if (data.state == "error") {
+                    alert("发生错误：" + data.message + ",请联系管理员！");
+                    return false;
+                }
+                else {
+                    alert(data.message);
+                    $.currentWindow().$("#gridList").resetSelection();
+                    $.currentWindow().$("#gridList").trigger("reloadGrid");
+                }
+            }
+        });
+    }
+
+    //返回多选的记录id
+    function rtn_grilid() {
+        var selarrrow = $("#gridList").jqGrid('getGridParam', 'selarrrow'); //取得多选行号
+        var keyValue = "";
+        var ret;
+        //取得多选项目的F_Id
+        selarrrow.forEach(function (e) {
+            ret = $("#gridList").jqGrid('getRowData', e);
+            keyValue += ret.Id + ",";
+        })
+        return keyValue;
+    }
+
+</script>
+<div class="topPanel">
+    <div class="toolbar">
+        <div class="btn-group">
+            <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+        </div>
+        @*<div class="btn-group">
+            <a id="NU-add" authorize="yes" class="btn btn-primary dropdown-text" onclick="btn_add()"><i class="fa fa-plus"></i>添加归属地</a>
+        </div>*@
+        <div class="btn-group">
+            <a id="NU-add" authorize="yes" class="btn btn-primary dropdown-text" onclick="btn_insert()"><i class="fa fa-plus"></i>Excel导入号码归属地</a>
+        </div>
+
+        @*<div class="operate">
+            <ul class="nav nav-pills">
+                <li><a id="NU-delete" authorize="yes" onclick="btn_delete()"><i class="fa fa-trash-o"></i>删除归属地</a></li>
+            </ul>
+            <a href="javascript:;" class="close"></a>
+        </div>*@
+    </div>
+
+    <div class="search">
+        <table>
+            <tr>
+                <td>
+                    <div class="input-group">
+                        @*<input id="F_SensitiveWords" type="text" class="form-control" placeholder="请输入敏感词" style="width: 150px;">*@
+                        @*<select id="F_Sign" name="F_Sign" class="form-control" style="width: 150px;">
+                                <option value="">请选择名单类型</option>
+                                <option value="true">黑名单</option>
+                                <option value="false">白名单</option>
+                            </select>*@
+                        @*<input id="CreateTime" name="CreateTime" type="text" class="form-control" style="width: 150px;" placeholder="" />*@
+                        @*<div style="float:left;"><input id="F_CreatorTime" name="F_CreatorTime" type="text" placeholder="请输入要查询的创造日期" class="form-control input-wdatepicker required" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd' })" style="width: 200px;" /></div>*@
+                        @*<span class="input-group-btn">
+                            <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i></button>
+                        </span>*@
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="gridPanel" id="gridPanel">
+    <table id="gridList"></table>
+    <div id="gridPager"></div>
+</div>

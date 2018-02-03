@@ -1,0 +1,344 @@
+﻿@{
+    //ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+<script>
+    var Id = "@NFine.Code.OperatorProvider.Provider.GetCurrent().Id";
+    var newwsb;//全局变量，用来判断是否有未识别号码
+    var SendNum = "";
+    $(function () {
+        //取用户签名
+        GetCUserInfoDataJson();
+        //获取通道并且在页面自增
+        getChannel();
+    })
+
+    //取用户签名,可获取用户表任意字段的值
+    function GetCUserInfoDataJson() {
+        $.ajax({
+            url: "/ClientsData/GetCUserInfoDataJson",
+            data: { fieldname: "F_Signature" },
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                var signature = "【" + data[0].value + "】";//标记
+                var snum = signature.length;//标记字数
+                $("#F_Signature").html(signature);
+                $("#zfsid").html(snum + " ");
+            }
+        });
+    }
+
+    //取通讯录
+    function btn_selectTXL() {
+        $.modalOpen({
+            id: "selectTXL",
+            title: "选择手机号码",
+            url: "/TXLManage/PheInfo/SelIndex",
+            width: "800px",
+            height: "600px",
+            //btn: null,
+            callBack: function (iframeId) {
+                var keyValue = rtn_grilField(iframeId, "Mobile");
+                if (keyValue == "") {
+                    alert("请选择手机号码！");
+                }
+                else {
+                    $("#F_MobileList").val(keyValue);
+                    var index = top.layer.getFrameIndex(iframeId); //先得到当前iframe层的索引
+                    top.layer.close(index);
+                }
+            }
+        });
+    }
+
+
+
+    //取短信模板
+    function btn_selectSmsTmpl() {
+        $.modalOpen({
+            id: "selectSmsTmpl",
+            title: "选择短信模板",
+            url: "/TXLManage/SmsTemplate/SmsIndex",
+            width: "800px",
+            height: "600px",
+            //btn: null,
+            callBack: function (iframeId) {
+                var keyValue = rtn_grilField(iframeId, "F_TplContent");//取模板内容
+                if (keyValue == "") {
+                    alert("请选择模板记录！");
+                }
+                else {
+                    $("#F_SmsContent").val(keyValue);
+                    var index = top.layer.getFrameIndex(iframeId); //先得到当前iframe层的索引
+                    top.layer.close(index);
+                }
+            }
+        });
+    }
+
+    //保存当前短信模板
+    function saveSmsTmpl(TplContent) {
+        var formSerialize = {
+            "F_TplContent": TplContent
+        };
+
+        $.submitForm({
+            url: "/TXLManage/SmsTemplate/SubmitForm",
+            param: formSerialize,
+            success: function (e) {
+                //alert(JSON.stringify(e))
+                $.reload();
+            }
+        })
+    }
+    //计算短信内容字符
+    function zifu() {
+        var s = document.getElementById("F_SmsContent").value;
+        //alert(s);
+        var num = s.length;
+        $("#zifu").html(num + " ");
+    }
+
+    //识别输入电话号码
+    function phone() {
+        var p = document.getElementById("F_MobileList").value;
+        var str = "";
+        var str1 = "";
+        var str2 = "";
+        var str3 = "";
+        var ChenkedNum = "";
+        var num = 0;
+        var arr = p.split(/;|:|,|，|；| |\r|\n/);
+        //alert(p);
+        //alert(arr);
+        for (i = 0; i < arr.length; i++) {
+            var pReg = /^1[0-9]\d{9}$/;
+            var xReg = /^0[0-9]\d{9}$/;
+            var mReg = /^0[0-9]\d{10}$/;
+
+            if (arr[i].length == 11 && pReg.test(arr[i]) == true) {
+                // alert("识别成功");
+                num += 1;
+                str1 += arr[i] + ",";
+            }
+
+            else if (arr[i].length == 11 && xReg.test(arr[i]) == true) {
+                //alert("识别成功");
+                num += 1;
+                str2 += arr[i] + ",";
+            }
+            else if (arr[i].length == 12 && mReg.test(arr[i]) == true) {
+                // alert("识别成功");
+                num += 1;
+                str3 += arr[i] + ",";
+            }
+            else {
+                str += arr[i] + ",";
+            }
+        }
+        SendNum = str1 + str2 + str3;
+        document.getElementById("F_MobileList").value = arr;
+        //alert(ChenkedNum);
+        $("#wsb").html(str);
+        newwsb = str;
+        $("#sbnum").html(num);
+    }
+    //取到选择字段值，可多选
+    function rtn_grilField(iframeId, fieldname) {
+        var selarrrow = top.frames[iframeId].$("#gridList").jqGrid('getGridParam', 'selarrrow'); //取得多选行号
+        var keyValue = "";
+        var ret;
+        //取得多选项目的Mobile
+        selarrrow.forEach(function (e) {
+            ret = top.frames[iframeId].$("#gridList").jqGrid('getRowData', e);
+            keyValue += ret[fieldname] + ",";
+            // alert(keyValue);
+        })
+        keyValue = keyValue.substr(0, keyValue.length - 1);//去掉最后一位字符
+        return keyValue;
+    }
+    //function change() {
+    //    if (!document.getElementById("Is_Timer").checked)
+    //        $("#F_SendTime").show();
+    //    else
+    //        {
+    //        $("#F_SendTime").hide();
+    //    $("#F_SendTime").value = "";
+    //}
+    function change() {
+        if (!document.getElementById("F_IsTimer").checked)
+            $("#F_SendTime").show();
+        else {
+            $("#F_SendTime").hide();
+            $("#F_SendTime").value = "";
+        }
+    }
+
+    function Show() {
+        alert("制作中，敬请期待");
+    }
+    //短信提交
+    function submitForm() {
+        var Chennel_Checked = $('input:radio:checked').val();
+        document.getElementById("F_MobileList").value = SendNum;
+        //Cookie防伪验证
+        var data = {};
+        if ($('[name=__RequestVerificationToken]').length > 0) {
+            data["__RequestVerificationToken"] = $('[name=__RequestVerificationToken]').val();
+        }
+        if (!$('#form1').formValid()) {
+            return false;
+        }
+        var formjson = $("#form1").formSerialize();
+        formjson["F_GroupChannelId"] = Chennel_Checked;
+        formjson["F_SmbSign"] = "phone";
+        formjson["F_SendSign"] = "手机号";
+        //alert(JSON.stringify(formjson));
+        if (formjson["F_GroupChannelId"] == undefined) {
+            alert("请选择发送通道！");
+            return false;
+        }
+        if (newwsb != "") {
+            var se = confirm("有未识别号码，是否继续发送！");
+            if (se != true) {
+                return false;
+            }
+
+        }
+        $.loading(true, "正在提交数据...");
+        // alert(formjson.Is_Timer);
+        $.submitForm({
+            url: "/SMCManage/SMCSend/SubmitForm",
+            param: formjson,
+            success: function (data) {
+                //alert(JSON.stringify(data));
+                //alert($("#F_SaveTmpl")[0].checked);
+                if ($("#F_SaveTmpl")[0].checked == true) {
+                    var TplContent = $("#F_SmsContent").val();
+                    saveSmsTmpl(TplContent);
+                }
+                else {
+                    $.reload();
+                }
+            }
+        })
+    }
+
+    //roll出通道，添加到对应的选择区
+    function getChannel() {
+        $.ajax({
+            url: "/OCManage/UserChannl/GetChannel",
+            data: { keyvalue: Id },
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                //rollChannel进页面
+                if (data != "") {
+                    for (var o in data) {
+                        var ChannelName = data[o].F_ChannelName;
+                        var UserMark = data[o].F_UserMark;
+                        var F_ID = data[o].F_ID;
+                        addToTable(ChannelName, UserMark, F_ID);
+                    }
+                }
+                else {
+                    NoneToTable();
+                }
+            }
+        });
+    }
+
+    //页面表格数据(选择通道)添加，扩展
+    function addToTable(ChannelName, UserMark, F_ID) {
+        //console.log(ProvinceId);//debug时候查看值
+        $("#table1").append(
+             "<tr>"
+             + "<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>"
+             //存通道Id
+             + "<td class=\"formValue\"> <div class=\"radio\"><input id=\"F_GroupChannelId\" name=\"F_GroupChannelId\"  type=\"radio\" value= \"" + F_ID + "\"><label for=\"F_GroupChannelId\">" + ChannelName + "\</label>&nbsp;&nbsp;<span>【" + UserMark + "】</span></div></td>"
+             + "</tr>"
+             );
+    }
+
+    function NoneToTable() {
+        $("#table1").append(
+            "<tr>"
+             + "<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;没有可用通道，请联系管理员！</td>"
+             + "</tr>"
+             );
+    }
+
+</script>
+<form id="form1">
+    <div style="margin-left: 10px; margin-right: 10px;">
+        <table id="nomaltable" class="form">
+            <tr>
+                <th class="formTitle">手机号码</th>
+                <td class="formValue">
+                    <div>
+                        <a class="btn btn-primary" onclick="btn_selectTXL()">点击这里从通讯录中选择号码</a>
+                    </div>
+                    <div style="padding:5px">一行一个手机号，或者手机号和手机号之间用逗号隔开</div>
+                    <div style="padding:5px">已识别<font id="sbnum"></font>个号码，未识别号码<font color="red" id="wsb"></font></div>
+                    <textarea id="F_MobileList" name="F_MobileList" class="form-control required" style="height: 100px;" onkeyup="phone()"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">信息内容</th>
+                <td class="formValue">
+                    <div>
+                        <a class="btn btn-primary" onclick="btn_selectSmsTmpl()">点击这里选择短信模板</a>
+                    </div>
+                    <div style="padding:5px">您的签名:<font color="red" id="F_Signature"></font>，占短信内容<font color="red" id="zfsid"> </font>字符</div>
+                    <div style="padding:5px">你已输入了<font color="red" id="zifu"></font>字符</div>
+                    <textarea id="F_SmsContent" name="F_SmsContent" class="form-control required" style="height: 100px;" onkeyup="zifu()"></textarea>
+                    <div class="ckbox"><input id="F_SaveTmpl" name="F_SaveTmpl" type="checkbox"><label for="F_SaveTmpl">保存到模板</label></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <th class="formTitle">发送时间</th>
+                <td class="formValue">
+                    <div class="ckbox">
+                        @*<input id="Is_Timer" name="Is_Timer" type="checkbox" /><label for="Is_Timer" onclick="change()">定时发送（默认即时发送）</label>*@
+                        <input id="F_IsTimer" name="F_IsTimer" type="checkbox" /><label for="F_IsTimer" onclick="change()">定时发送（默认即时发送）</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle"></th>
+                <td class="formValue">
+                    <div class="formValue">
+                        <input id="F_SendTime" name="F_SendTime" type="text" class="form-control input-wdatepicker required" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd HH:mm:ss', minDate: '%y-%M-%d-%H-%m-%s' })" style="width: 200px; display:none" />
+                    </div>
+                </td>
+            </tr>
+
+            @*<tr>
+                    <th class="formTitle">发送通道</th>
+                    <td class="formValue">
+                        <div class="rdio"><input id="F_GroupChannelId" name="F_GroupChannelId" type="radio"><label for="F_GroupChannelId">全网通道</label>&nbsp;&nbsp;<span>【单价10.00分，通道正常，无时间限制，该通道发送之前请一定先测试能否收到】</span></div>
+                    </td>
+                </tr>*@
+        </table>
+        <table id="table1" class="form">
+            <tr>
+                <th class="formTitle">发送通道</th>
+            </tr>
+        </table>
+        <div class="mail-body" style="text-align: center ;">
+            <a href="javascript:;" onclick="submitForm()" class="btn btn-primary" style="margin-right: 5px;">直接发送</a>
+            <a href="javascript:;" onclick="Show()" class="btn btn-primary" style="margin-right: 5px;">预览效果</a>
+            @*<a href="javascript:;" class="btn btn-warning">预览效果</a>*@
+        </div>
+        <div>
+            注意事项:<br />
+            一、本页面主要实现单个或少量手机号码的发送；大量手机号码的发送请选用其他发送方式；<br />
+            二、手工录入号码时请将号码用半角逗号“,”隔开，或者一行一个手机号。例如：13900000000,13900000000,05510000000<br />
+            三、短信内容不得包含涉嫌诈骗、色情、反动、政治等非法字眼的词组，否则将可能造成您的短信无法正常发送。 <br />
+        </div>
+    </div>
+</form>

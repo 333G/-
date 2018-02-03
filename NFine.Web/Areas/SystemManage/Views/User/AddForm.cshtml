@@ -1,0 +1,115 @@
+﻿@{
+    ViewBag.Title = "AddForm";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<script>
+     var Id = "@NFine.Code.OperatorProvider.Provider.GetCurrent().Id";
+ 
+    $(function () {
+        isadministrator_disable();
+        if (!!Id) {
+            //继承签名
+            $.ajax({
+                url: "/SystemManage/User/GetFormJson",
+                data: { Id: Id },
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    //alert(JSON.stringify(data));
+                    $("#F_Signature").val(data["F_Signature"]);
+                }
+            });
+        }
+    });
+
+    function isadministrator_disable() {
+        var tr = document.getElementById("F_Signature");
+        var isadministrator = "@NFine.Code.OperatorProvider.Provider.GetCurrent().IsSystem"
+        if (isadministrator)
+            tr.disabled = false;
+    }
+
+
+    function submitForm() {
+        if (!$('#form1').formValid()) {
+            return false;
+        }
+        $.submitForm({
+            url: "/SystemManage/User/SubmitForm",
+            param: $("#form1").formSerialize(),
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+</script>
+<form id="form1">
+    <div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#">基本信息</a></li>
+            @*<li ><a href="#">扩展信息</a></li>*@
+        </ul>
+        <div style="padding-top: 20px; margin-right: 30px;">
+            <table class="form">
+                <tr>
+                    <th class="formTitle">账户</th>
+                    <td class="formValue">
+                        <input id="F_Account" name="F_Account" type="text" class="form-control required" placeholder="请输入账户" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">密码</th>
+                    <td class="formValue">
+                        <input id="F_UserPassword" name="F_UserPassword" type="password" class="form-control required" placeholder="请输入密码" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">姓名</th>
+                    <td class="formValue">
+                        <input id="F_RealName" name="F_RealName" type="text" class="form-control required" placeholder="请输入姓名" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <th class="formTitle">余额</th>
+                    <td class="formValue">
+                        <input id="F_Balance" name="F_Balance" type="number" class="form-control required" placeholder="0" />
+                    </td>
+                    
+                </tr>
+
+                <tr>
+                    <th class="formTitle">短信签名</th>
+                    <td class="formValue">
+                        <input id="F_Signature" name="F_Signature" type="text" disabled="disabled" class="form-control" placeholder="" /> (最多八个汉字，如需修改短信签名请联系管理员）
+                    </td>
+                   
+                </tr>
+
+                <tr>
+                    <th class="formTitle" valign="top" style="padding-top: 5px;">
+                        备注
+                    </th>
+                    <td class="formValue" colspan="2">
+                        <textarea id="F_Description" name="F_Description" class="form-control" style="height: 60px;"></textarea>
+                    </td>
+                </tr>
+                <tr hidden="hidden">
+                    <th class="formTitle">角色</th>
+                    <td class="formValue">
+                        <input id="F_RoleId" name="F_RoleId" class="form-control required" value="2DA8390B-61A4-4E6C-A6E7-8F6794C7EDCE">@*默认普通用户*@
+                    </td>
+                    <th class="formTitle">类型</th>
+                    <td class="formValue">
+                        @*<select id="F_IsAdministrator" name="F_IsAdministrator" onfocus="this.defaultIndex=this.selectedIndex;" onchange="this.selectedIndex=this.defaultIndex;"class="form-control">*@
+                        <input id="F_IsAdministrator" name="F_IsAdministrator" disabled="disabled" class="form-control" value="false">@*非管理员*@
+                    </td>
+                    <th class="formTitle">允许登录</th>
+                    <td class="formValue">
+                        <input id="F_EnabledMark" name="F_EnabledMark" class="form-control" value="true">@*默认可以登录*@
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</form>

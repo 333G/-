@@ -1,0 +1,92 @@
+2017/5/26 22:06:58
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"262"}]
+2017/5/26 22:06:58
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"262"}]
+2017/5/26 22:07:10
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--OC_BaseChannel
+select * from OC_BaseChannel 参数：
+2017/5/26 22:07:10
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--OC_UserInfo
+select * from OC_UserInfo 参数：
+2017/5/26 22:07:10
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [Sev_SendDateDetail]   WHERE 1=1  AND (  ([F_ResponseTime] < @F_ResponseTime101)   AND   ([F_ResponseTime]  > @F_ResponseTime102)  )    参数：[{"key":"@F_ResponseTime101","value":"2017/5/27 22:07:10"},{"key":"@F_ResponseTime102","value":"2017/5/26 22:07:10"}]
+2017/5/26 22:07:10
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_Id desc ) FROM [Sev_SendDateDetail]   WHERE 1=1  AND (  ([F_ResponseTime] < @F_ResponseTime101)   AND   ([F_ResponseTime]  > @F_ResponseTime102)  )   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：[{"key":"@F_ResponseTime101","value":"2017/5/27 22:07:10"},{"key":"@F_ResponseTime102","value":"2017/5/26 22:07:10"}]
+2017/5/26 22:07:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [Sev_SendDateDetail]   WHERE 1=1  AND (  ([F_ResponseTime] < @F_ResponseTime101)   AND   ([F_ResponseTime]  > @F_ResponseTime102)  )    参数：[{"key":"@F_ResponseTime101","value":"2017/5/12 0:00:00"},{"key":"@F_ResponseTime102","value":"2017/5/10 0:00:00"}]
+2017/5/26 22:07:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_Id desc ) FROM [Sev_SendDateDetail]   WHERE 1=1  AND (  ([F_ResponseTime] < @F_ResponseTime101)   AND   ([F_ResponseTime]  > @F_ResponseTime102)  )   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：[{"key":"@F_ResponseTime101","value":"2017/5/12 0:00:00"},{"key":"@F_ResponseTime102","value":"2017/5/10 0:00:00"}]
+2017/5/26 22:07:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [SMC_SendSms]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"0214f333-d873-4b1a-8293-136ccfa9b35a"}]
+2017/5/26 22:07:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [SMC_SendSms]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"63f2c758-aa54-4947-a692-09ed6f2ba6a8"}]
+2017/5/26 22:07:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [SMC_SendSms]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"c387cb83-5db9-47a7-9106-bce7f9e9ed82"}]
+2017/5/26 22:08:08
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"430000"}]
+2017/5/26 22:14:22
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [Sev_SendDateDetail]   WHERE 1=1  AND (  ([F_ResponseTime] < @F_ResponseTime101)   AND   ([F_ResponseTime]  > @F_ResponseTime102)  )    参数：[{"key":"@F_ResponseTime101","value":"2017/5/12 0:00:00"},{"key":"@F_ResponseTime102","value":"2017/5/10 0:00:00"}]
+2017/5/26 22:14:22
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_Id desc ) FROM [Sev_SendDateDetail]   WHERE 1=1  AND (  ([F_ResponseTime] < @F_ResponseTime101)   AND   ([F_ResponseTime]  > @F_ResponseTime102)  )   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：[{"key":"@F_ResponseTime101","value":"2017/5/12 0:00:00"},{"key":"@F_ResponseTime102","value":"2017/5/10 0:00:00"}]
+2017/5/26 22:14:22
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [SMC_SendSms]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"0214f333-d873-4b1a-8293-136ccfa9b35a"}]
+2017/5/26 22:14:22
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [SMC_SendSms]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"63f2c758-aa54-4947-a692-09ed6f2ba6a8"}]
+2017/5/26 22:14:22
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [SMC_SendSms]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"c387cb83-5db9-47a7-9106-bce7f9e9ed82"}]
+2017/5/26 22:14:23
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_Area]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"430000"}]

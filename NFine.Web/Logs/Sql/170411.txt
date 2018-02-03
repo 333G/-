@@ -1,0 +1,325 @@
+2017/4/11 16:01:46
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/11 16:02:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [VOC_UserInfo]   WHERE 1=1  AND (1=1)    参数：
+2017/4/11 16:03:36
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [VOC_UserInfo]   WHERE 1=1  AND (1=1)    参数：
+2017/4/11 16:04:11
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [VOC_UserInfo]   WHERE 1=1  AND (1=1)    参数：
+2017/4/11 16:04:59
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [VOC_UserInfo]   WHERE 1=1  AND ( (1=1)  AND   ([F_Reviewed]  = @F_Reviewed101)  )    参数：[{"key":"@F_Reviewed101","value":"0"}]
+2017/4/11 16:06:48
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [VOC_UserInfo]   WHERE 1=1  AND ( (1=1)  AND   ([F_Reviewed]  = @F_Reviewed101)  )    参数：[{"key":"@F_Reviewed101","value":"0"}]
+2017/4/11 16:06:57
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [VOC_UserInfo]   WHERE 1=1  AND ( (1=1)  AND   ([F_Reviewed]  = @F_Reviewed101)  )    参数：[{"key":"@F_Reviewed101","value":"0"}]
+2017/4/11 16:08:53
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/11 16:08:57
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [VOC_UserInfo]   WHERE 1=1  AND (1=1)    参数：
+2017/4/11 16:15:25
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/11 16:15:29
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id  FROM [OC_UserInfo]   s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )    WHERE 1=1    参数：
+2017/4/11 16:16:00
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id  FROM [OC_UserInfo]   s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )    WHERE 1=1    参数：
+2017/4/11 16:33:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/11 16:33:35
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id  FROM [OC_UserInfo]   s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )    WHERE 1=1    参数：
+2017/4/11 16:33:35
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [VOC_UserInfo]   WHERE 1=1  AND (1=1)    参数：
+2017/4/11 16:43:44
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]    s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )   WHERE 1=1  AND (1=1)    参数：
+2017/4/11 16:43:44
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )    WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/11 16:53:23
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]    s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )   WHERE 1=1  AND (1=1)    参数：
+2017/4/11 16:53:25
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )    WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/11 17:04:15
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/11 17:04:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]    s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )   WHERE 1=1  AND (1=1)    参数：
+2017/4/11 17:04:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )    WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/11 17:12:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]    s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )   WHERE 1=1  AND (1=1)    参数：
+2017/4/11 17:12:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )    WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/11 17:18:22
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )    WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/11 17:19:26
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]    s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )   WHERE 1=1  AND (1=1)    参数：
+2017/4/11 17:28:29
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )    WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/11 18:07:24
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/11 18:07:55
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]    s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )   WHERE 1=1  AND (1=1)    参数：
+2017/4/11 18:07:57
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )    WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/11 18:09:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )    WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/11 18:27:29
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserId = s2.F_UserId, F_SmsContent = s1.F_SmsContent, F_RootId = s2.F_RootId, F_SendTime = s1.F_SendTime, F_SendSign = s1.F_SendSign, F_SendState = s1.F_SendState, F_DealState = s1.F_DealState, F_MobileList = s2.F_PhoneCode, F_Price = s1.F_Price  FROM [SMC_SendSms]   s1  Left JOIN [Sev_SendDateDetail]  s2  ON  ( s1.F_Id  = s2.SMC_F_Id )    WHERE 1=1    参数：
+2017/4/11 18:30:11
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserId = s2.F_UserId, F_SmsContent = s1.F_SmsContent, F_RootId = s2.F_RootId, F_SendTime = s1.F_SendTime, F_SendSign = s1.F_SendSign, F_SendState = s1.F_SendState, F_DealState = s1.F_DealState, F_MobileList = s2.F_PhoneCode, F_Price = s1.F_Price  FROM [SMC_SendSms]   s1  Left JOIN [Sev_SendDateDetail]  s2  ON  ( s1.F_Id  = s2.SMC_F_Id )    WHERE 1=1    参数：
+2017/4/11 18:48:43
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserFid = s1.F_UserFid, F_UserId = s1.F_UserId, F_RootId = s1.F_RootId, F_ManagerId = s1.F_ManagerId, F_Account = s1.F_Account, F_SendedNum = s1.F_SendedNum, F_Balance = s1.F_Balance, F_Reviewed = s1.F_Reviewed, F_State = s1.F_State, F_DeleteMark = s1.F_DeleteMark, F_EnabledMark = s1.F_EnabledMark, F_Description = s1.F_Description, F_MobileChannel = s2.F_MobileChannel, F_UnicomChannel = s2.F_UnicomChannel, F_TelecomChannel = s2.F_TelecomChannel ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )    WHERE 1=1  AND (1=1)    参数：
+2017/4/11 18:49:23
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserFid = s1.F_UserFid, F_UserId = s1.F_UserId, F_RootId = s1.F_RootId, F_ManagerId = s1.F_ManagerId, F_Account = s1.F_Account, F_SendedNum = s1.F_SendedNum, F_Balance = s1.F_Balance, F_Reviewed = s1.F_Reviewed, F_State = s1.F_State, F_DeleteMark = s1.F_DeleteMark, F_EnabledMark = s1.F_EnabledMark, F_Description = s1.F_Description, F_MobileChannel = s2.F_MobileChannel, F_UnicomChannel = s2.F_UnicomChannel, F_TelecomChannel = s2.F_TelecomChannel ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )    WHERE 1=1  AND ( ( ( (1=1)  AND   ([param].[F_MobileChannel]  = @param_F_MobileChannel101)  )  OR   ([param].[F_UnicomChannel]  = @param_F_UnicomChannel102)  )  OR   ([param].[F_TelecomChannel]  = @param_F_TelecomChannel103)  )    参数：[{"key":"@param_F_MobileChannel101","value":"65"},{"key":"@param_F_UnicomChannel102","value":"65"},{"key":"@param_F_TelecomChannel103","value":"65"}]
+2017/4/11 18:53:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserFid = s1.F_UserFid, F_UserId = s1.F_UserId, F_RootId = s1.F_RootId, F_ManagerId = s1.F_ManagerId, F_Account = s1.F_Account, F_SendedNum = s1.F_SendedNum, F_Balance = s1.F_Balance, F_Reviewed = s1.F_Reviewed, F_State = s1.F_State, F_DeleteMark = s1.F_DeleteMark, F_EnabledMark = s1.F_EnabledMark, F_Description = s1.F_Description, F_MobileChannel = s2.F_MobileChannel, F_UnicomChannel = s2.F_UnicomChannel, F_TelecomChannel = s2.F_TelecomChannel ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )    WHERE 1=1  AND (1=1)    参数：
+2017/4/11 18:53:41
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserFid = s1.F_UserFid, F_UserId = s1.F_UserId, F_RootId = s1.F_RootId, F_ManagerId = s1.F_ManagerId, F_Account = s1.F_Account, F_SendedNum = s1.F_SendedNum, F_Balance = s1.F_Balance, F_Reviewed = s1.F_Reviewed, F_State = s1.F_State, F_DeleteMark = s1.F_DeleteMark, F_EnabledMark = s1.F_EnabledMark, F_Description = s1.F_Description, F_MobileChannel = s2.F_MobileChannel, F_UnicomChannel = s2.F_UnicomChannel, F_TelecomChannel = s2.F_TelecomChannel ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )    WHERE 1=1  AND ( (1=1)  AND   ([param].[F_Balance] >= @param_F_Balance101)  )    参数：[{"key":"@param_F_Balance101","value":"1"}]
+2017/4/11 18:53:57
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserFid = s1.F_UserFid, F_UserId = s1.F_UserId, F_RootId = s1.F_RootId, F_ManagerId = s1.F_ManagerId, F_Account = s1.F_Account, F_SendedNum = s1.F_SendedNum, F_Balance = s1.F_Balance, F_Reviewed = s1.F_Reviewed, F_State = s1.F_State, F_DeleteMark = s1.F_DeleteMark, F_EnabledMark = s1.F_EnabledMark, F_Description = s1.F_Description, F_MobileChannel = s2.F_MobileChannel, F_UnicomChannel = s2.F_UnicomChannel, F_TelecomChannel = s2.F_TelecomChannel ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )    WHERE 1=1  AND ( (1=1)  AND   ([param].[F_Balance] >= @param_F_Balance101)  )    参数：[{"key":"@param_F_Balance101","value":"1"}]
+2017/4/11 18:55:55
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserFid = s1.F_UserFid, F_UserId = s1.F_UserId, F_RootId = s1.F_RootId, F_ManagerId = s1.F_ManagerId, F_Account = s1.F_Account, F_SendedNum = s1.F_SendedNum, F_Balance = s1.F_Balance, F_Reviewed = s1.F_Reviewed, F_State = s1.F_State, F_DeleteMark = s1.F_DeleteMark, F_EnabledMark = s1.F_EnabledMark, F_Description = s1.F_Description, F_MobileChannel = s2.F_MobileChannel, F_UnicomChannel = s2.F_UnicomChannel, F_TelecomChannel = s2.F_TelecomChannel ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )    WHERE 1=1  AND ( (1=1)  AND   ([param].[F_Balance] >= @param_F_Balance101)  )    参数：[{"key":"@param_F_Balance101","value":"0"}]
+2017/4/11 18:56:06
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserFid = s1.F_UserFid, F_UserId = s1.F_UserId, F_RootId = s1.F_RootId, F_ManagerId = s1.F_ManagerId, F_Account = s1.F_Account, F_SendedNum = s1.F_SendedNum, F_Balance = s1.F_Balance, F_Reviewed = s1.F_Reviewed, F_State = s1.F_State, F_DeleteMark = s1.F_DeleteMark, F_EnabledMark = s1.F_EnabledMark, F_Description = s1.F_Description, F_MobileChannel = s2.F_MobileChannel, F_UnicomChannel = s2.F_UnicomChannel, F_TelecomChannel = s2.F_TelecomChannel ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )    WHERE 1=1  AND (1=1)    参数：
+2017/4/11 18:59:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/11 18:59:42
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]    s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )   WHERE 1=1  AND (1=1)    参数：
+2017/4/11 18:59:42
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )    WHERE 1=1  AND (1=1)    参数：
+2017/4/11 19:00:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]    s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )   WHERE 1=1  AND ( (1=1)  AND   ([param].[F_Balance] >= @param_F_Balance101)  )    参数：[{"key":"@param_F_Balance101","value":"1"}]
+2017/4/11 19:03:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserId = s2.F_UserId, F_SmsContent = s1.F_SmsContent, F_RootId = s2.F_RootId, F_SendTime = s1.F_SendTime, F_SendSign = s1.F_SendSign, F_SendState = s1.F_SendState, F_DealState = s1.F_DealState, F_MobileList = s2.F_PhoneCode, F_Price = s1.F_Price  FROM [SMC_SendSms]   s1  Left JOIN [Sev_SendDateDetail]  s2  ON  ( s1.F_Id  = s2.SMC_F_Id )    WHERE 1=1    参数：
+2017/4/11 19:03:08
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserId = s2.F_UserId, F_SmsContent = s1.F_SmsContent, F_RootId = s2.F_RootId, F_SendTime = s1.F_SendTime, F_SendSign = s1.F_SendSign, F_SendState = s1.F_SendState, F_DealState = s1.F_DealState, F_MobileList = s2.F_PhoneCode, F_Price = s1.F_Price  FROM [SMC_SendSms]   s1  Left JOIN [Sev_SendDateDetail]  s2  ON  ( s1.F_Id  = s2.SMC_F_Id )    WHERE 1=1    参数：
+2017/4/11 19:03:10
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserId = s2.F_UserId, F_SmsContent = s1.F_SmsContent, F_RootId = s2.F_RootId, F_SendTime = s1.F_SendTime, F_SendSign = s1.F_SendSign, F_SendState = s1.F_SendState, F_DealState = s1.F_DealState, F_MobileList = s2.F_PhoneCode, F_Price = s1.F_Price  FROM [SMC_SendSms]   s1  Left JOIN [Sev_SendDateDetail]  s2  ON  ( s1.F_Id  = s2.SMC_F_Id )    WHERE 1=1    参数：
+2017/4/11 19:03:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserId = s2.F_UserId, F_SmsContent = s1.F_SmsContent, F_RootId = s2.F_RootId, F_SendTime = s1.F_SendTime, F_SendSign = s1.F_SendSign, F_SendState = s1.F_SendState, F_DealState = s1.F_DealState, F_MobileList = s2.F_PhoneCode, F_Price = s1.F_Price  FROM [SMC_SendSms]   s1  Left JOIN [Sev_SendDateDetail]  s2  ON  ( s1.F_Id  = s2.SMC_F_Id )    WHERE 1=1    参数：
+2017/4/11 19:03:14
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserId = s2.F_UserId, F_SmsContent = s1.F_SmsContent, F_RootId = s2.F_RootId, F_SendTime = s1.F_SendTime, F_SendSign = s1.F_SendSign, F_SendState = s1.F_SendState, F_DealState = s1.F_DealState, F_MobileList = s2.F_PhoneCode, F_Price = s1.F_Price  FROM [SMC_SendSms]   s1  Left JOIN [Sev_SendDateDetail]  s2  ON  ( s1.F_Id  = s2.SMC_F_Id )    WHERE 1=1    参数：
+2017/4/11 19:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserId = s2.F_UserId, F_SmsContent = s1.F_SmsContent, F_RootId = s2.F_RootId, F_SendTime = s1.F_SendTime, F_SendSign = s1.F_SendSign, F_SendState = s1.F_SendState, F_DealState = s1.F_DealState, F_MobileList = s2.F_PhoneCode, F_Price = s1.F_Price  FROM [SMC_SendSms]   s1  Left JOIN [Sev_SendDateDetail]  s2  ON  ( s1.F_Id  = s2.SMC_F_Id )    WHERE 1=1    参数：
+2017/4/11 19:03:23
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserId = s2.F_UserId, F_SmsContent = s1.F_SmsContent, F_RootId = s2.F_RootId, F_SendTime = s1.F_SendTime, F_SendSign = s1.F_SendSign, F_SendState = s1.F_SendState, F_DealState = s1.F_DealState, F_MobileList = s2.F_PhoneCode, F_Price = s1.F_Price  FROM [SMC_SendSms]   s1  Left JOIN [Sev_SendDateDetail]  s2  ON  ( s1.F_Id  = s2.SMC_F_Id )    WHERE 1=1    参数：
+2017/4/11 19:03:26
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserId = s2.F_UserId, F_SmsContent = s1.F_SmsContent, F_RootId = s2.F_RootId, F_SendTime = s1.F_SendTime, F_SendSign = s1.F_SendSign, F_SendState = s1.F_SendState, F_DealState = s1.F_DealState, F_MobileList = s2.F_PhoneCode, F_Price = s1.F_Price  FROM [SMC_SendSms]   s1  Left JOIN [Sev_SendDateDetail]  s2  ON  ( s1.F_Id  = s2.SMC_F_Id )    WHERE 1=1    参数：
+2017/4/11 19:03:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserId = s2.F_UserId, F_SmsContent = s1.F_SmsContent, F_RootId = s2.F_RootId, F_SendTime = s1.F_SendTime, F_SendSign = s1.F_SendSign, F_SendState = s1.F_SendState, F_DealState = s1.F_DealState, F_MobileList = s2.F_PhoneCode, F_Price = s1.F_Price  FROM [SMC_SendSms]   s1  Left JOIN [Sev_SendDateDetail]  s2  ON  ( s1.F_Id  = s2.SMC_F_Id )    WHERE 1=1    参数：
+2017/4/11 19:03:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserId = s2.F_UserId, F_SmsContent = s1.F_SmsContent, F_RootId = s2.F_RootId, F_SendTime = s1.F_SendTime, F_SendSign = s1.F_SendSign, F_SendState = s1.F_SendState, F_DealState = s1.F_DealState, F_MobileList = s2.F_PhoneCode, F_Price = s1.F_Price  FROM [SMC_SendSms]   s1  Left JOIN [Sev_SendDateDetail]  s2  ON  ( s1.F_Id  = s2.SMC_F_Id )    WHERE 1=1    参数：
+2017/4/11 19:03:37
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserId = s2.F_UserId, F_SmsContent = s1.F_SmsContent, F_RootId = s2.F_RootId, F_SendTime = s1.F_SendTime, F_SendSign = s1.F_SendSign, F_SendState = s1.F_SendState, F_DealState = s1.F_DealState, F_MobileList = s2.F_PhoneCode, F_Price = s1.F_Price  FROM [SMC_SendSms]   s1  Left JOIN [Sev_SendDateDetail]  s2  ON  ( s1.F_Id  = s2.SMC_F_Id )    WHERE 1=1    参数：
+2017/4/11 19:03:39
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserId = s2.F_UserId, F_SmsContent = s1.F_SmsContent, F_RootId = s2.F_RootId, F_SendTime = s1.F_SendTime, F_SendSign = s1.F_SendSign, F_SendState = s1.F_SendState, F_DealState = s1.F_DealState, F_MobileList = s2.F_PhoneCode, F_Price = s1.F_Price  FROM [SMC_SendSms]   s1  Left JOIN [Sev_SendDateDetail]  s2  ON  ( s1.F_Id  = s2.SMC_F_Id )    WHERE 1=1    参数：
+2017/4/11 19:03:42
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserId = s2.F_UserId, F_SmsContent = s1.F_SmsContent, F_RootId = s2.F_RootId, F_SendTime = s1.F_SendTime, F_SendSign = s1.F_SendSign, F_SendState = s1.F_SendState, F_DealState = s1.F_DealState, F_MobileList = s2.F_PhoneCode, F_Price = s1.F_Price  FROM [SMC_SendSms]   s1  Left JOIN [Sev_SendDateDetail]  s2  ON  ( s1.F_Id  = s2.SMC_F_Id )    WHERE 1=1    参数：
+2017/4/11 19:03:46
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserId = s2.F_UserId, F_SmsContent = s1.F_SmsContent, F_RootId = s2.F_RootId, F_SendTime = s1.F_SendTime, F_SendSign = s1.F_SendSign, F_SendState = s1.F_SendState, F_DealState = s1.F_DealState, F_MobileList = s2.F_PhoneCode, F_Price = s1.F_Price  FROM [SMC_SendSms]   s1  Left JOIN [Sev_SendDateDetail]  s2  ON  ( s1.F_Id  = s2.SMC_F_Id )    WHERE 1=1    参数：
+2017/4/11 19:03:48
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserId = s2.F_UserId, F_SmsContent = s1.F_SmsContent, F_RootId = s2.F_RootId, F_SendTime = s1.F_SendTime, F_SendSign = s1.F_SendSign, F_SendState = s1.F_SendState, F_DealState = s1.F_DealState, F_MobileList = s2.F_PhoneCode, F_Price = s1.F_Price  FROM [SMC_SendSms]   s1  Left JOIN [Sev_SendDateDetail]  s2  ON  ( s1.F_Id  = s2.SMC_F_Id )    WHERE 1=1    参数：
+2017/4/11 19:03:50
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserId = s2.F_UserId, F_SmsContent = s1.F_SmsContent, F_RootId = s2.F_RootId, F_SendTime = s1.F_SendTime, F_SendSign = s1.F_SendSign, F_SendState = s1.F_SendState, F_DealState = s1.F_DealState, F_MobileList = s2.F_PhoneCode, F_Price = s1.F_Price  FROM [SMC_SendSms]   s1  Left JOIN [Sev_SendDateDetail]  s2  ON  ( s1.F_Id  = s2.SMC_F_Id )    WHERE 1=1    参数：
+2017/4/11 19:06:39
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]    s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )   WHERE 1=1  AND (1=1)    参数：
+2017/4/11 19:06:41
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   s1  Left JOIN [OC_GroupChannel]  s2  ON  ( s1.F_UserId  = s2.F_UserId )    WHERE 1=1  AND (1=1)    参数：
+2017/4/11 19:11:44
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [Sys_User]   WHERE 1=1  AND  ([F_Account] <> @F_Account101)     参数：[{"key":"@F_Account101","value":"admin"}]
+2017/4/11 19:11:44
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_IsAdministrator desc,F_CreatorTime desc,F_DepartmentId asc ) FROM [Sys_User]   WHERE 1=1  AND  ([F_Account] <> @F_Account101)    ) t WHERE t.row_index BETWEEN 1 AND 50 参数：[{"key":"@F_Account101","value":"admin"}]
+2017/4/11 19:11:59
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT F_Id = s1.F_Id, F_UserId = s2.F_UserId, F_SmsContent = s1.F_SmsContent, F_RootId = s2.F_RootId, F_SendTime = s1.F_SendTime, F_SendSign = s1.F_SendSign, F_SendState = s1.F_SendState, F_DealState = s1.F_DealState, F_MobileList = s2.F_PhoneCode, F_Price = s1.F_Price  FROM [SMC_SendSms]   s1  Left JOIN [Sev_SendDateDetail]  s2  ON  ( s1.F_Id  = s2.SMC_F_Id )    WHERE 1=1    参数：

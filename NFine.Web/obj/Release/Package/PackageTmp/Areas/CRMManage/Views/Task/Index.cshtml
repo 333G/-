@@ -1,0 +1,238 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<link href="/Content/js/datepicker/skin/WdatePicker.css" rel="stylesheet" />
+<script src="/Content/js/datepicker/WdatePicker.js"></script>
+<style >
+  
+
+    .topPanel .search .input-group .form-control  {
+         margin-left :7px;
+     }
+   
+</style>
+<script>
+    $(function () {
+        gridList();
+    })
+
+    function gridList() {
+        var $gridList = $("#gridList");
+        $gridList.dataGrid({
+            url: "/CRMManage/Task/GetGridJson",
+            height: $(window).height() - 128,
+            colModel: [
+                { label: '主键', name: 'F_Id', hidden: true },
+                {
+                    label: '任务内容', name: 'F_TaskInfo', width: 200, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var retstr = cellvalue+'<br>'+'<a onclick="btn_addRemarks(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">修改备注</a>&nbsp;&nbsp;';
+                        return retstr;
+                    }
+                },
+                { label: '发布日期', name: 'F_CreatorTime', width: 200, align: 'center' },
+                { label: '处理人', name: 'F_DoUser', width: 200, align: 'center' },
+                //进度下拉栏待定待修改？？？？？？？？？？？？？？？？？？？？
+              //  {name:'type',   index:'type',   formatter: "select", editoptions:{value:"0:无效;1:正常;2:未知"}}  
+           /*{
+               label: '完成进度', name: 'F_StatId', width: 200, align: 'center',
+               editable: true, edittype: 'select', editrules: { required: true }, editoptions: { value: "0:无效;1:正常;2:未知" }
+           },
+           */
+           {
+                label: '完成进度', name: 'F_StatId', width: 200, align: 'center', 
+                    formatter: function (cellvalue, select, rowObject) { 
+                        var retstr = "<select id='state' class='form-control' style='width: 110px;height:20px;margin-left:30px;margin-top:10px;' onchange='javascript:updateTaskProcess(\"" + rowObject.F_Id + "\",this)'>";
+                        if (cellvalue == "已完成") {
+                            retstr += '<option value=' + cellvalue + '"还未处理">还未处理</option>'; 
+                            retstr += '<option selected="selected" value="已完成">已完成</option> ';
+                        }
+                        else { 
+                            retstr += '<option selected="selected" value="还未处理">还未处理</option>';
+                            retstr += '<option value="已完成">已完成</option> ';
+                        }
+                        //retstr += '$("#state  option[value="'+ cellvalue +'"] ").attr("selected", true);';
+                        retstr += '</select>';
+
+                      //  $("#state  option[value=" + cellvalue + "] ").attr("selected", true);
+                        //retstr += '$("#state   option[value="' + cellvalue + '"]").attr("selected", true);';
+                        return retstr;
+                    }, 
+                },
+                {
+                     label: '操作', name: 'm_operate', width: 100, align: 'center',
+                     formatter: function (cellvalue, options, rowObject) {
+                         var retstr = '<a onclick="btn_edit(\'' + rowObject.F_Id + '\')" style="cursor:pointer">修改</a>&nbsp;&nbsp;';
+                         return retstr;
+                     }
+                 }
+            ],
+            pager: "#gridPager",
+            sortname: 'F_TaskTime desc',
+            rownumber: true,
+            multiselect: true,
+            viewrecords: true
+        });
+
+        $("#btn_search").click(function () {
+            //设置查询参数
+            var queryJson = {
+                keyword: $("#txt_keyword").val(),
+                CreatorTime: $("#txt_CreatorTime").val()
+            }
+            $gridList.jqGrid('setGridParam', {
+                postData: { queryJson: JSON.stringify(queryJson) },
+            }).trigger('reloadGrid');
+        });
+    }
+
+    //更新进度
+    //内容待定
+    function btn_update() {
+        var selarrrow = $("#gridList").jqGrid('getGridParam', 'selarrrow'); //取得多选行
+        var updateList = {};
+        var i = 0;
+        var j = 0;
+        var ret; 
+        selarrrow.forEach(function (e) {
+            ret = $("#gridList").jqGrid('getRowData', e);
+            updateList["[" + i + "].F_Id"] = ret.F_Id;
+            var a = ret.F_StatId;
+            alert(a);
+
+            //updateList["[" + i + "].F_StatId"] = ret.F_StatId.value;
+            i++;
+            alert(updateList["[" + i + "].F_StatId"]);
+        })
+        alert("fsd");
+        $.submitForm({
+            url: "/CRMManage/Task/UpdateForm",
+            param: updateList,
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+
+    function updateTaskProcess(id, con) {
+        var state = $(con).val();
+        if (confirm("您已更新任务进度，是否需要保存？")) {
+            var updateList = {};
+            updateList["[0].F_Id"] = id;
+            updateList["[0].F_StatId"] = state;
+            $.submitForm({
+                url: "/CRMManage/Task/UpdateForm?",
+                param: updateList,
+                success: function () {
+                    $.currentWindow().$("#gridList").trigger("reloadGrid");
+                }
+            })
+        } 
+        $.currentWindow().$("#gridList").trigger("reloadGrid");
+
+        //alert("选中ID:" + id + ",选中状态：" + state);测试用
+
+
+    }
+    //链接到添加新任务页面
+    function btn_add() {
+        $.modalOpen({
+            id: "Form",
+            title: "录入新任务",
+            url: "/CRMManage/Task/Form",
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    //链接到修改任务页面
+    function btn_edit(fid) {
+        var keyValue = $("#gridList").jqGridRowValue().F_Id;
+        if (fid != undefined)
+            keyValue = fid;
+        $.modalOpen({
+            id: "Form",
+            title: "修改任务",
+            url: "/CRMManage/Task/Form?keyValue=" + keyValue,
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+
+    //删除对应F_Id的数据 
+    function btn_delete(fid) {
+        var keyValue = rtn_grilid();
+        if (fid != undefined)
+            keyValue = fid;
+        $.deleteForm({
+            url: "/CRMManage/Task/DeleteForm",
+            param: { keyValue: keyValue },
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+  
+    //返回多选的记录id字符串 ,以‘，’为分隔符
+    function rtn_grilid() {
+        var selarrrow = $("#gridList").jqGrid('getGridParam', 'selarrrow'); //取得多选行号
+        var keyValue = "";
+        var ret;
+        //取得多选项目的F_Id
+        selarrrow.forEach(function (e) {
+            ret = $("#gridList").jqGrid('getRowData', e);
+            keyValue += ret.F_Id + ",";
+        })
+        return keyValue;
+    }
+  
+  
+  //    var keyValue = $("#gridList").jqGridRowValue().F_Id;//取得单选F_ID,其实没什么用，只是做个记录。
+    
+
+</script>
+<iframe id="HideFrm" style="display: none"></iframe>
+<div class="topPanel">
+    <div class="toolbar">
+        <div class="btn-group">
+            <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+        </div>
+        <div class="btn-group">
+            <a id="NU-add" authorize="yes" class="btn btn-primary dropdown-text" onclick="btn_add()"><i class="fa fa-plus"></i>录入新任务</a>
+        </div>
+        <div class="operate">
+            <ul class="nav nav-pills">
+                <li><a id="NU-delete" authorize="yes" onclick="btn_delete()"><i class="fa fa-trash-o"></i>删除选中</a></li>
+                <li><a id="NU-update" authorize="yes" onclick="btn_update()"><i class="fa fa-trash-o"></i>更新进度</a></li>
+            </ul>
+            <a href="javascript:;" class="close"></a>
+        </div>
+    </div>
+    <div class="search">
+        <table>
+            <tr>
+                <td> 模糊查询:  </td>
+                <td>
+                    <div class="input-group">
+                        <!--对表中所有字段模糊查询，字段名字待定-->
+                        <input id="txt_keyword" type="text" class="form-control" placeholder="请输入表中字段" style="width: 250px;">
+                        <input id="txt_CreatorTime" name="txt_CreatorTime" type="text"class="form-control" placeholder="请输入要查询的收件日期" class="form-control input-wdatepicker required" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd' })" style="width: 200px;" />
+                        <span class="input-group-btn">
+                            <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="gridPanel" id="gridPanel">
+    <table id="gridList"></table>
+    <div id="gridPager"></div>
+</div>

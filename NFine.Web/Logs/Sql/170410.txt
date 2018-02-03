@@ -1,0 +1,754 @@
+2017/4/10 9:11:41
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/10 9:12:08
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sys_User
+select F_Id, Id,F_Account,F_Depth
+                                from Sys_User 
+                                where F_IsAdministrator = 0 and F_Id=@F_Id 参数：[{"key":"@F_Id","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"}]
+2017/4/10 9:24:48
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sys_User
+select F_Id, Id,F_Account,F_Depth
+                                from Sys_User 
+                                where F_IsAdministrator = 0 and F_Id=@F_Id 参数：[{"key":"@F_Id","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"}]
+2017/4/10 9:25:44
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sys_User
+select F_Id, Id,F_Account,F_Depth
+                                from Sys_User 
+                                where F_IsAdministrator = 0 and F_Id=@F_Id 参数：[{"key":"@F_Id","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"}]
+2017/4/10 9:45:41
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [Sys_User]   WHERE 1=1  AND (  ([F_ParentId]  = @F_ParentId101)   AND   ([F_Account] <> @F_Account102)  )    参数：[{"key":"@F_ParentId101","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"},{"key":"@F_Account102","value":"admin"}]
+2017/4/10 9:45:44
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_DepartmentId asc,F_CreatorTime desc ) FROM [Sys_User]   WHERE 1=1  AND (  ([F_ParentId]  = @F_ParentId101)   AND   ([F_Account] <> @F_Account102)  )   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：[{"key":"@F_ParentId101","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"},{"key":"@F_Account102","value":"admin"}]
+2017/4/10 9:45:52
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"210"}]
+2017/4/10 9:46:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"207"}]
+2017/4/10 9:46:26
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"210"}]
+2017/4/10 9:55:06
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"210"}]
+2017/4/10 9:56:22
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/10 9:56:43
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [Sys_User]   WHERE 1=1  AND  ([F_Account] <> @F_Account101)     参数：[{"key":"@F_Account101","value":"admin"}]
+2017/4/10 9:56:43
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_IsAdministrator desc,F_CreatorTime desc,F_DepartmentId asc ) FROM [Sys_User]   WHERE 1=1  AND  ([F_Account] <> @F_Account101)    ) t WHERE t.row_index BETWEEN 1 AND 50 参数：[{"key":"@F_Account101","value":"admin"}]
+2017/4/10 9:56:49
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"209"}]
+2017/4/10 9:56:58
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [Sys_User]   WHERE 1=1  AND (  ([F_ParentId]  = @F_ParentId101)   AND   ([F_Account] <> @F_Account102)  )    参数：[{"key":"@F_ParentId101","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"},{"key":"@F_Account102","value":"admin"}]
+2017/4/10 9:56:58
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_DepartmentId asc,F_CreatorTime desc ) FROM [Sys_User]   WHERE 1=1  AND (  ([F_ParentId]  = @F_ParentId101)   AND   ([F_Account] <> @F_Account102)  )   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：[{"key":"@F_ParentId101","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"},{"key":"@F_Account102","value":"admin"}]
+2017/4/10 9:57:25
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"207"}]
+2017/4/10 9:57:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  (F_Id is null )     参数：[{"key":"@F_Id101","value":""}]
+2017/4/10 9:57:58
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"207"}]
+2017/4/10 9:58:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  (F_Id is null )     参数：[{"key":"@F_Id101","value":""}]
+2017/4/10 10:00:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/10 10:00:50
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_BaseChannel]   WHERE 1=1  AND (  ([F_DeleteMark] <> @F_DeleteMark101)   AND   ([F_EnabledMark] <> @F_EnabledMark102)  )    参数：[{"key":"@F_DeleteMark101","value":"1"},{"key":"@F_EnabledMark102","value":"0"}]
+2017/4/10 10:00:53
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_BaseChannel]   WHERE 1=1  AND (  ([F_DeleteMark] <> @F_DeleteMark101)   AND   ([F_EnabledMark] <> @F_EnabledMark102)  )   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：[{"key":"@F_DeleteMark101","value":"1"},{"key":"@F_EnabledMark102","value":"0"}]
+2017/4/10 10:01:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [Sys_User]   WHERE 1=1  AND (  ([F_ParentId]  = @F_ParentId101)   AND   ([F_Account] <> @F_Account102)  )    参数：[{"key":"@F_ParentId101","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"},{"key":"@F_Account102","value":"admin"}]
+2017/4/10 10:01:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_DepartmentId asc,F_CreatorTime desc ) FROM [Sys_User]   WHERE 1=1  AND (  ([F_ParentId]  = @F_ParentId101)   AND   ([F_Account] <> @F_Account102)  )   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：[{"key":"@F_ParentId101","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"},{"key":"@F_Account102","value":"admin"}]
+2017/4/10 10:01:09
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"207"}]
+2017/4/10 10:05:47
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"207"}]
+2017/4/10 10:07:53
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"207"}]
+2017/4/10 10:08:02
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [Sys_User]   WHERE 1=1  AND  ([F_Account] <> @F_Account101)     参数：[{"key":"@F_Account101","value":"admin"}]
+2017/4/10 10:08:02
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_IsAdministrator desc,F_CreatorTime desc,F_DepartmentId asc ) FROM [Sys_User]   WHERE 1=1  AND  ([F_Account] <> @F_Account101)    ) t WHERE t.row_index BETWEEN 1 AND 50 参数：[{"key":"@F_Account101","value":"admin"}]
+2017/4/10 10:08:07
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"216"}]
+2017/4/10 10:11:55
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"122"}]
+2017/4/10 10:12:02
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"210"}]
+2017/4/10 10:12:53
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY [F_Account] ASC ) FROM [Sys_User]   WHERE 1=1  AND  ([F_Account] <> @F_Account101)   AND ([F_IsAdministrator] = @F_IsAdministrator201)    参数：[{"key":"@F_Account101","value":"admin"},{"key":"@F_IsAdministrator201","value":"1"}]
+2017/4/10 10:18:51
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/10 10:19:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [Sys_User]   WHERE 1=1  AND (  ([F_ParentId]  = @F_ParentId101)   AND   ([F_Account] <> @F_Account102)  )    参数：[{"key":"@F_ParentId101","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"},{"key":"@F_Account102","value":"admin"}]
+2017/4/10 10:19:05
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_DepartmentId asc,F_CreatorTime desc ) FROM [Sys_User]   WHERE 1=1  AND (  ([F_ParentId]  = @F_ParentId101)   AND   ([F_Account] <> @F_Account102)  )   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：[{"key":"@F_ParentId101","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"},{"key":"@F_Account102","value":"admin"}]
+2017/4/10 10:19:10
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"205"}]
+2017/4/10 10:21:11
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"205"}]
+2017/4/10 10:21:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY [F_Account] ASC ) FROM [Sys_User]   WHERE 1=1  AND  ([F_Account] <> @F_Account101)   AND ([F_IsAdministrator] = @F_IsAdministrator201)    参数：[{"key":"@F_Account101","value":"admin"},{"key":"@F_IsAdministrator201","value":"1"}]
+2017/4/10 10:21:43
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_BaseChannel]   WHERE 1=1  AND (  ([F_DeleteMark] <> @F_DeleteMark101)   AND   ([F_EnabledMark] <> @F_EnabledMark102)  )    参数：[{"key":"@F_DeleteMark101","value":"1"},{"key":"@F_EnabledMark102","value":"0"}]
+2017/4/10 10:21:43
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_BaseChannel]   WHERE 1=1  AND (  ([F_DeleteMark] <> @F_DeleteMark101)   AND   ([F_EnabledMark] <> @F_EnabledMark102)  )   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：[{"key":"@F_DeleteMark101","value":"1"},{"key":"@F_EnabledMark102","value":"0"}]
+2017/4/10 10:41:11
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/10 10:41:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY [F_Account] ASC ) FROM [Sys_User]   WHERE 1=1  AND  ([F_Account] <> @F_Account101)   AND ([F_IsAdministrator] = @F_IsAdministrator201)    参数：[{"key":"@F_Account101","value":"admin"},{"key":"@F_IsAdministrator201","value":"1"}]
+2017/4/10 10:49:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"216"}]
+2017/4/10 10:49:59
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"216"}]
+2017/4/10 10:51:28
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"216"}]
+2017/4/10 10:52:50
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/10 10:53:29
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"216"}]
+2017/4/10 10:55:38
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"216"}]
+2017/4/10 10:58:21
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/10 11:00:27
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"216"}]
+2017/4/10 11:00:59
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"216"}]
+2017/4/10 11:01:21
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"216"}]
+2017/4/10 11:02:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY [F_Account] ASC ) FROM [Sys_User]   WHERE 1=1  AND  ([F_Account] <> @F_Account101)   AND ([F_IsAdministrator] = @F_IsAdministrator201)    参数：[{"key":"@F_Account101","value":"admin"},{"key":"@F_IsAdministrator201","value":"1"}]
+2017/4/10 11:04:48
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"216"}]
+2017/4/10 11:06:40
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"216"}]
+2017/4/10 11:07:09
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"216"}]
+2017/4/10 11:07:45
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"216"}]
+2017/4/10 11:14:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/10 11:16:30
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"216"}]
+2017/4/10 11:17:06
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"216"}]
+2017/4/10 11:19:51
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"216"}]
+2017/4/10 11:22:56
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"216"}]
+2017/4/10 11:56:07
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/10 11:56:47
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"216"}]
+2017/4/10 11:57:21
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"216"}]
+2017/4/10 11:58:35
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"216"}]
+2017/4/10 11:59:14
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"216"}]
+2017/4/10 12:00:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"216"}]
+2017/4/10 12:00:51
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"216"}]
+2017/4/10 12:01:48
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"216"}]
+2017/4/10 12:05:22
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"216"}]
+2017/4/10 12:06:48
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"216"}]
+2017/4/10 12:07:50
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"216"}]
+2017/4/10 13:07:53
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"216"}]
+2017/4/10 13:08:15
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"216"}]
+2017/4/10 13:08:59
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/10 13:09:24
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"216"}]
+2017/4/10 13:10:35
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"212"}]
+2017/4/10 13:10:50
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"212"}]
+2017/4/10 13:11:22
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"212"}]
+2017/4/10 13:11:41
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"212"}]
+2017/4/10 15:04:46
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/10 15:05:22
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [Sys_User]   WHERE 1=1  AND (  ([F_ParentId]  = @F_ParentId101)   AND   ([F_Account] <> @F_Account102)  )    参数：[{"key":"@F_ParentId101","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"},{"key":"@F_Account102","value":"admin"}]
+2017/4/10 15:05:24
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_DepartmentId asc,F_CreatorTime desc ) FROM [Sys_User]   WHERE 1=1  AND (  ([F_ParentId]  = @F_ParentId101)   AND   ([F_Account] <> @F_Account102)  )   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：[{"key":"@F_ParentId101","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"},{"key":"@F_Account102","value":"admin"}]
+2017/4/10 15:05:38
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"216"}]
+2017/4/10 15:05:46
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [Sys_User]   WHERE 1=1  AND  ([F_Account] <> @F_Account101)     参数：[{"key":"@F_Account101","value":"admin"}]
+2017/4/10 15:05:46
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_IsAdministrator desc,F_CreatorTime desc,F_DepartmentId asc ) FROM [Sys_User]   WHERE 1=1  AND  ([F_Account] <> @F_Account101)    ) t WHERE t.row_index BETWEEN 1 AND 50 参数：[{"key":"@F_Account101","value":"admin"}]
+2017/4/10 15:05:54
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"216"}]
+2017/4/10 15:06:05
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"204"}]
+2017/4/10 15:06:21
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"122"}]
+2017/4/10 15:08:47
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY [F_Account] ASC ) FROM [Sys_User]   WHERE 1=1  AND  ([F_Account] <> @F_Account101)   AND ([F_IsAdministrator] = @F_IsAdministrator201)    参数：[{"key":"@F_Account101","value":"admin"},{"key":"@F_IsAdministrator201","value":"1"}]
+2017/4/10 17:26:41
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/10 17:26:56
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY [F_Account] ASC ) FROM [Sys_User]   WHERE 1=1  AND  ([F_Account] <> @F_Account101)   AND ([F_IsAdministrator] = @F_IsAdministrator201)    参数：[{"key":"@F_Account101","value":"admin"},{"key":"@F_IsAdministrator201","value":"1"}]
+2017/4/10 17:29:45
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY [F_Account] ASC ) FROM [Sys_User]   WHERE 1=1  AND  ([F_Account] <> @F_Account101)   AND ([F_IsAdministrator] = @F_IsAdministrator201)    参数：[{"key":"@F_Account101","value":"admin"},{"key":"@F_IsAdministrator201","value":"1"}]
+2017/4/10 17:34:56
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/10 17:35:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)    参数：
+2017/4/10 17:35:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/10 17:36:08
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)    参数：
+2017/4/10 17:36:09
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/10 17:39:51
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/10 17:40:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)    参数：
+2017/4/10 17:40:15
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/10 17:40:22
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND ( (1=1)  AND   ([F_ChannelID]  = @F_ChannelID101)  )    参数：[{"key":"@F_ChannelID101","value":"65"}]
+2017/4/10 17:40:28
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND ( (1=1)  AND   ([F_ChannelID]  = @F_ChannelID101)  )    参数：[{"key":"@F_ChannelID101","value":"68"}]
+2017/4/10 17:40:30
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)    参数：
+2017/4/10 17:40:30
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/10 17:40:53
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)    参数：
+2017/4/10 17:40:53
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/10 17:40:55
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)    参数：
+2017/4/10 17:40:55
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/10 17:41:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND ( ( ( ( ( ( ( (1=1)  AND  ([F_UserId]  LIKE @F_UserId101) )  OR  ([F_Account]  LIKE @F_Account102) )  OR  ([F_RootId]  LIKE @F_RootId103) )  OR  ([F_ManagerId]  LIKE @F_ManagerId104) )  OR  ([F_SendedNum]  LIKE @F_SendedNum105) )  OR  ([F_Balance]  LIKE @F_Balance106) )  OR  ([F_Description]  LIKE @F_Description107) )    参数：[{"key":"@F_UserId101","value":"%1111%"},{"key":"@F_Account102","value":"%1111%"},{"key":"@F_RootId103","value":"%1111%"},{"key":"@F_ManagerId104","value":"%1111%"},{"key":"@F_SendedNum105","value":"%1111%"},{"key":"@F_Balance106","value":"%1111%"},{"key":"@F_Description107","value":"%1111%"}]
+2017/4/10 17:41:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND ( ( ( ( ( ( ( (1=1)  AND  ([F_UserId]  LIKE @F_UserId101) )  OR  ([F_Account]  LIKE @F_Account102) )  OR  ([F_RootId]  LIKE @F_RootId103) )  OR  ([F_ManagerId]  LIKE @F_ManagerId104) )  OR  ([F_SendedNum]  LIKE @F_SendedNum105) )  OR  ([F_Balance]  LIKE @F_Balance106) )  OR  ([F_Description]  LIKE @F_Description107) )   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：[{"key":"@F_UserId101","value":"%1111%"},{"key":"@F_Account102","value":"%1111%"},{"key":"@F_RootId103","value":"%1111%"},{"key":"@F_ManagerId104","value":"%1111%"},{"key":"@F_SendedNum105","value":"%1111%"},{"key":"@F_Balance106","value":"%1111%"},{"key":"@F_Description107","value":"%1111%"}]
+2017/4/10 17:41:29
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND ( ( ( ( ( ( ( (1=1)  AND  ([F_UserId]  LIKE @F_UserId101) )  OR  ([F_Account]  LIKE @F_Account102) )  OR  ([F_RootId]  LIKE @F_RootId103) )  OR  ([F_ManagerId]  LIKE @F_ManagerId104) )  OR  ([F_SendedNum]  LIKE @F_SendedNum105) )  OR  ([F_Balance]  LIKE @F_Balance106) )  OR  ([F_Description]  LIKE @F_Description107) )    参数：[{"key":"@F_UserId101","value":"%asd%"},{"key":"@F_Account102","value":"%asd%"},{"key":"@F_RootId103","value":"%asd%"},{"key":"@F_ManagerId104","value":"%asd%"},{"key":"@F_SendedNum105","value":"%asd%"},{"key":"@F_Balance106","value":"%asd%"},{"key":"@F_Description107","value":"%asd%"}]
+2017/4/10 17:41:29
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND ( ( ( ( ( ( ( (1=1)  AND  ([F_UserId]  LIKE @F_UserId101) )  OR  ([F_Account]  LIKE @F_Account102) )  OR  ([F_RootId]  LIKE @F_RootId103) )  OR  ([F_ManagerId]  LIKE @F_ManagerId104) )  OR  ([F_SendedNum]  LIKE @F_SendedNum105) )  OR  ([F_Balance]  LIKE @F_Balance106) )  OR  ([F_Description]  LIKE @F_Description107) )   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：[{"key":"@F_UserId101","value":"%asd%"},{"key":"@F_Account102","value":"%asd%"},{"key":"@F_RootId103","value":"%asd%"},{"key":"@F_ManagerId104","value":"%asd%"},{"key":"@F_SendedNum105","value":"%asd%"},{"key":"@F_Balance106","value":"%asd%"},{"key":"@F_Description107","value":"%asd%"}]
+2017/4/10 17:41:35
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND ( ( ( ( ( ( ( (1=1)  AND  ([F_UserId]  LIKE @F_UserId101) )  OR  ([F_Account]  LIKE @F_Account102) )  OR  ([F_RootId]  LIKE @F_RootId103) )  OR  ([F_ManagerId]  LIKE @F_ManagerId104) )  OR  ([F_SendedNum]  LIKE @F_SendedNum105) )  OR  ([F_Balance]  LIKE @F_Balance106) )  OR  ([F_Description]  LIKE @F_Description107) )    参数：[{"key":"@F_UserId101","value":"%asd%"},{"key":"@F_Account102","value":"%asd%"},{"key":"@F_RootId103","value":"%asd%"},{"key":"@F_ManagerId104","value":"%asd%"},{"key":"@F_SendedNum105","value":"%asd%"},{"key":"@F_Balance106","value":"%asd%"},{"key":"@F_Description107","value":"%asd%"}]
+2017/4/10 17:41:36
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND ( ( ( ( ( ( ( (1=1)  AND  ([F_UserId]  LIKE @F_UserId101) )  OR  ([F_Account]  LIKE @F_Account102) )  OR  ([F_RootId]  LIKE @F_RootId103) )  OR  ([F_ManagerId]  LIKE @F_ManagerId104) )  OR  ([F_SendedNum]  LIKE @F_SendedNum105) )  OR  ([F_Balance]  LIKE @F_Balance106) )  OR  ([F_Description]  LIKE @F_Description107) )   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：[{"key":"@F_UserId101","value":"%asd%"},{"key":"@F_Account102","value":"%asd%"},{"key":"@F_RootId103","value":"%asd%"},{"key":"@F_ManagerId104","value":"%asd%"},{"key":"@F_SendedNum105","value":"%asd%"},{"key":"@F_Balance106","value":"%asd%"},{"key":"@F_Description107","value":"%asd%"}]
+2017/4/10 17:41:39
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)    参数：
+2017/4/10 17:41:39
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/10 17:43:26
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/10 17:43:47
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)    参数：
+2017/4/10 17:43:47
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/10 17:44:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND ( (1=1)  AND   ([F_ChannelID]  = @F_ChannelID101)  )    参数：[{"key":"@F_ChannelID101","value":"64"}]
+2017/4/10 17:44:30
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)    参数：
+2017/4/10 17:44:31
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/10 17:44:54
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)    参数：
+2017/4/10 17:44:54
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/10 17:45:51
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)    参数：
+2017/4/10 17:45:52
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/10 17:59:41
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND ( (1=1)  AND  (  ([F_Balance] >= @F_Balance101)   AND   ([F_Balance] <= @F_Balance102)  ) )    参数：[{"key":"@F_Balance101","value":"13"},{"key":"@F_Balance102","value":"27"}]
+2017/4/10 17:59:42
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND ( (1=1)  AND  (  ([F_Balance] >= @F_Balance101)   AND   ([F_Balance] <= @F_Balance102)  ) )   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：[{"key":"@F_Balance101","value":"13"},{"key":"@F_Balance102","value":"27"}]
+2017/4/10 18:00:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)    参数：
+2017/4/10 18:00:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/10 18:00:37
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)    参数：
+2017/4/10 18:00:37
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/10 18:01:57
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)    参数：
+2017/4/10 18:02:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/10 18:02:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)    参数：
+2017/4/10 18:02:14
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/10 18:02:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)    参数：
+2017/4/10 18:02:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/10 18:05:38
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND ( (1=1)  AND   ([F_Balance] >= @F_Balance101)  )    参数：[{"key":"@F_Balance101","value":"12"}]
+2017/4/10 18:05:40
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND ( (1=1)  AND   ([F_Balance] >= @F_Balance101)  )   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：[{"key":"@F_Balance101","value":"12"}]
+2017/4/10 18:05:50
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND ( (1=1)  AND   ([F_Balance] >= @F_Balance101)  )    参数：[{"key":"@F_Balance101","value":"15"}]
+2017/4/10 18:05:51
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND ( (1=1)  AND   ([F_Balance] >= @F_Balance101)  )   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：[{"key":"@F_Balance101","value":"15"}]
+2017/4/10 18:05:58
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)    参数：
+2017/4/10 18:05:59
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [OC_UserInfo]   WHERE 1=1  AND (1=1)   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/4/10 18:06:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY [F_Account] ASC ) FROM [Sys_User]   WHERE 1=1  AND  ([F_Account] <> @F_Account101)   AND ([F_IsAdministrator] = @F_IsAdministrator201)    参数：[{"key":"@F_Account101","value":"admin"},{"key":"@F_IsAdministrator201","value":"1"}]

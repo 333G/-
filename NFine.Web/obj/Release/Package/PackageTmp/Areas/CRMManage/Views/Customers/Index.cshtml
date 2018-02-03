@@ -1,0 +1,280 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<script>
+    $(function () { 
+            gridList();
+    })
+
+    function gridList() {
+        var $gridList = $("#gridList");
+        $gridList.dataGrid({
+            url: "/CRMManage/Customers/GetGridJson",
+            height: $(window).height() - 128,
+            colModel: [
+                { label: '客户主键', name: 'customerId', hidden: true },
+                {
+                    label: '客户信息', name: 'customerInformation', width: 200, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var retstr = '<a onclick="btn_editCustomer(\'' + rowObject["customerId"] + '\')" style="cursor:pointer">修改</a>&nbsp;&nbsp;';
+                        retstr += '<a onclick="btn_deleteCustomer(\'' + rowObject["customerId"] + '\')" style="cursor:pointer">删除</a>&nbsp;&nbsp;';
+                        retstr += '<a onclick="btn_addRecord(\'' + rowObject["customerId"] + '\')" style="cursor:pointer">添加记录</a>&nbsp;&nbsp;';
+                        retstr += '<a onclick="btn_allRecords(\'' + rowObject["customerId"] + '\')" style="cursor:pointer">所有记录</a>';
+                        retstr += '<br>' + cellvalue;
+                        return retstr;
+                    }
+                },
+                { label: '状态', name: 'customerStateId', width: 100, align: 'center' },
+              
+                { label: '记录1主键', name: 'Record1Id', hidden: true },
+                {
+                    label: '记录1', name: 'Record1', width: 100, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        if (cellvalue) {
+                            var retstr = '<a onclick="btn_editRecord(\'' + rowObject["customerId"] + '\' ,\'' + rowObject["Record1Id"] + '\')" style="cursor:pointer">修改</a>&nbsp;&nbsp;';
+                            retstr += '<a onclick="btn_deleteRecord(\'' + rowObject["Record1Id"] + '\')" style="cursor:pointer">删除</a>';
+                            retstr += '<br>' + cellvalue;
+                            return retstr;
+                        }
+                        return "";
+                    }
+                },
+
+                { label: '记录2主键', name: 'Record2Id', hidden: true },
+                {
+                    label: '记录2', name: 'Record2', width: 100, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        if (cellvalue){
+                            var retstr = '<a onclick="btn_editRecord(\'' + rowObject["customerId"] + '\' ,\'' + rowObject["Record2Id"] + '\')" style="cursor:pointer">修改</a>&nbsp;&nbsp;';
+                            retstr += '<a onclick="btn_deleteRecord(\'' + rowObject["Record2Id"] + '\')" style="cursor:pointer">删除</a>';
+                            retstr += '<br>' + cellvalue;
+                            return retstr;
+                        }
+                        return  "";
+                    }
+                },
+
+                { label: '记录3主键', name: 'Record3Id', hidden: true },
+                {
+                    label: '记录3', name: 'Record3', width: 100, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        if (cellvalue) {
+                            var retstr = '<a onclick="btn_editRecord(\'' + rowObject["customerId"] + '\' ,\'' + rowObject["Record3Id"] + '\')" style="cursor:pointer">修改</a>&nbsp;&nbsp;';
+                            retstr += '<a onclick="btn_deleteRecord(\'' + rowObject["Record3Id"] + '\')" style="cursor:pointer">删除</a>';
+                            retstr += '<br>' + cellvalue;
+                            return retstr;
+                        }
+                        return "";
+                    }
+                },
+
+                { label: '记录4主键', name: 'Record4Id', hidden: true },
+                {
+                    label: '记录4', name: 'Record4', width: 100, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        if (cellvalue) {
+                            var retstr = '<a onclick="btn_editRecord(\'' + rowObject["customerId"] + '\' ,\'' + rowObject["Record4Id"] + '\')" style="cursor:pointer">修改</a>&nbsp;&nbsp;';
+                            retstr += '<a onclick="btn_deleteRecord(\'' + rowObject["Record4Id"] + '\')" style="cursor:pointer">删除</a>';
+                            retstr += '<br>' + cellvalue;
+                            return retstr;
+                        }
+                        return "";
+                    }
+                },
+                        ], 
+            pager: "#gridPager",
+            sortname: 'F_CreatorTime desc',
+            rownumber: true,
+            multiselect: true,
+            multiboxonly: true,
+            beforeSelectRow: beforeSelectRow,//js方法
+            viewrecords: true
+        });
+
+        $("#btn_search").click(function () {
+            //设置查询参数
+            var queryJson = {
+                F_StateId: $("#F_StateId").val(),
+                keyword: $("#txt_keyword").val()
+            }
+            $gridList.jqGrid('setGridParam', {
+                postData: { queryJson: JSON.stringify(queryJson) },
+            }).trigger('reloadGrid');
+        });
+    }
+
+    function beforeSelectRow() { 
+        $("#jqgridId").jqGrid('resetSelection');
+        return (true);
+    }
+    
+    //修改客户记录
+    function btn_editRecord(customerId,RecordId) {
+        var customerId;
+        if (customerId != undefined)
+            customerId = customerId;
+        var recordId;
+        if (RecordId != undefined)
+            recordId = RecordId;
+         
+         /*
+        var rowData = $("#gridList").jqGridRowValue(); //获取选中行数据对象数组
+        console.log(rowData[0].customerId);
+        */
+        $.modalOpen({
+            id: "Form",
+            title: "修改客户记录",
+            url: "/CRMManage/Customers/RecordForm?customerId=" + customerId + "&recordId=" + recordId,
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    //目标客户的所有记录
+    function btn_allRecords(custId) {
+        var customerId;
+        if (custId != undefined)
+            customerId = custId;
+        $.modalOpen({
+            id: "Form",
+            title: "该客户所有记录",
+            url: "/CRMManage/Customers/AllRecordsForm?customerId=" + customerId,
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+     
+    //添加客户记录
+    function btn_addRecord(custId) {
+        var customerId;
+        if (custId != undefined)
+            customerId = custId;
+        $.modalOpen({
+            id: "Form",
+            title: "添加客户记录",
+            url: "/CRMManage/Customers/RecordForm?customerId=" + customerId,
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    //添加新客户
+    function btn_addCustomer() {
+        $.modalOpen({
+            id: "Form",
+            title: "添加新客户",
+            url: "/CRMManage/Customers/AddCustomerForm",
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    //修改客户
+    function btn_editCustomer(fid) {
+        var keyValue = $("#gridList").jqGridRowValue().F_Id;
+        if (fid !=undefined)
+            keyValue = fid;
+        $.modalOpen({
+            id: "Form",
+            title: "修改客户信息",
+            url: "/CRMManage/Customers/CustomerForm?keyValue=" + keyValue,
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    //删除对应F_Id的数据  客户
+    function btn_deleteCustomer(fid) {
+        var keyValue = rtn_grilid();
+        if (fid != undefined)
+            keyValue = fid;
+        $.deleteForm({
+            url: "/CRMManage/Customers/DeleteForm",
+            param: { keyValue: keyValue },
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+    //删除对应F_Id的数据   客户记录
+    function btn_deleteRecord(fid) {
+        var keyValue;
+        if (fid != undefined)
+            keyValue = fid;
+        $.deleteForm({
+            url: "/CRMManage/Customers/RecordDeleteForm",
+            param: { keyValue: keyValue },
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+     
+
+    //返回多选的记录id字符串 ,以‘，’为分隔符
+    function rtn_grilid() {
+        var selarrrow = $("#gridList").jqGrid('getGridParam', 'selarrrow'); //取得多选行号
+        var keyValue = "";
+        var ret;
+        //取得多选项目的customerId
+        selarrrow.forEach(function (e) {
+            ret = $("#gridList").jqGrid('getRowData', e);
+            keyValue += ret.customerId + ",";
+        })
+        return keyValue;
+    }
+</script>
+<div class="topPanel">
+    <div class="toolbar"> 
+        <div class="btn-group">
+            <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+        </div> 
+        <div class="btn-group">
+            <a id="NC-add" authorize="yes" class="btn btn-primary dropdown-text" onclick="btn_addCustomer()"><i class="fa fa-plus"></i>添加新客户</a>
+        </div>
+        <div class="operate">
+            <ul class="nav nav-pills">
+                <li><a id="NC-delete" authorize="yes" onclick="btn_deleteCustomer()"><i class="fa fa-trash-o"></i>删除选中</a></li>
+                <li><a id="NC-move" authorize="yes" onclick="btn_move()"><i class="fa fa-trash-o"></i>批量转移</a></li>
+            </ul>
+            <a href="javascript:;" class="close"></a>
+        </div>
+    </div>
+    <div class="search">
+        <table>
+            <tr>
+                <td>
+                    <div class="input-group">
+                        <select id="F_StateId" name="F_StateId" class="form-control" style="width: 110px;">
+                            <option value="">全部客户</option> 
+                            <option value="一级客户">一级客户</option>
+                            <option value="二级客户">二级客户</option>
+                            <option value="三级客户">三级客户</option>
+                            <option value="四级客户">四级客户</option>
+                        </select>
+                        <input id="txt_keyword" type="text" class="form-control" placeholder="请输入客户信息关键字" style="width: 300px;">
+                        <span class="input-group-btn">
+                            <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="gridPanel" id="gridPanel">
+    <table id="gridList"></table>
+    <div id="gridPager"></div>
+</div>

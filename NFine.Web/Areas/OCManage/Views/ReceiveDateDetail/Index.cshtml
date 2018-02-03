@@ -1,0 +1,215 @@
+﻿@{
+    ViewBag.Title = "ReceiveDateDetail";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+
+<style>
+    .topPanel .search .input-group .btn {
+        padding: 0px 5px;
+        line-height: 27px;
+    }
+
+    .topPanel {
+        padding-left: 0.7em;
+    }
+
+    .cxjl {
+        float: left;
+        font-size: 13px;
+        line-height: 30px;
+        font-weight: bold;
+    }
+</style>
+<script>
+    $(function () {
+        gridList();
+    })
+    //取得组名
+    function getgrupname(groupid) {
+        var GroupName = "";
+        var init = function () {
+            $.ajax({
+                url: "/SMCManage/SMCSend/GetPheGrupDataJson",
+                data: { keyValue: groupid },
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    //alert(JSON.stringify(data));
+                    GroupName = data["PheGrup"]["GroupName"];
+                }
+            });
+        }
+        init();
+        return GroupName;
+    }
+
+    function gridList() {
+        var $gridList = $("#gridList");
+        $gridList.dataGrid({
+            url: "/OCManage/ReceiveDateDetail/GetGridJson",
+            height: $(window).height() - 128,
+            colModel: [
+                { label: '主键', name: 'F_Id', width: 120, align: 'center' },
+                { label: '用户id', name: 'F_UserId', width: 100, align: 'center' },
+                { label: '接收时间 ', name: 'F_ReceiveTime', width: 100, align: 'center' },
+                { label: '手机号', name: 'F_MobileList', width: 100, align: 'center' },
+                { label: '目的号码', name: 'F_Mobile', width: 100, align: 'center' },
+                { label: '通道id', name: 'F_ChannelId', width: 50, align: 'center' },
+                { label: '内容', name: 'F_SmsContent', width: 120, align: 'center' },
+                { label: '黑名单', name: '', width: 100, align: 'center' },
+                {
+                    label: '操作', name: 'm_operate', width: 100, align: 'left',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var retstr = '<a onclick="btn_edit(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">加入黑白名单</a>&nbsp;&nbsp;';
+                        retstr += '<a onclick="btn_delete(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">删除</a>';
+                        return retstr;
+                    }
+                }
+            ],
+            pager: "#gridPager",
+            sortname: 'F_Id desc',
+            rownumber: true,
+            multiselect: true,
+            multiboxonly: true,
+            beforeSelectRow: beforeSelectRow,//js方法
+            viewrecords: true
+        });
+
+        $("#btn_search").click(function () {
+            //查询参数
+            var queryJson = {
+                Operator: $("#Operator").val()
+            }
+            $gridList.jqGrid('setGridParam', {
+                postData: { queryJson: JSON.stringify(queryJson) },
+            }).trigger('reloadGrid');
+        });
+    }
+    function beforeSelectRow() {
+        //alert("===");
+        $("#jqgridId").jqGrid('resetSelection');
+        return (true);
+    }
+    function btn_add() {
+        $.modalOpen({
+            id: "Form",
+            title: "新增用户",
+            url: "/SMCManage/SMCSend/Form",
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    function btn_edit(fid) {
+        var keyValue = $("#gridList").jqGridRowValue().F_Id;
+        if (fid !=undefined)
+            keyValue = fid;
+        $.modalOpen({
+            id: "Form",
+            title: "修改用户",
+            url: "/SMCManage/SMCSend/SendEditForm?keyValue=" + keyValue,
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    function btn_delete(fid) {
+        var keyValue = rtn_grilid();
+        if (fid !=undefined)
+            keyValue = fid;
+        $.deleteForm({
+            url: "/SMCManage/SMCSend/DeleteForm",
+            param: { keyValue: keyValue },
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+    function btn_exp() {
+        //查询参数
+        var queryJson = {
+            Sex: $("#Sex").val(),
+            Operator: $("#Operator").val(),
+            State: $("#State").val(),
+            keyword: $("#txt_keyword").val()
+        }
+        $.download("/SMCManage/SMCSend/ExpToXls", "queryJson=" + queryJson, 'post');
+    }
+    //导出
+    function btn_exp() {
+        var F_Mobile = $("#F_Mobile").val();
+        var F_Sign = $("#F_Sign").val();
+        var F_Level = $("#F_Level").val();
+        //查询参数
+        $.download("/OCManage/BlackWhiteList/Export", "F_Mobile=" + F_Mobile + "&F_Sign=" + F_Sign + "&F_Level=" + F_Level, 'post');
+    }
+    function btn_details() {
+        var keyValue = $("#gridList").jqGridRowValue().F_Id;
+        $.modalOpen({
+            id: "Details",
+            title: "查看用户",
+            url: "/SMCManage/SMCSend/Details?keyValue=" + keyValue,
+            width: "700px",
+            height: "550px",
+            btn: null,
+        });
+    }
+
+    //返回多选的记录id
+    function rtn_grilid() {
+        var selarrrow = $("#gridList").jqGrid('getGridParam', 'selarrrow'); //取得多选行号
+        var keyValue = "";
+        var ret;
+        //取得多选项目的F_Id
+        selarrrow.forEach(function (e) {
+            ret = $("#gridList").jqGrid('getRowData', e);
+            keyValue += ret.F_Id + ",";
+        })
+        return keyValue;
+    }
+</script>
+<div class="topPanel">
+    <div class="toolbar">
+        <div class="btn-group">
+            <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+        </div>
+
+        <div class="btn-group">
+            <a id="NU-exp" authorize="yes" class="btn btn-primary" onclick="btn_exp()"><i class="fa fa-plus"></i>导出</a>
+        </div>
+
+        <div class="operate">
+            <ul class="nav nav-pills">
+                <li class="first">已选中<span>1</span>项</li>
+                <li><a id="NU-delete" authorize="yes" onclick="btn_delete()"><i class="fa fa-trash-o"></i>删除</a></li>
+            </ul>
+            <a href="javascript:;" class="close"></a>
+        </div>
+    </div>
+    <div class="search">
+        <table>
+            <tr>
+                <td>
+                    <div class="input-group">
+                        <select id="Operator" name="Operator" class="form-control" style="width: 150px;float:left;padding-left:10px;">
+                            <option value="">查询所有记录</option>
+                            <option value="0">查询七天内记录</option>
+                            <option value="1">查询七天前记录</option>
+                        </select>
+                        <span class="input-group-btn" style="float:left;">
+                            <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="gridPanel" id="gridPanel">
+    <table id="gridList"></table>
+    <div id="gridPager"></div>
+</div>

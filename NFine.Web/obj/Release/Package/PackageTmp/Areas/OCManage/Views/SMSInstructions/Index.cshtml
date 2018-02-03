@@ -1,0 +1,133 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+
+<script>
+    $(function () {
+        gridList();
+    })
+
+    function gridList() {
+        var $gridList = $("#gridList");
+        $gridList.dataGrid({
+            url: "/OCManage/SMSInstructions/GetGridJson",
+            height: $(window).height() - 128,
+            colModel: [
+                { label: '主键', name: 'F_Id', hidden: true },
+                { label: '用户ID', name: 'F_UserID', width: 200, align: 'left' },
+                { label: '指令', name: 'F_Instructions', width: 200, align: 'left' },
+                { label: '金额', name: 'F_Money', width: 200, align: 'left' },
+                {
+                    label: '操作', name: 'm_operate', width: 100, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var retstr = '<a onclick="btn_edit(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">修改</a>&nbsp;&nbsp;';
+                        retstr += '<a onclick="btn_delete(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">删除</a>';
+                        return retstr;
+                    }
+                }
+            ],
+            pager: "#gridPager",
+            sortname: 'F_CreatorTime desc',
+            rownumber: true,
+            multiselect: true,
+            multiboxonly: true,
+            beforeSelectRow: beforeSelectRow,//js方法
+            viewrecords: true
+        });
+    }
+    function btn_search() {
+        //模糊查询
+        var queryJson = {
+            keyword: $("#txt_keyword").val()
+        }
+        $("#gridList").jqGrid('setGridParam', {
+            postData: { queryJson: JSON.stringify(queryJson) },
+        }).trigger('reloadGrid');
+    }
+    function beforeSelectRow() {
+        //alert("===");
+        $("#jqgridId").jqGrid('resetSelection');
+        return (true);
+    }
+    function btn_add() {
+        $.modalOpen({
+            id: "Form",
+            title: "添加用户指令",
+            url: "/OCManage/SMSInstructions/Form",
+            width: "700px",
+            height: "200px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    function btn_edit(fid) {
+        var keyValue = $("#gridList").jqGridRowValue().F_Id;
+        if (fid != undefined)
+            keyValue = fid;
+        $.modalOpen({
+            id: "Form",
+            title: "修改用户指令",
+            url: "/OCManage/SMSInstructions/Form?keyValue=" + keyValue,
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    function btn_delete(fid) {
+        var keyValue = rtn_grilid();
+        if (fid != undefined)
+            keyValue = fid;
+        $.deleteForm({
+            url: "/OCManage/SMSInstructions/DeleteForm",
+            param: { keyValue: keyValue },
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+    //返回多选的记录id
+    function rtn_grilid() {
+        var selarrrow = $("#gridList").jqGrid('getGridParam', 'selarrrow'); //取得多选行号
+        var keyValue = "";
+        var ret;
+        //取得多选项目的F_Id
+        selarrrow.forEach(function (e) {
+            ret = $("#gridList").jqGrid('getRowData', e);
+            keyValue += ret.F_Id + ",";
+        })
+        return keyValue;
+    }
+</script>
+
+<div class="topPanel">
+    <div class="search">
+        <table>
+            <tr>
+                <td>
+                    <div class="input-group">
+                        <input id="txt_keyword" type="text" class="form-control" placeholder="请输入要查询的关键字" style="width: 200px;">
+                        <span class="input-group-btn">
+                            <a id="NI-search" authorize="yes" class="btn btn-primary dropdown-text" onclick="btn_search()"><i class="fa fa-search"></i></a>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="toolbar">
+        <div class="btn-group">
+            <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+        </div>
+        <div class="btn-group">
+            <a id="NI-add" authorize="yes" class="btn btn-primary" onclick="btn_add()"><i class="fa fa-plus"></i>添加用户指令</a>
+        </div>
+    </div>
+</div>
+<div class="gridPanel" id="gridPanel">
+    <table id="gridList"></table>
+    <div id="gridPager"></div>
+</div>

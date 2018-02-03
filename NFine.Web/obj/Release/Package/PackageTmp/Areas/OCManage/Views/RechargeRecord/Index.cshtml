@@ -1,0 +1,203 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+
+<style>
+    .topPanel, .search {
+        height:75px;
+    }
+    /*.topPanel, .search, .btn-group, .form-control{
+        margin-left:7px;
+    }*/
+</style>
+
+<link href="/Content/js/datepicker/skin/WdatePicker.css" rel="stylesheet" />
+<script src="/Content/js/datepicker/WdatePicker.js"></script>
+
+<script>
+    $(function () {
+        gridList();
+    })
+
+    function gridList() {
+        var $gridList = $("#gridList");
+        $gridList.dataGrid({
+            url: "/OCManage/RechargeRecord/GetGridJson",
+            height: $(window).height() - 128,
+            colModel: [
+                { label: '主键', name: 'F_Id', hidden: true },
+                { label: '用户ID', name: 'F_UserId', width: 70, align: 'center' },
+                { label: '账户', name: 'F_Account', width: 75, align: 'center' },
+                { label: '价格', name: 'F_Price', width: 80, align: 'center' },
+                { label: '业务员ID', name: 'F_ManagerId', width: 80, align: 'center' },
+                { label: '操作员ID', name: 'F_OperatorId', width: 80, align: 'center' },
+                { label: '显示金额', name: 'F_ShowCash', width: 80, align: 'center' },
+                { label: '实际金额', name: 'F_TrueCash', width: 80, align: 'center' },
+               //日期，表中字段对应待定
+               { label: '日期', name: 'F_CreatorTime', width: 120, align: 'center' },
+                { label: '充值前', name: 'F_RechargeStar', width: 80, align: 'center' },
+                { label: '充值后', name: 'F_RechargeOver', width: 80, align: 'center' },
+                {
+                    label: '充值状态', name: 'F_State', width: 80, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var retstr = cellvalue + '<br>' + '<a onclick="btn_sonCharge(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">子账户充值</a>&nbsp;&nbsp;';
+                        return retstr;
+                    }
+                },            
+                { label: '我们看的备注', name: 'F_ShowDescription', width: 130, align: 'center' },
+                { label: '用户看的备注', name: 'F_TrueDescription', width: 130, align: 'center' },
+                {
+                    label: '操作', name: 'm_operate', width: 60, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var retstr = '<a onclick="btn_edit(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">修改</a>&nbsp;&nbsp;';
+                        return retstr;
+                    }
+                } 
+            ],
+            pager: "#gridPager",
+            sortname: 'F_CreatorTime desc',
+            rownumber: true,
+            multiselect: true,
+            multiboxonly: true,
+            beforeSelectRow: beforeSelectRow,//js方法
+            viewrecords: true
+        });
+        $("#btn_search").click(function () {
+            //查询参数          待定
+            var queryJson = {
+                F_CreatorTimeFrom: $("#F_CreatorTimeFrom").val(),
+                F_CreatorTimeEnd: $("#F_CreatorTimeEnd").val(),
+                F_UserId: $("#F_UserId").val(),
+                F_Account: $("#F_Account").val(),
+                F_State: $("#F_State").val(),
+                F_PayMode: $("#F_PayMode").val(),
+
+            }
+            $gridList.jqGrid('setGridParam', {
+                postData: { queryJson: JSON.stringify(queryJson) },
+            }).trigger('reloadGrid');
+        });
+        $("#F_PayMode").bindSelect({ url: "/OCManage/RechargeRecord/GetPayModeJson" });
+    }
+    function beforeSelectRow() {
+        //alert("===");
+        $("#jqgridId").jqGrid('resetSelection');
+        return (true);
+    }
+//    分析，内容待定
+    function btn_analyse() {
+        $.modalOpen({
+              
+        });
+    }
+
+    function btn_edit(fid) {
+        var keyValue = $("#gridList").jqGridRowValue().F_Id;
+        if (fid !=undefined)
+            keyValue = fid;
+        $.modalOpen({
+            id: "Form",
+            title: "修改信息",
+            url: "/OCManage/RechargeRecord/editForm?keyValue=" + keyValue,
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    function btn_delete(fid) {
+        var keyValue = rtn_grilid();
+        if (fid !=undefined)
+            keyValue = fid;
+        $.deleteForm({
+            url: "/OCManage/RechargeRecord/DeleteForm",
+            param: { keyValue: keyValue },
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }  
+    //返回多选的记录id
+    function rtn_grilid() {
+        var selarrrow = $("#gridList").jqGrid('getGridParam', 'selarrrow'); //取得多选行号
+        var keyValue = "";
+        var ret;
+        //取得多选项目的F_Id
+        selarrrow.forEach(function (e) {
+            ret = $("#gridList").jqGrid('getRowData', e);
+            keyValue += ret.F_Id + ",";
+        })
+        return keyValue;
+    }
+</script>
+<div class="topPanel">
+    <div class="search">
+        <table>
+            <tr>
+                <td>
+                    <div class="input-group">
+                        <div style="padding-right:2px;float:left;width:4.5em;line-height:30px;text-align:right;">日期：从</div>
+                        <div style="width:12em;float:left;">
+                            <input id="F_CreatorTimeFrom" name="F_CreatorTimeFrom" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd' })" style="float:left;width:12em;" />
+                        </div>
+                        <div style="padding-right:2px;float:left;width:2.5em;line-height:30px;text-align:right;">到</div>
+                        <div style="width:16em;float:left;">
+                            <input id="F_CreatorTimeEnd" name="F_CreatorTimeEnd" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd' })" style="float:left;width:12em;" />
+                        </div>
+                        <input id="F_UserId" type="text" class="form-control" placeholder="请输入用户ID" style="width: 100px;">
+                        <input id="F_Account" type="text" class="form-control" placeholder="请输入账户ID" style="width: 100px;">
+                        <div style="padding-right:2px;float:left;width:2.5em;line-height:30px;">
+                            <span class="input-group-btn">
+                                <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                        <!--下拉框字段名字待定-->
+                        <br>
+                        @*<select id="F_State" name="F_State" class="form-control" style="width:10em;float:left;">
+                            <option value="">请选择充值标志</option>
+                            <option value="1">全部</option>
+                            <option value="2">其他</option>
+                        </select>*@
+                        @*<select id="F_StateId" name="F_StateId" class="form-control" style="width:10em;float:left;">
+                            <option value="">请选择付款标记</option>
+                            <option value="1">全部</option>
+                            <option value="2">已付款</option>
+                            <option value="3">未付款</option>
+                        </select>
+                        <select id="F_StateId" name="F_StateId" class="form-control" style="width:9.8em;float:left;">
+                            <option value="">请选择付款银行</option>
+                            <option value="1">全部</option>
+                            <option value="2">中国建设银行</option>
+                            <option value="3">中国银行</option>
+                        </select>*@
+                        <select id="F_State" name="F_State" class="form-control"style="width:9.8em;float:left;">
+                            <option value="">请选择充值状态</option>
+                            <option value="已付款">已付款</option>
+                            <option value="未付款">未付款</option>
+                        </select>
+                        <select id="F_PayMode" name="F_PayMode" class="form-control" style="width:9.8em;float:left;">
+                            <option value="">收款方式</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="toolbar">
+        <div class="btn-group">
+            <a id="NR-analyse" authorize="yes" class="btn btn-primary" onclick="btn_analyse()">分析</a>
+        </div>
+        <div class="btn-group">
+            <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+        </div>        
+        <script>$('.toolbar').authorizeButton()</script>
+    </div>
+</div>
+<div class="gridPanel">
+    <table id="gridList"></table>
+    <div id="gridPager"></div>
+</div> 
+       
+    

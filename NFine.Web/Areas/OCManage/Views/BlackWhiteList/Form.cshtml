@@ -1,0 +1,263 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+@*<script src="~/Content/selfjs/OCManage/BlackWhiteList/form.js"></script>*@
+<script>
+    var id = $.request("id");
+    function submitForm() {
+        if (!$('#form1').formValid()) {
+            return false;
+        }
+        $.submitForm({
+            url: "/OCManage/BlackWhiteList/SubmitForm?id=" + id,
+            param: $("#form1").formSerialize(),
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+
+    $(function () {
+        BlackWhiteManager.init();
+    });
+    //黑白名单编辑插件
+    var BlackWhiteManager = function () {
+        //加载实体信息
+        var LoadModelInfo = function (id) {
+            $.ajax({
+                url: "/OCManage/BlackWhiteList/GetFormJson",
+                data: { id: id },
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    $("#form1").formSerialize(data);
+                    $("#hidOldMobile").val(data.F_Mobile);
+                    if (data.F_Sign === false) {
+                        $("#trLevel").show();
+                    }
+                }
+            });
+        }       
+        //检查手机号
+        var CheckMobile = function (phone) {
+            var str = "";
+            var num = 0;
+            var arr = phone.split(/;|:|,|，|；| |\r|\n/);
+            //alert(p);
+            //alert(arr);
+            for (i = 0; i < arr.length; i++) {
+                var pReg = /^1[0-9]\d{9}$/;
+                var xReg = /^0[0-9]\d{9}$/;
+                var mReg = /^0[0-9]\d{10}$/;
+
+                if (arr[i].length == 11 && pReg.test(arr[i]) == true) {
+                    // alert("识别成功");
+                    num += 1;
+                    
+                }
+
+                else if (arr[i].length == 11 && xReg.test(arr[i]) == true) {
+                    //alert("识别成功");
+                    num += 1;
+                   
+                }
+                else if (arr[i].length == 12 && mReg.test(arr[i]) == true) {
+                    // alert("识别成功");
+                    num += 1;
+                  
+                }
+                else {
+                    str += arr[i] + ",";
+                }
+            }
+            if (str!="")
+            {
+                return false;
+            }
+            return true;
+          
+        }
+        //限制级别（100-180）
+        var LimitLevel = function (level) {
+            if (level > 180) {
+                return 180;
+            }
+            if (level < 100) {
+                return 100;
+            }
+            return level;
+        }
+        //类型选择
+        var BindSignChange = function () {
+            $("#F_Sign").change(function () {
+                var selectSignId = $(this).val();
+                if (selectSignId === "true") {
+                    $("#F_Level").val("0");
+                    $("#trLevel").hide();
+                } else {
+                    $("#F_Level").val("180");
+                    $("#trLevel").show();
+                }
+            });
+        }
+        //绑定级别输入事件
+        var BindLevelEvent = function () {
+            //限制只能输入数字
+            $("#F_Level").keypress(function () {
+                if (event.keyCode < 48 || event.keyCode > 57)
+                    event.returnValue = false;
+            });
+            $("#F_Level").blur(function () {
+                var level = LimitLevel($(this).val());
+                $(this).val(level);
+            });
+        }
+        //绑定手机号
+        var BindMobileEvent = function () {
+            $("#F_Mobile").blur(function () {
+                var mobile = $(this).val();
+                if (!CheckMobile(mobile)) {
+                    $.modalMsg("手机号码格式不正确，请重新输入", "error");
+                }
+                var oldMobile = $("#hidOldMobile").val();
+                var newMobile = $("#F_Mobile").val();
+                //检查手机号是否重复
+                if (newMobile != oldMobile) {
+                    $.ajax({
+                        type: "post",
+                        url: "/OCManage/BlackWhiteList/CheckMobile",
+                        data: {
+                            mobile: mobile
+                        },
+                        success: function (data) {
+                            var json = JSON.parse(data);
+                            if (json.state == "success") {
+                                $.modalMsg("该手机号码已存在，请检查", "error");
+                            }
+                        }
+                    });
+                }
+            });
+        }
+        return {
+            init: function () {
+                if (!!id) {
+                    LoadModelInfo(id);
+                }
+                BindMobileEvent();
+                BindSignChange();
+                BindLevelEvent();
+            }
+        }
+    }();
+
+    $(function () {
+        var userid = "@NFine.Code.OperatorProvider.Provider.GetCurrent().UserId";//取得userid
+        $("#UserId").bindSelect({ url: "/OCManage/BlackWhiteList/GetUserInfoJson" });
+    })
+    //识别输入电话号码
+    function funcTest() {
+        //每隔0.001秒执行一次checkValue方法
+        window.setInterval("checkValue()", 1);
+    }
+    function checkValue() {//选为不是用户白名单时，隐藏“全部用户”下拉框
+        var User = document.getElementById("UserId");
+        var Sign = document.getElementById("F_Sign");
+        var UserWhite = document.getElementById("F_IsUserWhite");
+        var UserBlack = document.getElementById("F_IsUserBlack");
+        if (document.getElementById("F_Sign").value == 'true')//类型选择黑名单时
+        {
+            UserWhite.disabled = true;
+            UserBlack.disabled = false;
+            User.disabled = true;
+            if (document.getElementById("F_IsUserBlack").value == 'false')
+                User.disabled = true;
+            else if (document.getElementById("F_IsUserBlack").value == 'true')
+                User.disabled = false;
+        }
+        else//类型选择白名单时
+        {
+            UserWhite.disabled = false;
+            UserBlack.disabled = true;
+            User.disabled = true;
+            $("#trLevel").show();
+            $("#F_Level").val("180");
+            if (document.getElementById("F_IsUserWhite").value == 'false')
+                User.disabled = true;
+            else if (document.getElementById("F_IsUserWhite").value == 'true')
+                User.disabled = false;
+        }
+
+    }
+    window.onload = funcTest;
+</script>
+
+<form id="form1">
+    <div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+        <div style="padding-top: 20px; margin-right: 30px;">
+            <!--隐藏控件 begin-->
+            <input type="hidden" id="hidOldMobile" value="" />
+            <!--隐藏控件 end-->
+            <table class="form">
+                <tr>
+                    <th class="formTitle">手机号码<span class="text-danger">*</span></th>
+                    <td class="formValue">
+                        <textarea id="F_Mobile" name="F_Mobile" class="form-control required" placeholder="请输入手机号码" style="height: 100px;"></textarea>
+                        @*<input id="F_Mobile" name="F_Mobile" type="text" class="form-control required" placeholder="请输入手机号码" autofocus="" />*@
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">类型</th>
+                    <td class="formValue">
+                        <select id="F_Sign" name="F_Sign" class="form-control required">
+                            <option value="true">黑名单</option>
+                            <option value="false">白名单</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">是否用户白名单</th>
+                    <td class="formValue">
+                        <select id="F_IsUserWhite" name="F_IsUserWhite" class="form-control required">
+                            <option value="false">否</option>
+                            <option value="true">是</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">是否用户黑名单</th>
+                    <td class="formValue">
+                        <select id="F_IsUserBlack" name="F_IsUserBlack" class="form-control required">
+                            <option value="false">否</option>
+                            <option value="true">是</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle"></th>
+                    <td class="formValue">
+                        <select id="UserId" name="UserId" class="form-control required">
+                            <option value="">全部用户</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr id="trLevel" style="display:none;">
+                    <th class="formTitle">级别</th>
+                    <td class="formValue">
+                        <input id="F_Level" name="F_Level" type="text" class="form-control required" placeholder="请输入级别" value="0" />
+                    </td>
+                </tr>
+                @*<tr>
+                        <td class="formTitle" style="padding-left:100px ">注意：白名单：级别范围100-180；</td>
+                    </tr>*@
+                <tr>
+                    <th class="formTitle">备注</th>
+                    <td class="formValue">
+                        <textarea id="F_Description" name="F_Description" class="form-control" style="height: 60px;"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</form>

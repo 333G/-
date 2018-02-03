@@ -1,0 +1,144 @@
+﻿@{
+    ViewBag.Title = "SendEditForm";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+ 
+<script>
+    //keyValue：传递数据。若为空，则此页面为添加新客户窗体，否则此页面为修改F_Id值为keyValue的客户窗体
+    var keyValue = $.request("keyValue"); //获取传递数据keyValue
+
+    //keyValue不为空，获取对应F_Id为keyValue值的数据并填充form1表单
+    $(function () {
+        if (!!keyValue) {
+            $.ajax({
+                url: "/SMCManage/SMCSend/GetFormJson", 
+                data: { keyValue: keyValue },
+                dataType: "json",
+                async: true,
+                success: function (data) {
+                    $("#form1").formSerialize(data);
+                }
+            });
+        }
+    });
+    //表单数据提交
+    function submitForm() {
+        if (!$('#form1').formValid()) {
+            return false;
+        }
+        $.submitForm({
+            url: "/SMCManage/SMCSend/SubmitForm?keyValue=" + keyValue,
+            param: $("#form1").formSerialize(),
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+    //function change() {
+    //    if (!document.getElementById("Is_Timer").checked)
+    //        $("#F_SendTime").show();
+    //    else {
+    //        $("#F_SendTime").hide();
+    //        $("#F_SendTime").value = "";
+    //    }
+    //}
+    function change() {
+        if (!document.getElementById("F_IsTimer").checked)
+            $("#F_SendTime").show();
+        else {
+            $("#F_SendTime").hide();
+            $("#F_SendTime").value = "";
+        }
+    }
+
+</script>
+<form id="form1">
+    <div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+        <div style="padding-top: 20px; margin-right: 30px;">
+            <table class="form">
+                <tr>
+                    <th class="formTitle" style="padding-right:8px;">收件人:</th>
+                    <td class="formValue" style="width:100%;">
+                        <textarea id="F_MobileList" name="F_MobileList" class="form-control required" readonly style="height: 60px;width: 100%;"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle" style="padding-right:8px;">短信内容:</th>
+                    <td class="formValue" style="width:100%;">
+                        <textarea id="F_SmsContent" name="F_SmsContent" class="form-control required" placeholder="请输入短信内容" style="height: 100px;width:100%;"></textarea>
+                    </td>
+                </tr>
+                <tr> 
+                    <td class="formValue" style="width:100%;">
+                    <td class="ckbox">
+                            @*<input id="Is_Timer" name="Is_Timer" type="checkbox" /><label for="Is_Timer" onclick="change()">定时发送（默认即时发送）</label>*@
+                        <input id="F_IsTimer" name="F_IsTimer" type="checkbox" /><label for="F_IsTimer" onclick="change()">定时发送（默认即时发送）</label>
+                        </td>  
+                    <td style="padding-right:1em;float:left;width:7.9em;line-height:30px;text-align:right;margin-top:10px;">发送时间:</td>
+                    <td style="width:18.8em;float:left;">
+                            <input id="F_SendTime" name="F_SendTime" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd HH:mm:ss' })" style="float:left;width:18.8em;height:32px;padding-top:6px;margin-top:10px;" />
+                        </td>  
+                </tr>
+
+                <tr style="padding-top:1em;">
+                    <td colspan="2" style="width:100%;height:50px;padding:1em 0em;">
+                        <div class="formTitle" style="padding-right:12px;float:left;width:7.9em;line-height:30px;">发送类型:</div>
+                        <div style="width:18.8em;float:left;">
+                            <select id="F_SendSign" name="F_SendSign"onfocus="this.defaultIndex=this.selectedIndex;" onchange="this.selectedIndex=this.defaultIndex;" class="form-control" style="width:18.8em;float:left;">
+                                <option value="手机号">手机号</option>
+                                <option value="文本">文本</option>
+                                <option value="群组">群组</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr style="padding-top:1em;">
+                    <td colspan="2" style="width:100%;height:50px;padding:1em 0em;">
+                        <div style="width:90px;float:left;width:8.3em;line-height:30px;padding-right:12px;text-align:right;">发送状态:</div>
+                        <div style="width:18.8em;float:left;">
+                            <select id="F_SendState" name="F_SendState" class="form-control" style="width:18.8em;float:left;">
+                                <option value="0">待发送</option>
+                                <option value="9">发送成功</option>
+                                <option value="-1">发送失败</option>
+                                <option value="-2">不发送</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr style="padding-top:1em;">
+                    <td colspan="2" style="width:100%;height:50px;padding:1em 0em;">
+                        <div style="width:90px;float:left;width:8.3em;line-height:30px;padding-right:12px;text-align:right;">@*处理状态*@审核状态:</div>
+                        <div style="width:18.8em;float:left;">
+                            <select id="F_DealState" name="F_DealState" class="form-control" style="width:18.8em;float:left;">
+                                <option value="0">未审核</option>
+                                <option value="9">已审核</option>
+                                <option value="-1">需审核</option>
+                                <option value="-2">余额不足</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr style="padding-top:1em;">
+                    <td colspan="2" style="width:100%;height:50px;padding:1em 0em;">
+                        <div style="width:90px;float:left;width:8.3em;line-height:30px;padding-right:12px;text-align:right;">处理状态:</div>
+                        <div style="width:18.8em;float:left;">
+                            <select id="F_OperateState" name="F_OperateState" class="form-control" style="width:18.8em;float:left;">
+                                
+                                <option value="9">已处理</option>
+                                <option value="0">待处理</option>
+                                <option value="1">处理中</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr style="padding-top:1em;">
+                    <td class="formTitle" style="text-align:right;">费用(分)：</td>
+                    <td class="formValue" colspan="6">
+                        <input id="F_Price" name="F_Price" readonly="readonly" type="text" class="form-control" placeholder="单价" style="width:300px;" />
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</form>

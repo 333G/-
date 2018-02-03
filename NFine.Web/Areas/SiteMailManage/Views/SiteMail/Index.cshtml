@@ -1,0 +1,136 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+
+<script>
+
+   //=============================================================================================== <发件箱>
+    $(function () {
+        gridList();  
+    })
+   
+    /*
+    $(function () {
+        //取用户签名
+        GetCUserInfoDataJson();
+    })
+    //取用户签名,可获取用户表任意字段的值
+    function GetCUserInfoDataJson() {
+        $.ajax({
+            url: "/ClientsData/GetCUserInfoDataJson",
+            data: { fieldname: "F_Signature" },
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                var signature = "【" + data[0].value + "】";//标记
+                var snum = signature.length;//标记字数
+                $("#qmid").html(signature);
+                $("#zfsid").html(snum + " ");
+            }
+        });
+    }
+    */
+    function gridList() {
+        var $gridList = $("#gridList");
+        $gridList.dataGrid({
+            url: "/SiteMailManage/SiteMail/GetSendGridJson",
+            height: $(window).height() - 128,
+            colModel: [
+                { label: '主键', name: 'F_Id', hidden: true},
+                { label: '消息内容', name: 'F_Message', width: 200, align: 'center' },
+                  { label: '发送时间', name: 'F_CreatorTime', width: 200, align: 'center' },
+                  { label: '发件人', name: 'F_SendName', width: 200, align: 'center' },
+                  { label: '收件人', name: 'F_ReceiveName', width: 200, align: 'center' },
+                  {
+                      label: '状态', name: 'State', width: 200, align: 'center',
+                      formatter: function (cellvalue, options, rowObject) {
+                          var str = ""; 
+                          if (rowObject["F_Statue"]) 
+                              return '<span class=\"label label-success\">已读</span>';
+                          else
+                              return'<span class=\"label label-default\">未读</span>';
+                          /*
+                          if (rowObject["F_Statue"]) {
+                              str += '<span class=\"label label-success\">已读</span>|';
+                              if (rowObject["F_DeleteMark"]) {
+                                  str += '<span class=\"label label-default\">已删</span>';
+                              }
+                              else{
+                                  str += '<span class=\"label label-success\">未删</span>'
+                              }
+                          }
+                          else{
+                              str += '<span class=\"label label-default\">未读</span>|';
+                              if (rowObject["F_DeleteMark"]) {
+                                  str += '<span class=\"label label-default\">已删</span>';
+                              }
+                              else {
+                                  str += '<span class=\"label label-default\">未删</span>';
+                              }
+                          } 
+                          return str;
+                          */
+                      }
+                  },
+                  {
+                    label: '操作', name: 'm_operate', width: 100, align: 'left',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var retstr =  '<a onclick="btn_delete(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">删除</a>';
+                        return retstr;
+                    }
+                }
+            ],
+            pager: "#gridPager",
+            sortname: 'F_CreatorTime desc',
+            rownumber: true,
+            multiselect: true, 
+            viewrecords: true, 
+        }); 
+    }
+   
+    function btn_delete(fid) {
+
+        var selarrrow = $("#gridList").jqGrid('getGridParam', 'selarrrow'); //取得多选行号
+        var keyValue = "";
+        var ret;
+        //取得多选项目的F_Id
+        selarrrow.forEach(function (e) {
+            ret = $("#gridList").jqGrid('getRowData', e);
+            keyValue += ret.F_Id + ',';
+        })
+        if (fid !=undefined){
+            keyValue = fid;
+        }
+        $.deleteForm({
+            url: "/SiteMailManage/SiteMail/DeleteForm",
+            param: { keyValue: keyValue },
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+
+</script>
+<iframe id="HideFrm" style="display: none"></iframe>
+<div class="topPanel">
+    <div class="toolbar">
+        <div class="btn-group">
+            <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+        </div> 
+        <div class="operate">
+            <ul class="nav nav-pills">
+                <li class="first">已选中<span>1</span>项</li>
+                <li><a id="NU-delete" authorize="yes" onclick="btn_delete()"><i class="fa fa-trash-o"></i>删除消息</a></li> 
+                <li><a href="/SiteMailManage/SiteMail/SendMailForm">发送信息</a></li>
+            </ul>
+            <a href="javascript:;" class="close"></a>
+        </div>
+        <script>$('.toolbar').authorizeButton()</script>
+    </div> 
+</div>
+<div class="gridPanel" id="gridPanel">
+    <table id="gridList"></table>
+    <div id="gridPager"></div>
+</div>
+

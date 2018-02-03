@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<script>
+    //keyValue：传递数据。若为空，则此页面为添加新任务窗体，否则此页面为修改F_Id值为keyValue的任务窗体
+    var keyValue = $.request("keyValue"); //获取传递数据keyValue 
+
+    //keyValue不为空，获取对应F_Id为keyValue值的数据并填充form1表单 
+    $(function () {
+        if (!!keyValue) {
+            $.ajax({
+                url: "/CRMManage/Task/GetFormJson",
+                data: { keyValue: keyValue },
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    $("#form1").formSerialize(data);
+                }
+            });
+        }
+
+    });
+    //表单数据提交
+    function submitForm() {  
+        if (!$('#form1').formValid()) {
+            return false;
+        }
+        $.submitForm({
+            url: "/CRMManage/Task/SubmitForm?keyValue=" + keyValue,
+            param: $("#form1").formSerialize(),
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+
+</script>
+<form id="form1">
+    <div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#">基本信息</a></li> 
+        </ul>
+        <div style="padding-top: 20px; margin-right: 30px;">
+            <table class="form">
+                <tr>
+                    <th class="formTitle">任务内容：</th>
+                    <td class="formValue">
+                        <textarea id="F_TaskInfo" name="F_TaskInfo" class="form-control required" style="height: 100px;width: 550px"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">处理时间：</th>
+                    <td class="formValue">
+                        <input id="F_TaskTime" name="F_TaskTime" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker()" />
+                    </td>
+                    <th class="formTitle">处理人：</th>
+                    <td class="formValue">
+                        <input id="F_DoUser" name="F_CreatorUserId" type="text" class="form-control required" placeholder="请输入处理人" />
+                    </td> 
+                    <th class="formTitle">录入人ID：</th>
+                    <td class="formValue">
+                        <input id="F_CreatorUserId" name="F_CreatorUserId" type="text" class="form-control required" placeholder="请输入录入人ID" />
+                    </td> 
+                </tr>
+            </table>
+             
+        </div>
+    </div>
+</form>

@@ -1,0 +1,7 @@
+E:\17_2_20\Project1\NFine.Log\bin\Release\NFine.Log.dll
+E:\17_2_20\Project1\NFine.Log\bin\Release\NFine.Log.pdb
+E:\17_2_20\Project1\NFine.Log\bin\Release\log4net.dll
+E:\17_2_20\Project1\NFine.Log\bin\Release\log4net.xml
+E:\17_2_20\Project1\NFine.Log\obj\Release\NFine.Log.csprojResolveAssemblyReference.cache
+E:\17_2_20\Project1\NFine.Log\obj\Release\NFine.Log.dll
+E:\17_2_20\Project1\NFine.Log\obj\Release\NFine.Log.pdb

@@ -1,0 +1,233 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<link href="/Content/js/datepicker/skin/WdatePicker.css" rel="stylesheet" />
+<script src="/Content/js/datepicker/WdatePicker.js"></script>
+<style>
+    .topPanel .search .input-group .btn {
+        padding: 0px 5px;
+        line-height: 27px;
+    }
+    .topPanel .search .input-group .form-control {
+        margin-left:7px;
+    }
+    .topPanel {
+        padding-left: 0.2em;
+    }
+    .cxjl {
+        float: left;
+        font-size: 13px;
+        line-height: 30px;
+        font-weight: bold;
+    }
+     .ui-jqgrid tr.jqgrow td {
+        white-space: normal !important;
+        height: auto;
+        vertical-align: text-top;
+        padding-top: 2px;
+    }
+</style>
+<script>
+    $(function () {
+        $("#GroupId").bindSelect({
+            url: "/TXLManage/PheGrup/GetTreeGroupJson"
+        });
+        gridList();
+    })
+    //取得组名
+    function getgrupname(groupid) {
+        var GroupName = "";
+        var init = function () {
+            $.ajax({
+                url: "/SMCManage/SMCRceive/GetPheGrupDataJson",
+                data: { keyValue: groupid },
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    //alert(JSON.stringify(data));
+                    GroupName = data["PheGrup"]["GroupName"];
+                }
+            });
+        }
+        init();
+        return GroupName;
+    }
+    //取得当前用户所有分组
+    function getgrupall(userid) {
+    }
+
+    function gridList() {
+        var $gridList = $("#gridList");
+        $gridList.dataGrid({
+            url: "/SMCManage/SMCRceive/GetGridJson",
+            height: $(window).height() - 128,
+            colModel: [
+                { label: '主键', name: 'F_Id', hidden: true },
+                { label: '回复时间', name: 'receive_time', width: 150, align: 'center' },
+                { label: '手机号码', name: 'mobile', width: 150, align: 'center' },
+                {
+                    label: '类型', name: 'F_Operator', width: 150, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        if (cellvalue == 1) {
+                            return "移动";
+                        } else if (cellvalue == 2) {
+                            return "联通";
+                        } else if (cellvalue == 3) {
+                            return "电信";
+                        }
+                        else return "未知运营商";
+                    }
+                },
+                {
+                    label: '内容', name: 'F_SmsContent', width: 425, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+
+                        return '<div><span>短信：</span>' + rowObject["F_SmsContent"] + '</div>' +
+                            '<div><sqan>回复：</span>' + rowObject["receive_content"] + '</div>';
+                    }
+                },
+                { label: '省', name: 'F_Province', width: 150, align: 'center' }
+            ],
+            pager: "#gridPager",
+            sortname: 'F_CreatorTime desc',
+            rownumber: true,
+            multiselect: true,
+            multiboxonly: false,
+            beforeSelectRow: beforeSelectRow,//js方法
+            viewrecords: true
+        });
+
+        $("#btn_search").click(function () {
+            //查询参数
+            var queryJson = {
+                F_Mobile : $("#F_Mobile").val(),
+                F_SmsContent : $("#F_SmsContent").val(),
+                //GroupId : $("#GroupId").val(),
+                F_RceiveTime : $("#F_RceiveTime").val(),
+                F_TA : document.getElementById("F_TA").checked,//显示发件人姓名
+            }
+            $gridList.jqGrid('setGridParam', {
+                postData: { queryJson: JSON.stringify(queryJson) },
+            }).trigger('reloadGrid');
+        });
+    }
+    function beforeSelectRow() {
+        //alert("===");
+        $("#jqgridId").jqGrid('resetSelection');
+        return (true);
+    }
+ 
+    function btn_edit(fid) {
+        var keyValue = $("#gridList").jqGridRowValue().F_Id;
+        if (fid !=undefined)
+            keyValue = fid;
+        $.modalOpen({
+            id: "Form",
+            title: "修改用户",
+            url: "/SMCManage/SMCRceive/Form?keyValue=" + keyValue,
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    function btn_delete(fid) {
+        var keyValue = rtn_grilid();
+        if (fid !=undefined)
+            keyValue = fid;
+        $.deleteForm({
+            url: "/SMCManage/SMCRceive/DeleteForm",
+            param: { keyValue: keyValue },
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+  
+    //导出
+    function btn_exp() {
+        var F_Mobile = $("#F_Mobile").val();
+        var F_SmsContent = $("#F_SmsContent").val();
+        var GroupId = $("#GroupId").val();
+        var F_RceiveTime = $("#F_RceiveTime").val();
+        var F_TA = document.getElementById("F_TA").checked;//显示发件人姓名
+        
+        //查询参数
+        $.download("/SMCManage/SMCRceive/Export", "F_Mobile=" + F_Mobile + "&F_SmsContent=" + F_SmsContent + "&GroupId=" + GroupId + "&F_RceiveTime=" + F_RceiveTime + "&F_TA=" + F_TA, 'post');
+    }
+    function btn_details() {
+        var keyValue = $("#gridList").jqGridRowValue().F_Id;
+        $.modalOpen({
+            id: "Details",
+            title: "查看用户",
+            url: "/SMCManage/SMCRceive/Details?keyValue=" + keyValue,
+            width: "700px",
+            height: "550px",
+            btn: null,
+        });
+    }
+    
+    //返回多选的记录id
+    function rtn_grilid() {
+        var selarrrow = $("#gridList").jqGrid('getGridParam', 'selarrrow'); //取得多选行号
+        var keyValue = "";
+        var ret;
+        //取得多选项目的F_Id
+        selarrrow.forEach(function (e) {
+            ret = $("#gridList").jqGrid('getRowData', e);
+            keyValue += ret.F_Id + ",";
+        })
+        return keyValue;
+    }
+</script>
+<div class="topPanel">
+    <div class="toolbar">
+        <div class="btn-group">
+            <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+        </div> 
+        <div class="btn-group">
+            <a id="NU-exp" authorize="yes" class="btn btn-primary" onclick="btn_exp()"><i class="fa fa-plus"></i>导出</a>
+        </div>
+        <div class="btn-group">
+            <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i></button>
+        </div>
+            <div class="operate">
+                <ul class="nav nav-pills">
+                    <li><a id="NU-delete" authorize="yes" onclick="btn_delete()"><i class="fa fa-trash-o"></i>删除</a></li>
+                </ul>
+                <a href="javascript:;" class="close"></a>
+            </div>
+
+        </div>
+    <div class="search">
+        <table>
+            <tr>
+                <td>
+                    <div class="input-group">
+                        <input id="F_Mobile" type="text" class="form-control" placeholder="请输入要查询的手机号" style="width: 200px;">
+                        <input id="F_SmsContent" type="text" class="form-control" placeholder="请输入要查询的短信内容" style="width: 200px;">
+                        <!--
+                        <span style="float:left;position:relative;">&nbsp;&nbsp;手机号:&nbsp;&nbsp;</span>
+                        <input type="text" class="form-control" style="width: 100px;float:left;" id="F_Mobile"/>
+                        --> 
+                        @*<select id="GroupId" name="GroupId" class="form-control" style="width: 100px;float:left;">
+                            <option value="">请选择分组</option> 
+                        </select>*@ 
+                        <div style="float:left;"><input id="F_RceiveTime" name="F_RceiveTime" type="text" placeholder="请输入要查询的收件日期" class="form-control input-wdatepicker required" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd' })" style="width: 200px;" /></div>
+                        <span style="float:left;position:relative;">&nbsp;&nbsp;显示姓名&nbsp;&nbsp;</span>
+                        <div class="ckbox"><input id="F_TA" name="test" type="checkbox"><label for="F_TA"></label></div>
+                        @*<span class="input-group-btn" style="float:left;">
+                            <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i></button>
+                        </span>*@ 
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="gridPanel" id="gridPanel">
+    <table id="gridList"></table>
+    <div id="gridPager"></div>
+</div>

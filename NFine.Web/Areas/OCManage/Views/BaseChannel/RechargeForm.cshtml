@@ -1,0 +1,118 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<script>
+    var keyValue = $.request("keyValue");//ChannelId
+    $(function () {
+        if (!!keyValue) {
+            $.ajax({
+                url: "/OCManage/BaseChannel/GetFormJson",
+                data: { keyValue: keyValue },
+                dataType: "json",
+                async: false,
+                success: function (data) {                  
+                    $("#form1").formSerialize(data);
+                    document.getElementById("F_F_SurplusNum").value = document.getElementById("F_SurplusNum").value;
+                    document.getElementById("F_F_ChaBalance").value = document.getElementById("F_ChaBalance").value;//获取初始值
+                }
+            });
+        }
+    });
+
+    function submitForm() {
+        if (!$('#form1').formValid()) {
+            return false;
+        }        
+        $.submitForm({
+            url: "/OCManage/BaseChannel/Add?keyValue=" + keyValue,
+            param: $("#form1").formSerialize(),
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+
+    //输入充值金额后的自加操作，检测到input改变后自动计算
+    $(function () {
+        $('#F_recharge').bind('input propertychange', function () {
+            var ChargeNum = document.getElementById("F_recharge").value;//获取充值金额               
+            if (ChargeNum != "") {
+                var Price = document.getElementById("F_Price").value;     //通道单价           
+                var LeftNum = document.getElementById("F_F_ChaBalance").value;
+                var LeftSms = document.getElementById("F_F_SurplusNum").value;
+
+                var a = parseFloat(Number(ChargeNum)) + parseFloat(Number(LeftNum));
+                var b = parseFloat(a) * parseFloat(Number(Price));
+                document.getElementById("F_ChaBalance").value = a;
+                document.getElementById("F_SurplusNum").value = b;
+            }
+            else if (ChargeNum == "") {
+                document.getElementById("F_SurplusNum").value = document.getElementById("F_F_SurplusNum").value;
+                document.getElementById("F_ChaBalance").value = document.getElementById("F_F_ChaBalance").value; 
+            }        
+        })
+    });
+
+</script>
+<form id="form1">
+    <div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+        <div style="padding-top: 20px; margin-right: 30px;">
+            <table class="form">
+                <tr>
+                    <th class="formTitle">通道ID<span class="text-danger"></span></th>
+                    <td class="formValue">
+                        <input id="Id" name="Id" type="text" readonly="readonly" class="form-control required" autofocus="" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">名称</th>
+                    <td class="formValue">
+                        <input id="F_ChannelName" name="F_ChannelName" type="text" readonly="readonly" class="form-control required" autofocus="" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">通道单价（分）</th>
+                    <td class="formValue">
+                        <input id="F_Price" name="F_Price" type="text" readonly="readonly" class="form-control required" autofocus="" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">充值金额（元）</th>
+                    <td class="formValue">
+                        <input id="F_recharge" name="F_recharge" type="text"  class="form-control required" autofocus="" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">通道余额（元）</th>
+                    <td class="formValue">
+                        <input id="F_ChaBalance" name="F_ChaBalance" type="text" readonly="readonly" class="form-control required" placeholder="自动计算" autofocus="" />
+                    </td>
+                </tr>               
+                <tr>
+                    <th class="formTitle">剩余条数（条）</th>
+                    <td class="formValue">
+                        <input id="F_SurplusNum" name="F_SurplusNum" type="text" readonly="readonly" class="form-control required" placeholder="自动计算并累计" autofocus="" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">备注</th>
+                    <td class="formValue">
+                        <textarea id="F_Description" name="F_Description" class="form-control" readonly="readonly" style="height: 60px;"></textarea>
+                    </td>
+                </tr>
+                @*通道余额和剩余条数的input隐藏域，用来存储原始值*@
+                <tr>                    
+                    <td class="formValue">
+                        <input id="F_F_ChaBalance" name="F_F_ChaBalance" style="display:none" />
+                    </td>
+                </tr>
+                <tr>                    
+                    <td class="formValue">
+                        <input id="F_F_SurplusNum" name="F_F_SurplusNum" style="display:none" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</form>

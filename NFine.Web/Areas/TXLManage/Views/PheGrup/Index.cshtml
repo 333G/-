@@ -1,0 +1,269 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<script>
+    $(function () {
+        gridList();
+    })
+    function gridList() {
+        var $gridList = $("#gridList");
+        $gridList.dataGrid({
+            url: "/TXLManage/PheGrup/GetGridJson",
+            height: $(window).height() - 128,
+            colModel: [
+                { label: "主键", name: "F_Id", hidden: true, key: true },
+                { label: '组名', name: 'GroupName', width: 200, align: 'left' },
+                { label: '数量', name: 'F_MemberNumber', width: 100, align: 'left' },
+                {
+                    label: '操作', name: 'm_operate', width: 200, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var retstr = '<a onclick="btn_addMember(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">添加成员</a>&nbsp;&nbsp;';
+                        retstr += '<a onclick="btn_analyse(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">数据分析</a>&nbsp;&nbsp;';
+                        retstr += '<a onclick="btn_moveMember(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">移动成员</a>&nbsp;&nbsp;';
+                        retstr += '<a onclick="btn_clearMember(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">清空</a>';
+                        return retstr;
+                    }
+                },
+                {
+                    label: "默认", name: "IsDefault", width: 60, align: "center",
+                    formatter: function (cellvalue) {
+                        return cellvalue == true ? "<i class=\"fa fa-toggle-on\"></i>" : "<i class=\"fa fa-toggle-off\"></i>";
+                    }
+                },
+                { label: '备注', name: 'F_Description', width: 300, align: 'left' }
+            ],
+            pager: "#gridPager",
+            sortname: 'F_CreatorTime asc',
+            rownumber: true,
+            multiselect: true,
+            multiboxonly: false,
+            beforeSelectRow: beforeSelectRow,//js方法
+            viewrecords: true
+        });
+        $("#btn_search").click(function () {
+            $gridList.jqGrid('setGridParam', {
+                postData: { keyword: $("#txt_keyword").val() },
+            }).trigger('reloadGrid');
+        });
+    }
+    function beforeSelectRow() {
+        //alert("===");
+        $("#jqgridId").jqGrid('resetSelection');
+        return (true);
+    }
+    function rtn_grilid() {
+        var selarrrow = $("#gridList").jqGrid('getGridParam', 'selarrrow'); //取得多选行号
+        var keyValue = "";
+        var ret;
+        //取得多选项目的F_Id
+        selarrrow.forEach(function (e) {
+            ret = $("#gridList").jqGrid('getRowData', e);
+            keyValue += ret.F_Id + "," + ret.IsDefault.indexOf("on") + "|";
+        })
+        keyValue = keyValue.substr(0, keyValue.length - 1);//去掉最后一位字符
+        return keyValue;
+    }
+
+    function rtn_grilField(fieldname) {                      //取到选择字段值，可多选
+        var selarrrow = $("#gridList").jqGrid('getGridParam', 'selarrrow');//取得多选行号
+        var keyValue = "";
+        var ret;
+        //取得多选项目的Mobile
+        selarrrow.forEach(function (e) {
+            ret = $("#gridList").jqGrid('getRowData', e);
+            keyValue += ret[fieldname] + ",";
+            // alert(keyValue); 能获取到数据
+        })
+        keyValue = keyValue.substr(0, keyValue.length - 1);//去掉最后一位字符
+        return keyValue;
+    }
+
+
+
+
+    //群组添加成员
+    //fid:  string类型，区分判断用，不为空对应页面所显示群组信息的F_Id
+    function btn_addMember(fid) {
+        $.modalOpen({
+            id: "Form",
+            title: "添加成员",
+            url: "/TXLManage/PheInfo/Form?groupId=" + fid,
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    //数据分析： 预定与查询统计栏的数据分析有关，内容待定
+    function btn_analyse() {
+        alert("预定与查询统计栏的数据分析有关，内容待定");
+    }
+    //群组移动成员
+    function btn_moveMember(fid) {
+        $.modalOpen({
+            id: "Form",
+            title: "移动成员",
+            url: "/TXLManage/PheGrup/MoveMemberForm?groupId=" + fid,
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    //群组清空成员
+    //fid:对应页面指定的群组数据F_Id
+    function btn_clearMember(fid) {
+        if (fid != undefined)
+            keyValue = fid;
+        $.deleteForm({
+            url: "/TXLManage/PheInfo/ClearForm",
+            param: { keyValue: fid },
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+
+    function btn_add() {
+        $.modalOpen({
+            id: "Form",
+            title: "新增群组",
+            url: "/TXLManage/PheGrup/Form",
+            width: "450px",
+            height: "340px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+
+    function btn_edit() {
+        var keyValue = rtn_grilid().split('|');
+        if (keyValue[1] != undefined)
+        { alert("禁止同时修改多个组！"); }
+        else {
+            var F_Id = keyValue[0].split(',')[0];
+            $.modalOpen({
+                id: "Form",
+                title: "修改群组",
+                url: "/TXLManage/PheGrup/Form?keyValue=" + F_Id,
+                width: "450px",
+                height: "340px",
+                callBack: function (iframeId) {
+                    top.frames[iframeId].submitForm();
+                }
+            });
+        }
+    }
+    function btn_delete() {
+        keyValue = rtn_grilid();
+        var JudgeArray = keyValue.split('|');
+        var FIDList = "";
+        for (var o in JudgeArray) {
+            var FID = JudgeArray[o].split(',')[0];
+            FIDList += FID + ",";
+            var IsDefult = JudgeArray[o].split(',')[1];
+            if (IsDefult > 0) {
+                alert("有默认组不能删除");
+                return false;
+            }
+        }
+        FIDList = FIDList.substr(0, keyValue.length - 1);//去掉最后一位字符
+        $.deleteForm({
+            url: "/TXLManage/PheGrup/DeleteForm",
+            param: { keyValue: FIDList },
+            success: function () {
+                $.currentWindow().$("#gridList").resetSelection();
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+
+    function selectgroupid() {
+        var select = $("#gridList").jqGrid('getRowData', 'select');
+        return select;
+        alert(select + "hhh");
+    }
+
+    function btn_send() {
+        var keyValue = rtn_grilid();
+        var JudgeArray = keyValue.split('|');
+        var FIDList = "";
+        for (var o in JudgeArray) {
+            var FID = JudgeArray[o].split(',')[0];
+            FIDList += FID + ",";
+        }
+
+        FIDList = FIDList.substr(0, keyValue.length - 1);//去掉最后一位字符
+        if (FIDList != null) {
+            $.ajax({
+                url: "/TXLManage/PheGrup/getPhoneNum?keyValue=" + FIDList,
+                data: { keyValue: FIDList },
+                dataType: "text",
+                async: false
+                //success: function (data) {
+                //alert(data);
+                // }
+            });
+            $.modalOpen({
+                id: "send",
+                title: "发送短信",
+                url: "/TXLManage/PheGrup/SendSMS?groupID=" + FIDList,
+                width: "700px",
+                height: "550px"
+            });
+        }
+        else
+            alert("请选择分类再发送短信！");
+    }
+
+    function btn_inset() {
+        $.modalOpen({
+            id: "inset",
+            title: "批量导入",
+            url: "/TXLManage/PheGrup/AddMore",
+            width: "700px",
+            height: "550px",
+            callBack: function (iframeId) {
+            }
+        });
+    }
+    function btn_InfoInset() {
+        alert("建设中，敬请期待");
+    }
+</script>
+
+<div class="topPanel">
+    <div class="toolbar">
+        <div class="btn-group">
+            <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+        </div>
+        <div class="btn-group">
+            <a id="NG-add" authorize="yes" class="btn btn-primary" onclick="btn_add()"><i class="fa fa-plus"></i>添加群组</a>
+        </div>
+        <div class="btn-group">
+            <a id="NG-edit" authorize="yes" class="btn btn-primary" onclick="btn_edit()"><i class="fa fa-pencil-square-o"></i>修改群组</a>
+        </div>
+        <div class="btn-group">
+            <a id="NG-delete" authorize="yes" class="btn btn-primary" onclick="btn_delete()"><i class="fa fa-trash-o"></i>删除群组</a>
+        </div>
+        <div class="btn-group">
+            <a id="NG-send" authorize="yes" class="btn btn-primary" onclick="btn_send()"><i class="fa fa-mail-reply"></i>发送短信</a>
+        </div>
+        <div class="btn-group">
+            <a id="NG-import" authorize="yes" class="btn btn-primary" onclick="btn_inset()"><i class="fa fa-inbox"></i>批量导入成员</a>
+        </div>
+        <div class="btn-group">
+            <button id="btn_InfoInsert" type="button" class="btn btn-primary " onclick="btn_InfoInset()">导入营销数据</button>
+        </div>
+        <div class="toolbar">
+            <script>$('.toolbar').authorizeButton()</script>
+        </div>
+    </div>
+</div>
+<div class="gridPanel">
+    <table id="gridList"></table>
+</div>

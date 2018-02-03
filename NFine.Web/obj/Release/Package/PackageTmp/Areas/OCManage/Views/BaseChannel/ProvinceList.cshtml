@@ -1,0 +1,193 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<style>
+     .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+            color: #555;
+            cursor: default;
+            background: none;
+            border: none;
+            border-bottom-color: transparent;
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 24px;
+        }
+</style>
+<script>
+    var F_Id = $.request("keyvalue");
+ 
+   $(function () {
+       getProvinceName();
+   });
+
+    //复选框全选功能
+   $(function () {
+       $("#checkAll").click(function () {
+           $('input[name="subBox"]').attr("checked", this.checked);
+       });
+       var subBox = $("input[name='subBox']");
+       subBox.click(function () {
+           console.log(subBox);
+           $("#checkAll").attr("checked", $subBox.length == $("input[name='subBox']:checked").length ? true : false);
+       });
+   });
+
+    //前台提交按钮方法
+   function submitForm() {
+       batchSubmitForm();
+   }
+
+    //批量提交表单
+    function batchSubmitForm() {
+        if (window.confirm('确定提交？')) { 
+            var taskList = {};
+            var j = 0;
+            var i = 0;
+            var array = $("#form2").serializeArray();//产生对象数组 
+            //将待添加数据加入对象数组taskList
+            //console.log(array);
+            while (i < array.length) {
+                j = i / 3;
+                taskList["[" + j + "].F_ProvinceName"] = array[i].value;
+                if (array[i + 1].value != "") { taskList["[" + j + "].F_ChannelId"] = array[i + 1].value;}
+                else { taskList["[" + j + "].F_ChannelId"] = 0;}
+                taskList["[" + j + "].F_ProvinceId"] = array[i + 2].value;
+                i = i + 3;
+                j++;
+                //alert(j + taskList[j].F_ProvinceId);//测试数据
+            }
+            $.submitForm({
+                url: "/OCManage/BaseChannel/submitEditProvinceForm?keyValue=" + F_Id,
+                param: taskList,
+                success: function () {
+                    $.currentWindow().$("#gridList").trigger("reloadGrid");
+                }
+            })
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    //roll出省份名，以及对应的下拉框
+    function getProvinceName() {       
+            $.ajax({
+                url: "/OCManage/BaseChannel/GetProvinceName",
+                data: { keyValue: F_Id },
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    //roll省份进table
+                    for (var o in data) {
+                        //判断是否有通道转换
+                        if (data[o].F_SwitchChannelId == data[o].F_ChannelId || data[o].F_SwitchChannelId == 0) {
+                            addToTable(data[o].F_ProvinceName, data[o].F_ProvinceId, data[o].F_ChannelId);
+                        }
+                        else {
+                            addToTable(data[o].F_ProvinceName, data[o].F_ProvinceId, data[o].F_SwitchChannelId);
+                        }
+                    }                   
+                }
+            });       
+    }
+
+    //页面表格数据添加，扩展
+    function addToTable(ProvinceName, ProvinceId, ChannelId) {
+        //console.log(ProvinceId);//debug时候查看值
+
+        if (ChannelId == 0) {
+            var ChannelName = "此省份暂无通道";
+            $("#table1").append(
+                 "<tr>"
+                 + "<td style='width:20%;text-align:center'><input id=\"subBoxId" + ProvinceId + "\" name=\"subBox\" value=\"" + ProvinceId + "\" type=\"checkbox\"/></td>"
+                 + "<td style='width:25%'><input id=\"F_ProvinceName\" name=\"F_ProvinceName\" style=\"width: 120px;\" type=\"text\" class=\"form-control required\" value=\"" + ProvinceName + "\" readonly=\"readonly\" /></td>"
+                 + "<td style='width:25%'><select id=\"F_ChannelId" + ProvinceId + "\" name=\"F_ChannelId" + ProvinceId + "\" class=\"form-control\" style=\"width: 240px;\"><option value=\"\">" + ChannelName + "_" + ChannelId + "</option></select></td>"
+                 + "<td style='width:25%'><input id=\"F_ProvinceId\" name=\"F_ProvinceId\" style=\"display:none;\" type=\"text\" class=\"form-control required\" value=\"" + ProvinceId + "\" readonly=\"readonly\" /></td>"
+                 + "</tr>"
+                 );
+        }
+        else
+        {
+            var ChannelName = getFullName(ChannelId);
+            $("#table1").append(
+                 "<tr>"
+                 + "<td style='width:20%;text-align:center'><input id=\"subBoxId" + ProvinceId + "\" name=\"subBox\" value=\"" + ProvinceId + "\" type=\"checkbox\"/></td>"
+                 + "<td><input id=\"F_ProvinceName\" name=\"F_ProvinceName\" style=\"width: 120px;\" type=\"text\" class=\"form-control required\" value=\"" + ProvinceName + "\" readonly=\"readonly\" /></td>"
+                 + "<td style=\"width: 240px;\"><select id=\"F_ChannelId" + ProvinceId + "\" name=\"F_ChannelId" + ProvinceId + "\" class=\"form-control\" style=\"width: 240px;\"><option value=\"\">" + ChannelName + "_" + ChannelId + "</option></select></td>"
+                 + "<td><input id=\"F_ProvinceId\" name=\"F_ProvinceId\" style=\"display:none;\" type=\"text\" class=\"form-control required\" value=\"" + ProvinceId + "\" readonly=\"readonly\" /></td>"
+                 + "</tr>"
+                 );
+        }
+        //给select框赋值，把全部的通道Id作为value传进去。
+        $("#F_ChannelId" + ProvinceId).bindSelect({ url: "/OCManage/BaseChannel/GetTreeSelectJson?keyvalue="+ 0 });
+    }
+
+    function getFullName(ChannelId) {
+        var F_ChannelName = "";
+        var init = function () {
+            $.ajax({
+                url: "/OCManage/BaseChannel/GetChannelName?ChannelId="+ChannelId,
+                data: { ChannelId: ChannelId },
+                datatype: "json",
+                async: false,
+                success: function (data) {
+                    var getdata = JSON.parse(data);
+                    F_ChannelName = getdata[0]["F_ChannelName"];
+                }
+            })
+        }
+        init();
+        return F_ChannelName;
+    }
+   
+    function btn_delete()
+    {
+        var obj = document.getElementsByName('subBox'); //选择所有name="'subBox'"的对象，返回数组 
+        //取到对象数组后，来循环检测是不是被选中 
+        var s = '';
+        for (var i = 0; i < obj.length; i++) {
+            if (obj[i].checked) s += obj[i].value + ','; //如果选中，将value添加到变量s中 
+        }
+        //那么现在来检测s的值就知道选中的复选框的值了 
+        if (s == '')
+            alert('你还没有选择任何省份！')
+        else
+        {
+            var postData = $("form1").formSerialize();
+            postData["F_Id"] = F_Id;
+            postData["ProvinceId"] = s;
+            $.deleteForm({
+                url: "/OCManage/BaseChannel/DeleteProvince",
+                param: postData,
+                success: function () {
+                    $.currentWindow().$("#form2").reload();
+                }
+            })
+        }
+    }
+</script>
+
+ <form id="form1" style="display"></form>
+<form id="form2">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#"></a></li>
+    </ul>
+    <table id="table1" class="form">
+        <tr>
+            <th style="text-align:center"><input id="checkAll" type="checkbox" />&nbsp;全选</th>
+            <th class="formTitle2">省份</th>
+            <th class="formTitle2">通道名称</th>
+            <th class="formTitle2"></th>
+        </tr>
+    </table> 
+<div class="toolbar"  style="float:right;">
+        <div class="btn-group">
+             <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+        </div> 
+    <div class="btn-group">
+        <span style="float:left;"><a id="NU-add" authorize="yes" class="btn btn-primary dropdown-text" onclick="btn_delete()"><i class="fa delete-rule"></i>删除选中省份通道</a></span>
+    </div>
+</div>    
+</form>

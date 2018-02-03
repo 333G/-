@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "批量导入";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+@section header{
+    <script src="~/Content/js/jquery-form/jquery.form.js"></script>
+    <script>
+        $(function () {
+            $("#form1").ajaxForm({
+                success: function (data) {
+                    var json = JSON.parse(data);
+                    
+                    $.modalAlert(json.message, json.type);
+                    $.currentWindow().$("#gridList").trigger("reloadGrid");
+                    $.modalClose();
+                },
+                error: function (data) {
+                    var json = JSON.parse(data);
+                    $.modalAlert(json.message, json.type);
+                }
+            });
+        });
+    </script>
+}
+<form id="form1" action="/OCManage/BlackWhiteList/UploadFile" enctype="multipart/form-data" method="post">
+    <div class="ibox">
+        <div class="ibox-content">
+            <ul>
+                <li>目前上传文件只支持xls,xlsx</li>
+                <li>请注意按照模板的格式进行编辑</li>
+                <li>参考模板文档<a href="/Content/resource/blackwhiteTemplate.xlsx" target="_blank" class="label label-warning">下载</a></li>
+            </ul>
+            <div class="row">
+                <div class="col-md-12" style="left:10px">
+                    <input type="file" name="file" class="btn btn-upload" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <input id="ButtonUpload" type="submit" value="导入" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

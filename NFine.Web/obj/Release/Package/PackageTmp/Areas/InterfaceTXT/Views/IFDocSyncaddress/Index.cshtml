@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<script>
+    $(function () {
+        gridList();
+    })
+  
+    function gridList() {
+        var $gridList = $("#gridList");
+        $gridList.dataGrid({
+            url: "/InterfaceTXT/IFDocSyncaddress/GetGridJson",
+            height: $(window).height() - 128,
+            colModel: [
+                { label: '主键', name: 'F_Id', hidden: true },
+                { label: '上行地址', name: 'F_ReAscRptUrl', width: 500, align: 'center' },
+                { label: '状态报告地址', name: 'F_ReStatusRptUrl', width: 500, align: 'center' },
+                {
+                    label: '操作', name: 'm_operate', width: 100, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var retstr = '<a onclick="btn_edit(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">修改</a>&nbsp;&nbsp;';
+                        retstr += '<a onclick="btn_delete(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">删除</a>';
+                        return retstr;
+                    }
+                }
+            ],
+            pager: "#gridPager",
+            sortname: 'F_CreatorTime desc',
+            rownumber: true,
+            multiselect: true,
+            viewrecords: true
+        });
+    }
+
+        function btn_edit(fid) {
+            var keyValue = $("#gridList").jqGridRowValue().F_Id;      //此语法有问题，取不到表格里面勾选的F_id
+            if (fid != undefined)
+                keyValue = fid;
+            $.modalOpen({
+                id: "Form",
+                title: "修改短信模板",
+                url: "/InterfaceTXT/IFDocSyncaddress/Form?keyValue=" + keyValue,
+                width: "700px",
+                height: "510px",
+                callBack: function (iframeId) {
+                    top.frames[iframeId].submitForm();
+                }
+            });
+        }
+
+        //短信提交
+        function submitForm() {
+            if (!$('#form1').formValid()) {
+                return false;
+            }
+            $.submitForm({
+                url: "/InterfaceTXT/IFDocSyncaddress/SubmitForm",
+                param: $("#form1").formSerialize(),
+                success: function (data) {
+                    $.reload();
+                }
+            })
+        }
+    
+</script>
+
+    <div style="margin-left: 10px; margin-right: 10px;">
+        <table class="form">
+            <tr>
+                <th class="formTitle" style="width:30%;">接收上行地址:</th>
+                <td class="formValue" style="width:29em;">
+                    <input id="F_ReAscRptUrl" name="F_ReAscRptUrl" type="text" class="form-control required"  style="width:30em;float:left;" />
+                </td>
+                <td style="padding-left:3em;">用于接收用户的上行信息</td>
+            </tr>
+            <tr>
+                <th class="formTitle" style="width:30%;">接收状态报告地址:</th>
+                <td class="formValue" style="width:29em;">
+                    <input id="F_ReStatusRptUrl" name="F_ReStatusRptUrl" type="text" class="form-control required"  style="width:30em;float:left;" />
+                </td>
+                <td style="padding-left:3em;">用于接收下状态</td>
+            </tr>
+            <tr>
+                <th class="formTitle"></th>
+                <td class="formValue">
+                    <div class="customers-body" style="text-align: left;">
+                        <a href="javascript:void;/" onclick="btn_edit()" class="btn btn-primary" style="margin-right: 8px;padding:5px 20px;">确定修改</a>
+                        <a href="javascript:void;/"  class="btn btn-primary" style="margin-right: 8px;padding:5px 20px;">重新填写</a>
+                    </div>
+                </td>
+            </tr>
+            
+        </table>
+        
+    </div>
+
+

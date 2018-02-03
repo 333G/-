@@ -1,0 +1,578 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<style>
+  .topPanel .search .input-group .btn {
+        padding: 0px 5px;
+        line-height: 27px;
+    }
+
+    .topPanel .search .input-group .form-control {
+        margin-left: 7px;
+    }
+
+    .topPanel .btn-group {
+        margin-left :3px;
+    }
+
+    .cxjl {
+        float: left;
+        font-size: 13px;
+        line-height: 30px;
+        font-weight: bold;
+    }
+</style>
+<script>
+    $(function () {
+        gridList();
+        $("#F_ChannelId").bindSelect({ url: "/OCManage/BaseChannel/GetTreeSelectJson?keyvalue=" + 0 });
+    })
+
+    function gridList() {
+        var $gridList = $("#gridList");
+        $gridList.dataGrid({
+            url: "/OCManage/UserInfo/GetReceiveGridJson",
+            height: $(window).height() - 128,
+            colModel: [
+                { label: '主键', name: 'Id', hidden: true },
+                { label: '签名', name: 'F_Signature', hidden: true },
+                { label: '用户ID', name: 'F_UserId', width: 80, align: 'center' },
+                { label: '用户名', name: 'F_Account', width: 80, align: 'center' },
+                { label: 'ROOTID', name: 'F_RootId', width: 80, align: 'center' },
+                { label: '业务ID', name: 'F_ManagerId', width: 80, align: 'center' },
+                { label: '已发', name: 'F_SendedNum', width: 100, align: 'center' },
+                { label: '余额', name: 'F_Balance', width: 100, align: 'center' },
+                {
+                    label: '审核', name: 'F_Reviewed', width: 100, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var retstr = "无";
+                        if (cellvalue == 1)
+                            retstr = "条条需审";
+                        else if (cellvalue > 1)
+                            retstr = cellvalue + "条需审";
+                        return retstr;
+                    }
+                },
+                {
+                    label: '状态', name: 'F_State', width: 60, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        if (cellvalue == "正常") {
+                            return '<span class=\"label label-success\">' + cellvalue + '</span>';
+                        } else {
+                            return '<span class=\"label label-default\">' + cellvalue + '</span>';
+                        }
+                    }
+                },
+                {
+                    label: '计费', name: 'Charging', width: 60, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        return '按提交';
+                    }
+                },
+                //{ label: '月租', name: 'monthpay', width: 60, align: 'center' },
+                {
+                    label: '匹配', name: 'Matching', width: 60, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        return '80';
+                    }
+                },
+                {
+                    label: '备注', name: 'F_Description', width: 240, align: 'left',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var retstr = '创建时间字段 待定' + '<a onclick="btn_checkCRM(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">查看CRM</a>&nbsp;&nbsp;';
+                        retstr += '<a onclick="btn_editCRM(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">修改CRM</a>&nbsp;&nbsp;' + '<br>';
+                        retstr += cellvalue + '<br>';
+                        retstr += '<a onclick="btn_balanceReminder(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">余额是否提醒</a>:&nbsp;' + GetBalanceReminder(rowObject["F_UserId"]) + '<br>';
+                        retstr += '<a onclick="btn_messageNumForm(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">每手机24小时内最多接收短信</a>:&nbsp;' + GetMessageNum(rowObject["F_UserId"]) + '<br>';
+                        retstr += '签名:&nbsp;' + GetSignature(rowObject["F_UserId"]);
+                        return retstr;
+                    }
+                    
+                },
+                {
+                    label: '操作', name: 'm_operate', width: 100, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var retstr = '<a onclick="btn_edit(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">修改资料</a>&nbsp;&nbsp;';
+                        retstr += '<a onclick="btn_review(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">审核</a>&nbsp;&nbsp;<br>';
+                        retstr += '<a onclick="btn_repassword(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">修改密码</a>&nbsp;&nbsp;';
+                        retstr += '<a onclick="btn_charge(\'' + rowObject["F_UserId"] + '\')" style="cursor:pointer">充值</a>&nbsp;&nbsp;<br>';
+
+                        //如果是祖宗用户，可以添加通道,否则不添加
+                        if (rowObject["F_RootId"] == rowObject["F_UserId"]) {
+                            retstr += '<a onclick="btn_addGroupChannel(\'' + rowObject["F_UserId"] + '\')" style="cursor:pointer">添加通道</a>&nbsp;&nbsp;';
+                        }
+                        return retstr;
+                    }
+                }
+
+            ],
+            pager: "#gridPager",
+            sortname: 'F_CreatorTime desc',
+            rownumber: true,
+            multiselect: true,
+            multiboxonly: true,
+            beforeSelectRow: beforeSelectRow,//js方法
+            viewrecords: true,
+            subGrid: true,
+           
+            // define the icons in subgrid
+            subGridOptions: {
+                //按钮样式，待定
+                //"plusicon": "ui-icon-triangle-1-e",
+                //"minusicon": "ui-icon-triangle-1-s",
+                //"openicon": "ui-icon-arrowreturn-1-e",
+                //不重新加载
+                "reloadOnExpand": false,
+                //加载后自动展开所有数据
+               // "expandOnLoad": true
+            },
+            subGridRowExpanded: function (subgrid_id, row_id) {
+                var subgrid_table_id, pager_id;
+                subgrid_table_id = subgrid_id + "_t";
+                var keyvalue = $gridList.getRowData(row_id);//取出当前行的F_UserId，用于取出通道
+                pager_id = "P_" + subgrid_table_id;
+                $("#" + subgrid_id).html("<table id='" + subgrid_table_id + "' class='scroll'></table><div id='" + pager_id + "' class='scroll'></div>");
+                $("#" + subgrid_table_id).dataGrid({
+                    url: "/OCManage/UserChannl/GetChannel?keyvalue=" + keyvalue["F_RootId"],//通过RootId继承通道
+                    dataType: "json",
+                    //colNames: ['通道名', '通道类型', '移动通道', '联通通道', '电信通道', '小灵通通道', '单价', '发送率', '成功率', '优先级', '其他'],
+                    colModel: [
+                        { label:"主键", name: "F_ID", hidden: true},
+                        { label: "通道名", name: "F_ChannelName", align: 'center', width: 130 },
+                        { label: "通道类型", name: "F_ChannelType", align: 'center', width: 80 },
+                        { label: "移动通道", name: "F_MobileChannel", align: 'center', width: 80 },
+                        { label: "联通通道", name: "F_UnicomChannel", align: 'center', width: 80 },
+                        { label: "电信通道", name: "F_TelecomChannel", align: 'center', width: 80 },
+                        { label: "小灵通通道", name: "F_ChannelXLT", align: 'center', width: 80 },
+                        { label: "行业类型", name: "F_TradeType", align: 'center', width: 80 },
+                        { label: "单价", name: "F_ChannelPrice", align: 'center', width: 50 },
+                        { label: "发送率", name: "F_SendRate", align: 'center', width: 50 },
+                        { label: "成功率", name: "F_SuccessRate", align: 'center', width: 50 },
+                        { label: "优先级", name: "F_Priority", align: 'center', width: 50 },
+                        { label: "其他", name: "F_UserMark", align: 'center', width: 100 },
+                        {
+                            label: '操作', name: 'm_operate', width: 100, align: 'center',
+                            formatter: function (cellvalue, options, rowObject) {
+                                var retstr = '<a onclick="btn_editGroupChannel(\'' + rowObject["F_ID"] + '\')" style="cursor:pointer">修改</a>&nbsp;&nbsp;';
+                                retstr += '<a onclick="btn_deleteGroupChannel(\'' + rowObject["F_ID"] + '\')" style="cursor:pointer">删除</a>&nbsp;&nbsp;<br>';
+                                return retstr;
+                            }
+                        }
+                    ],
+                    //pager: pager_id,
+                    height: '100%',
+                    //"expandOnLoad": true
+                })
+                $("#" + subgrid_table_id).dataGrid('navGrid', "#" + pager_id, { edit: false, add: false, del: false })
+            }
+
+
+        });
+
+        function GetSignature(UserId) {
+            var Signature = "";
+            $.ajax({
+                url: "/SystemManage/User/GetUserSignature?UserId=" + UserId,
+                data: { UserId: UserId },
+                dataType: "text",
+                async: true,
+                success: function (data) {
+                    Signature = data;
+                }
+            });
+            return Signature;
+        }
+        //根据F_UserId取余额是否提醒
+        function GetBalanceReminder(UserId) {
+            var BalanceReminder = "";
+            $.ajax({
+                url: "/SystemManage/User/GetUserBalanceReminder?UserId=" + UserId,
+                data: { UserId: UserId },
+                dataType: "text",
+                async: true,
+                success: function (data) {
+                    BalanceReminder = data;
+                }
+            });
+            return BalanceReminder;
+        }
+        //根据F_UserId取日最多接收短信数
+        function GetMessageNum(UserId) {
+            var MessageNum = "";
+            $.ajax({
+                url: "/OCManage/UserInfo/GetUserMessageNum?UserId=" + UserId,
+                data: { UserId: UserId },
+                dataType: "text",
+                async: true,
+                success: function (data) {
+                    MessageNum = data;
+                }
+            });
+            return MessageNum;
+        }
+        $("#btn_search").click(function () {
+            //查询参数 部分待定
+            var queryJson = {
+                F_UserId: $("#F_UserId").val(),
+                F_RootId: $("#F_RootId").val(),
+                keyword: $("#txt_keyword").val(),
+                F_BalanceMin: $("#F_BalanceMin").val(),
+                F_BalanceMax: $("#F_BalanceMax").val(),
+                carrieroperator: $("#carrieroperator").val(),
+                F_ChannelId: $("#F_ChannelId").val(),
+                F_Reviewed: $("#F_Reviewed").val(),
+                F_State: $("#F_State").val(),
+                signature: $("#signature").val()
+            }
+            $gridList.jqGrid('setGridParam', {
+                postData: { queryJson: JSON.stringify(queryJson) },
+            }).trigger('reloadGrid');
+        });
+    }
+
+    function beforeSelectRow() {
+        $("#jqgridId").jqGrid('resetSelection');
+        return (true);
+    }
+
+    //查看CRM，内容待定
+    function btn_details() {
+        var keyValue = $("#gridList").jqGridRowValue().F_Id;
+        $.modalOpen({
+            id: "Details",
+            title: "查看用户",
+            url: "/TXLManage/PheInfo/Details?keyValue=" + keyValue,
+            width: "700px",
+            height: "550px",
+            btn: null,
+        });
+    }
+
+    //修改短信条数限制
+    function btn_messageNumForm(fid) {
+        var keyValue = $("#gridList").jqGridRowValue().F_Id;
+        if (fid != undefined)
+            keyValue = fid;
+        $.modalOpen({
+            id: "Details",
+            title: "短信数信息",
+            url: "/OCManage/UserInfo/EditMessageNumForm?keyValue=" + keyValue,
+            width: "500px",
+            height: "300px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    //修改短信余额是否提醒
+    function btn_balanceReminder(fid) {
+        var keyValue = "";
+        keyValue = fid;
+        $.submitForm({
+            url: "/OCManage/UserInfo/BalanceReminder",
+            param: { keyValue: keyValue },
+            success: function () {
+                $.currentWindow().$("#gridList").resetSelection();
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+
+    //添加通道
+    function btn_addGroupChannel(fid) {
+        var keyValue = $("#gridList").jqGridRowValue().F_UserId;
+        if (fid != undefined)
+            keyValue = fid;
+        $.modalOpen({
+            id: "AddPasswayForm",
+            title: "添加通道",
+            url: "/OCManage/UserChannl/Form?keyValue=" + keyValue,
+            width: "700px",
+            height: "750px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    //修改通道
+    function btn_editGroupChannel(fid) {
+        var keyValue = $("#gridList").jqGridRowValue().F_ID;
+        if (fid != undefined)
+            keyValue = fid;
+        $.modalOpen({
+            id: "AddPasswayForm",
+            title: "修改通道",
+            //url: "/OCManage/UserChannl/Form?keyValue=" + keyValue,
+            url: "/OCManage/UserChannl/editChannelForm?keyValue=" + keyValue,
+            width: "700px",
+            height: "750px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+
+    function btn_edit(fid) {
+        var keyValue = $("#gridList").jqGridRowValue().F_Id;
+        if (fid != undefined)
+            keyValue = fid;
+        $.modalOpen({
+            id: "Form",
+            title: "修改用户信息",
+            url: "/OCManage/UserInfo/Form?keyValue=" + keyValue,
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+
+    //修改密码
+    function btn_repassword(fid) {
+        var keyValue = $("#gridList").jqGridRowValue().F_Id;
+        if (fid != undefined)
+            keyValue = fid;
+        var keyValue = "";
+        keyValue = fid;
+        $.modalOpen({
+            id: "ChangePasswordForm",
+            title: "修改密码",
+            url: "/OCManage/UserInfo/ChangePasswordForm?UserId=" + keyValue,
+            param: { keyValue: keyValue },
+            width: "700px",
+            height: "570px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+
+    function btn_charge(fid) {
+        var keyValue = $("#gridList").jqGridRowValue().F_Id;
+        if (fid != undefined)
+            keyValue = fid;
+        $.modalOpen({
+            id: "Form",
+            title: "充值",
+            url: "/OCManage/RechargeRecord/Form?keyValue=" + keyValue,
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+
+    //审核 功能：状态改为正常
+    function btn_review(fid) {
+        var keyValue = "";
+        keyValue = fid;
+        $.submitForm({
+            url: "/OCManage/UserInfo/Review",
+            param: { keyValue: keyValue },
+            success: function () { //刷新
+                $.currentWindow().$("#gridList").resetSelection();
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+    //删除组合通道
+    function btn_deleteGroupChannel(fid) {
+        var keyValue = rtn_grilid();
+        if (fid != undefined)
+            keyValue = fid;
+        $.deleteForm({
+            url: "/OCManage/UserChannl/DeleteForm",
+            param: { keyValue: keyValue },
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+
+    //批量删除
+    function btn_delete() {
+        var keyValue = rtn_grilid();
+        $.deleteForm({
+            url: "/OCManage/UserInfo/DeleteForm",
+            param: { keyValue: keyValue },
+            success: function () {
+                $.currentWindow().$("#gridList").resetSelection();
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+
+    //批量转移
+    function btn_batchMove() {
+        var keyValue = rtn_grilid();//批量获取UserId
+        if (keyValue == "") {
+            alert("请选择需要转移的用户!");
+            return false
+        }
+        $.modalOpen({
+            id: "ChangeForm",
+            title: "绑定业务员",
+            url: "/OCManage/UserInfo/ChangeManagerIdForm?keyValue=" + keyValue,
+            width: "200px",
+            height: "310px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+
+    //批量绑定通道
+    function btn_bind() {
+        var keyValue = rtn_grilid();
+        $.modalOpen({
+            id: "BindForm",
+            title: "绑定通道",
+            url: "/OCManage/UserInfo/BindChannelForm?keyValue=" + keyValue,
+            width: "700px",
+            height: "750px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    //返回多选的记录F_UserId
+    function rtn_grilid() {
+        var selarrrow = $("#gridList").jqGrid('getGridParam', 'selarrrow'); //取得多选行号
+        var keyValue = "";
+        var ret;
+        //取得多选项目的F_UserId
+        selarrrow.forEach(function (e) {
+            ret = $("#gridList").jqGrid('getRowData', e);
+            keyValue += ret.F_UserId + ",";
+        })
+        keyValue = keyValue.substr(0, keyValue.length - 1);//去掉最后一位字符
+        return keyValue;
+    }
+    function btn_add() {
+        $.modalOpen({
+            id: "AddForm",
+            title: "新增角色",
+            url: "/OCManage/UserInfo/AddForm",
+            width: "700px",
+            height: "570px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+
+    //roll出通道，添加到对应的选择区
+    function getChannel(Id) {
+        //var Id = rowObject["F_UserId"];
+        if (Id == null)
+            return "没有啊";
+        $.ajax({
+            url: "/OCManage/UserChannl/GetChannel",
+            data: { keyvalue: Id },
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                //rollChannel进页面
+                //alert(JSON.stringify(data));
+                var resultstr = "";
+                if (data.length == 0) {
+                    for (var o in data) {
+                        var ChannelName = data[o].F_ChannelName;
+                        var ChannelPrice = data[o].F_ChannelPrice;
+                        var F_ID = data[o].F_ID;
+                        resultstr += addToTable(ChannelName, ChannelPrice, F_ID);
+                    }
+                    return resultstr;
+                }
+                else
+                    return "此用户没有用户通道!";
+            }
+        });
+    }
+
+</script>
+<div class="topPanel">
+    <div class="search">
+        <table>
+            <tr>
+                <td>
+                    <div class="input-group">
+                        <input id="F_UserId" type="text" class="form-control" placeholder="用户ID" style="width: 82px;">
+                        <input id="F_RootId" type="text" class="form-control" placeholder="祖宗Id" style="width: 82px;">
+                        <input id="txt_keyword" type="text" class="form-control" placeholder="关键字" style="width: 115px;">
+                        <input id="F_BalanceMin" type="number" class="form-control" placeholder="余额最小值" style="width: 82px;">
+                        <input id="F_BalanceMax" type="number" class="form-control" placeholder="余额最大值" style="width: 82px;">
+                        <select id="carrieroperator" name="carrieroperator" class="form-control" style="width: 90px;">
+                            <option value="">运营商</option>
+                            <option value="1">移动</option>
+                            <option value="2">联通</option>
+                            <option value="3">电信</option>
+                            <option value="4">小灵通</option>
+                        </select>
+                        <select id="F_ChannelId" name="F_ChannelId" class="form-control" style="width: 130px;">
+                            <option value="">全部通道</option>
+                        </select>
+                        @*</div>
+                            <div class="input-group">*@
+                        <select id="F_Reviewed" name="F_Reviewed" class="form-control" style="width: 82px;">
+                            <option value="">审核</option>
+                            <option value="600">600条须审</option>
+                            <option value="300">300条须审</option>
+                            <option value="100">100条须审</option>
+                            <option value="50">50条须审</option>
+                            <option value="10">10条须审</option>
+                            <option value="2">2条须审</option>
+                            <option value="1">条条须审</option>
+                            <option value="0">无</option>
+                        </select>
+                        <select id="F_State" name="F_State" class="form-control" style="width: 82px;">
+                            <option value="">状态</option>
+                            <option value="暂停">暂停</option>
+                            <option value="正常">正常</option>
+                        </select>
+                        <select id="signature" name="signature" class="form-control" style="width: 82px;">
+                            <option value="">签名</option>
+                            <option value="无签名">无签名</option>
+                            <option value="有签名">有签名</option>
+                        </select>
+                        @*<span class="input-group-btn" style="float:left;">
+                            <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i></button>
+                        </span>*@
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+    <div class="topPanel">
+        <div class="search">
+            <div class="btn-group">
+                <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i>查询</button>
+                <i></i>
+            </div>
+            <div class="btn-group">
+                <button id="btn_add" type="button" class="btn btn-primary dropdown-text" onclick="btn_add()"><i class="fa fa-plus"></i>新建普通用户</button>
+            </div>
+            <div class="btn-group">
+                <button id="btn_delete" type="button" class="btn btn-primary " onclick="btn_delete()">删除选中</button>
+            </div>
+            <div class="btn-group">
+                <button id="btn_batchMove" type="button" class="btn btn-primary " onclick="btn_batchMove()">批量转移</button>
+            </div>
+            <div class="btn-group">
+                <button id="btn_bind" type="button" class="btn btn-primary " onclick="btn_bind()">绑定通道</button>
+            </div>
+            <div class="btn-group">
+                <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+            </div>
+
+            <script>$('.toolbar').authorizeButton()</script>
+        </div>
+    </div>
+    <div class="gridPanel" id="gridPanel">
+        <table id="gridList"></table>
+        <div id="gridPager"></div>
+    </div>

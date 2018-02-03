@@ -1,0 +1,204 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+
+<style>
+
+.fl{
+    width:200px;
+    height:30px;
+    position:relative;
+    border:1px solid #000000;
+}
+.btn btn-primary{
+    line-height:12px;
+}
+.topPanel .search .input-group .btn{
+    padding:0px 3px;
+}
+
+</style>
+<script>
+    //======================================================================================================= <收件箱>
+    $(function () {
+        gridList();
+    })
+
+
+
+  
+
+    function gridList() {
+        var $gridList = $("#gridList");
+        $gridList.dataGrid({
+            url: "/SiteMailManage/SiteMail/GetReceiveGridJson",
+            height: $(window).height() - 128,
+            colModel: [
+                { label: '主键', name: 'F_Id', hidden: false },
+                { label: '消息内容', name: 'F_Message', width: 200, align: 'center' },
+                  { label: '发送时间', name: 'F_CreatorTime', width: 200, align: 'center' },
+                  { label: '发件人', name: 'F_SendName', width: 200, align: 'center' },
+                  { label: '收件人', name: 'F_ReceiveName', width: 200, align: 'center' },
+                  {
+                      label: '状态', name: 'F_Statue', width: 150, align: 'center',
+                      formatter: function (cellvalue, options, rowObject) {
+                          console.log(cellvalue);
+                          if (cellvalue=="True")
+                              return '<span class=\"label label-success\">已读</span>';
+                          return '<span class=\"label label-default\">未读</span>';
+                      }
+                  },
+                {
+                    label: '操作', name: 'm_operate', width: 100, align: 'left',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var retstr = '<a onclick="btn_reply(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">回复</a>&nbsp;&nbsp;';
+                        retstr += '<a onclick="btn_delete(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">删除</a>';
+                        return retstr;
+                    }
+                }
+            ],
+            pager: "#gridPager",
+            sortname: 'F_CreatorTime desc',
+            rownumber: true,
+            multiselect: true,
+            viewrecords: true
+        });
+
+        $("#btn_search").click(function () {
+            //查询参数
+            var queryJson = {
+                sel: $("#sel").val()
+            }
+            var newData = [];
+            var gridData = $("#gridList").datagrid('getData');//获取当前grid的所有数据
+            for (var i = 0; i < gridData.total; i++) {
+                if (gridData[i].F_Statue) {
+                    newData.push(gridData[i]);
+                }
+
+            }
+            $("#gridList").datagrid('loadData', newData);
+            /*
+            $gridList.jqGrid('setGridParam', {
+                postData: { queryJson: JSON.stringify(queryJson) },
+            }).trigger('reloadGrid');
+            */
+        });
+        
+    }
+    function btn_reply(fid) {
+        var keyValue = $("#gridList").jqGridRowValue().F_Id;
+        if (fid != undefined)
+            keyValue = fid;
+        $.modalOpen({
+            id: "Form",
+            title: "回复信息",
+            url: "/SiteMailManage/SiteMail/ReplyForm?keyValue=" + keyValue,
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+ 
+
+    //删除对应F_Id的数据 
+    function btn_delete(fid) {
+        var keyValue = rtn_grilid();
+        if (fid != undefined)
+            keyValue = fid;
+        $.deleteForm({
+            url: "/SiteMailManage/SiteMail/DeleteForm",
+            param: { keyValue: keyValue },
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+    //标记对应F_Id的短信为已读 
+    function btn_read(fid) {
+        var keyValue = rtn_grilid();
+        if (fid != undefined)
+            keyValue = fid;
+        $.submitForm({
+            url: "/SiteMailManage/SiteMail/MarkRead",
+            param: { keyValue: keyValue },
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+    //标记对应F_Id的短信为未读 
+    function btn_notRead(fid) {
+        var keyValue = rtn_grilid();
+        if (fid != undefined)
+            keyValue = fid;
+        $.submitForm({
+            url: "/SiteMailManage/SiteMail/MarkNotRead",
+            param: { keyValue: keyValue },
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+
+    //返回多选的记录id字符串 ,以‘，’为分隔符
+    function rtn_grilid() {
+        var selarrrow = $("#gridList").jqGrid('getGridParam', 'selarrrow'); //取得多选行号
+        var keyValue = "";
+        var ret;
+        //取得多选项目的F_Id
+        selarrrow.forEach(function (e) {
+            ret = $("#gridList").jqGrid('getRowData', e);
+            keyValue += ret.F_Id + ",";
+        })
+        keyValue = keyValue.substr(0, keyValue.length - 1);//去掉最后一位字符
+        return keyValue;
+    } 
+
+</script>
+<iframe id="HideFrm" style="display: none"></iframe>
+<div class="topPanel">
+    <div class="toolbar">
+        <div class="btn-group">
+            <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+        </div> 
+        <div class="operate">
+            <ul class="nav nav-pills">
+                <li><a id="NU-delete" onclick="btn_delete()"><i class="fa fa-trash-o"></i>删除消息</a></li>
+                <li><a id="NU-read" onclick="btn_read()">标志已读</a></li>
+                <li><a id="NU-notRead" onclick="btn_notRead()">标志未读</a></li> 
+                <li><a href="/SiteMailManage/SiteMail/SendMailForm">发送信息</a></li>
+            </ul>
+            <a href="javascript:;" class="close"></a>
+        </div>
+        <script>$('.toolbar').authorizeButton()</script>
+    </div> 
+
+    <div class="search">
+        <table>
+            <tr>
+                <td>
+                    <div class="input-group" style="width: 300px;">
+                        <select id="sel" name="carrieroperator" class="form-control" style="width: 200px;">
+                            <option value="0">全部</option>
+                            <option value="1">已读</option>
+                            <option value="2">未读</option>
+                            <option value="3">系统</option>
+                            <option value="4">非系统</option>
+                        </select>
+                        <span class="input-group-btn">
+                            <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div> 
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="gridPanel" id="gridPanel">
+    <table id="gridList"></table>
+    <div id="gridPager"></div>
+</div>

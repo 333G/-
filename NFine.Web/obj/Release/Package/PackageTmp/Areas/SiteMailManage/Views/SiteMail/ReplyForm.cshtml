@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<script>
+  
+     var keyValue = $.request("keyValue"); //获取传递数据keyValue 
+     var F_ReceiveId;
+
+     $(function () {  
+        if (!!keyValue) {
+            //alert(keyValue);
+            $.ajax({
+                url: "/SiteMailManage/SiteMail/GetReplyJson",
+                data: { keyValue: keyValue },
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    // alert(data.F_Id);
+                    F_ReceiveId = data.ReceiveId;//收件人F_Id
+                    alert("收件人ID"+F_ReceiveId);
+
+                    //F_MessageID = data.F_MessageID;
+                    $("#form1").formSerialize(data);
+                }
+            });
+        }
+
+    });
+  
+  function submitForm() {
+         if (!$('#form1').formValid()) {
+             return false;
+         }
+         keyValue = F_ReceiveId;
+         $.submitForm({
+             url: "/SiteMailManage/SiteMail/SubmitForm?keyValue=" + keyValue,
+             param: $("#form1").formSerialize(),
+             success: function () {
+                 $.currentWindow().$("#gridList").trigger("reloadGrid");
+             }
+         })
+     }
+
+</script>
+<form id="form1">
+    <div style="padding-top: 20px; margin-right: 20px;">
+        <table class="form">
+            <tr>
+              
+                <th class="formTitle" valign="top" style="padding-top: 5px;">  收件人：  </th>
+                <td class="formValue"> 
+                 <input id="ReceiveName" name="ReceiveName" type="text"  >  
+                </td> 
+            </tr>
+            <tr>
+                <th class="formTitle" valign="top" style="padding-top: 5px;">  收件内容：  </th>
+                <td class="formValue">
+                    <textarea id="ReceiveMessage" name="ReceiveMessage"  class="form-control" style="height: 60px;"></textarea>
+                </td> 
+            </tr>
+            <tr>
+                <th class="formTitle" valign="top" style="padding-top: 5px;">  回复内容：  </th>
+                <td class="formValue">
+                    <textarea id="F_Message" name="F_Message" class="form-control" style="height: 60px;"></textarea>
+                </td>
+            </tr> 
+        </table>
+    </div>
+</form>

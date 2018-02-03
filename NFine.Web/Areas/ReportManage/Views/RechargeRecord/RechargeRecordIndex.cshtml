@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "RechargeRecordIndex";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+
+<script>
+    $(function () {
+        gridList();
+    })
+
+    function gridList() {
+        var $gridList = $("#gridList");
+        $gridList.dataGrid({
+            //url: "/OCManage/SendDateDetail/GetReceiveGridJson",
+            url: "/ReportManage/RechargeRecord/GetGridJson",
+            height: $(window).height() - 128,
+            colModel: [
+                { label: '主键', name: 'F_Id', hidden: true },
+                { label: '用户ID', name: 'F_UserId', width: 70, align: 'center' },
+                //{ label: '账户', name: 'F_Account', width: 75, align: 'center' },
+                //{ label: '价格', name: 'F_Price', width: 80, align: 'center' },
+                //{ label: '业务员ID', name: 'F_ManagerId', width: 80, align: 'center' },
+                { label: '操作员ID', name: 'F_OperatorId', width: 80, align: 'center' },
+                { label: '充值金额', name: 'F_ShowCash', width: 80, align: 'center' },
+                //{ label: '实际金额', name: 'F_TrueCash', width: 80, align: 'center' },
+                { label: '日期', name: 'F_CreatorTime', width: 120, align: 'center' },
+                {
+                    label: '充值前', name: 'F_RechargeStar', width: 80, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                            var retstr = GetUserBalance(rowObject["F_UserId"]);
+                        return retstr;
+                    }
+                },
+                { label: '充值后', name: 'F_RechargeOver', width: 80, align: 'center' },
+                { label: '是否付款', name: 'F_State', width: 80, align: 'center' },
+                //{ label: '我们看的备注', name: 'F_ShowDescription', width: 130, align: 'center' },
+                { label: '说明', name: 'F_TrueDescription', width: 150, align: 'center' },             
+            ],
+            pager: "#gridPager",
+            sortname: 'F_Id desc',
+            rownumber: true,
+            multiselect: true,
+            multiboxonly: true,
+            beforeSelectRow: beforeSelectRow,//js方法
+            viewrecords: true
+        });
+
+        $("#btn_search").click(function () {
+            //查询参数，，待定！！
+            var queryJson = {
+                Operator: $("#Operator").val()
+            }
+            $gridList.jqGrid('setGridParam', {
+                postData: { queryJson: JSON.stringify(queryJson) },
+            }).trigger('reloadGrid');
+        });
+    }
+    function beforeSelectRow() {
+        //alert("===");
+        $("#jqgridId").jqGrid('resetSelection');
+        return (true);
+    }
+
+    //根据用户Id取充值前金额
+    function GetUserBalance(UserId) {
+        var userid = "";
+        $.ajax({
+            url: "/ReportManage/RechargeRecord/GetUserF_Balance?UserId=" + UserId,
+            data: { UserId: UserId },
+            dataType: "text",
+            async: false,
+            success: function (data) {
+                userid = data;
+            }
+        });
+        return userid;
+    }
+
+    //返回多选的记录id
+    function rtn_grilid() {
+        var selarrrow = $("#gridList").jqGrid('getGridParam', 'selarrrow'); //取得多选行号
+        var keyValue = "";
+        var ret;
+        //取得多选项目的F_Id
+        selarrrow.forEach(function (e) {
+            ret = $("#gridList").jqGrid('getRowData', e);
+            keyValue += ret.F_Id + ",";
+        })
+        return keyValue;
+    }
+</script>
+<div class="topPanel">
+    <div class="toolbar">
+        <div class="btn-group">
+            <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+        </div>
+    </div>
+    <div class="search">
+        <table>
+            <tr>
+                <td>
+                    <div class="input-group">
+                        @*<input id="F_UserId" name="F_UserId" type="text" class="form-control" placeholder="请输入用户ID" style="width: 80px;" />
+                            <input id="F_PhoneCode" name="F_PhoneCode" type="text" class="form-control" placeholder="请输入手机号" style="width: 180px;" />*@
+                        <select id="Operator" name="Operator" class="form-control" style="width: 150px;float:left;padding-left:10px;">
+                            <option value="">查询所有记录</option>
+                            <option value="0">查询七天内记录</option>
+                            <option value="1">查询七天前记录</option>
+                        </select>
+                        <span class="input-group-btn" style="float:left;">
+                            <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="gridPanel" id="gridPanel">
+    <table id="gridList"></table>
+    <div id="gridPager"></div>
+</div>

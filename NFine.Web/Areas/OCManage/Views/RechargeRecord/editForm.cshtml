@@ -1,0 +1,113 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+<script>
+    var keyValue = $.request("keyValue");
+    $(function () {
+        if (!!keyValue) {
+            $.ajax({
+                url: "/OCManage/RechargeRecord/GetFormJson",
+                data: { keyValue: keyValue },
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    $("#form1").formSerialize(data);
+                }
+            });
+        }
+
+    });
+
+    function submitForm() {
+        if (!$('#form1').formValid()) {
+            return false;
+        }
+        $.submitForm({
+            url: "/OCManage/RechargeRecord/SubmitForm?keyValue=" + keyValue,
+            param: $("#form1").formSerialize(),
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+
+</script>
+<form id="form1">
+    <div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#">基本信息</a></li>
+        </ul>
+        <div style="padding-top: 20px; margin-right: 30px;">
+            <table class="form">
+                <tr>
+                    <th class="formTitle">用户ID：</th>
+                    <td class="formValue">
+                        <input id="F_UserId" name="F_UserId" type="text" class="form-control required" readonly="readonly" placeholder="请输入用户ID" />
+                    </td>
+                    <th class="formTitle">账户：</th>
+                    <td class="formValue">
+                        <input id="F_Account" name="F_Account" type="text" class="form-control required" readonly="readonly" placeholder="请输入密码" />
+                    </td>
+                    <th class="formTitle">价格：</th>
+                    <td class="formValue">
+                        <input id="F_Price" name="F_Price" type="text" class="form-control required" placeholder="请输入价格" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <th class="formTitle">业务员ID：</th>
+                    <td class="formValue">
+                        <input id="F_ManagerId" name="F_ManagerId" type="text" class="form-control required" readonly="readonly" placeholder="请输入业务员ID" />
+                    </td>
+                    <th class="formTitle">操作员ID：</th>
+                    <td class="formValue">
+                        <input id="F_OperatorId" name="F_OperatorId" type="text" class="form-control required" readonly="readonly" placeholder="请输入操作员ID" />
+                    </td>
+                    <th class="formTitle">显示金额：</th>
+                    <td class="formValue">
+                        <input id="F_ShowCash" name="F_ShowCash" type="text" class="form-control required" readonly="readonly" placeholder="请输入显示金额" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <th class="formTitle">实际金额：</th>
+                    <td class="formValue">
+                        <input id="F_TrueCash" name="F_TrueCash" type="text" class="form-control required" readonly="readonly" placeholder="请输入实际金额" />
+                    </td>
+                    <th class="formTitle">充值前：</th>
+                    <td class="formValue">
+                        <input id="F_RechargeStar" name="F_RechargeStar" type="number" class="form-control required" readonly="readonly" placeholder="充值前" />
+                    </td>
+                    <th class="formTitle">充值后：</th>
+                    <td class="formValue">
+                        <input id="F_RechargeOver" name="F_RechargeOver" type="number" class="form-control required" readonly="readonly" placeholder="充值后" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <th class="formTitle">充值状态：</th>
+                    <td class="formValue">
+                        <select id="F_State" name="F_State" class="form-control">
+                            <option value="已付款">已付款</option>
+                            <option value="未付款">未付款</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">我们看的备注：</th>
+                    <td class="formValue">
+                        <textarea id="F_ShowDescription" name="F_ShowDescription" class="form-control required" style="height: 100px;width: 550px"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">用户看的备注：</th>
+                    <td class="formValue">
+                        <textarea id="F_TrueDescription" name="F_TrueDescription" class="form-control required" style="height: 100px;width: 550px"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</form>

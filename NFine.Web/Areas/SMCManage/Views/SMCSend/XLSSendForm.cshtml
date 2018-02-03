@@ -1,0 +1,190 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+@section header{
+    <script src="~/Content/js/jquery-form/jquery.form.js"></script>
+    <script>
+        var Id = "@NFine.Code.OperatorProvider.Provider.GetCurrent().Id";
+        $(function () {
+            //取用户签名
+            GetCUserInfoDataJson();
+            //获取通道并且在页面自增
+            getChannel();
+        })
+        //取用户签名,可获取用户表任意字段的值
+        function GetCUserInfoDataJson() {
+            $.ajax({
+                url: "/ClientsData/GetCUserInfoDataJson",
+                data: { fieldname: "F_Signature" },
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    var signature = "【" + data[0].value + "】";//标记
+                    var snum = signature.length;//标记字数
+                    $("#F_Signature").html(signature);
+                    $("#zfsid").html(snum + " ");
+                }
+            });
+        }
+
+
+
+        $(function () {
+            $("#form1").ajaxForm({
+                success: function (data) {
+                    var json = JSON.parse(data);
+                    $.modalAlert(json.message, json.type);
+                    $("#form1").resetForm();    //重置form表单
+                    $.reload();
+                },
+                error: function (data) {
+                    var json = JSON.parse(data);
+                    $.modalAlert(json.message, json.type);
+                }
+            });
+
+        });
+        //function change() {
+        //    if (!document.getElementById("Is_Timer").checked)
+        //        $("#F_SendTime").show();
+        //    else {
+        //        $("#F_SendTime").hide();
+        //        $("#F_SendTime").value = "";
+        //    }
+        //}
+        function change() {
+            if (!document.getElementById("F_IsTimer").checked)
+                $("#F_SendTime").show();
+            else {
+                $("#F_SendTime").hide();
+                $("#F_SendTime").value = "";
+            }
+        }
+
+        //roll出通道，添加到对应的选择区
+        function getChannel() {
+            $.ajax({
+                url: "/OCManage/UserChannl/GetChannel",
+                data: { keyvalue: Id },
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    //rollChannel进页面
+                    if (data != "") {
+                        for (var o in data) {
+                            var ChannelName = data[o].F_ChannelName;
+                            var UserMark = data[o].F_UserMark;
+                            var F_ID = data[o].F_ID;
+                            addToTable(ChannelName, UserMark, F_ID);
+                        }
+                    }
+                    else {
+                        NoneToTable();
+                    }
+                }
+            });
+        }
+
+        //页面表格数据(选择通道)添加，扩展
+        function addToTable(ChannelName, UserMark, F_ID) {
+            //console.log(ProvinceId);//debug时候查看值
+            $("#table1").append(
+                 "<tr>"
+                 + "<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>"
+                 //存通道Id
+                 + "<td class=\"formValue\"> <div class=\"radio\"><input id=\"F_GroupChannelId\" name=\"F_GroupChannelId\"  type=\"radio\" value= \"" + F_ID + "\"><label for=\"F_GroupChannelId\">" + ChannelName + "\</label>&nbsp;&nbsp;<span>【" + UserMark + "】</span></div></td>"
+                 + "</tr>"
+                 );
+        }
+        function NoneToTable() {
+            $("#table1").append(
+                "<tr>"
+                 + "<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;没有可用通道，请联系管理员！</td>"
+                 + "</tr>"
+                 );
+        }
+    </script>
+}
+<form id="form1" action="/SMCManage/SMCSend/UploadFile" enctype="multipart/form-data" method="post">
+    <div style="margin-left:10px; margin-right:10px;">
+        <table class="form">
+            <tr>
+                <th class="formTitle">文件模板</th>
+                <td class="formValue">
+                    <div style="padding:5px" id="showFileName">
+                        <span>
+                            功能说明：批量对<strong>不同的手机号</strong>发送<strong>不同的短信内容</strong>(每次限发1000条)<br />
+                            <br /><a href="/Content/resource/XLSSSendTemplate2003.xls" target="_blank" class="label label-warning">
+                                点击下载excel2003模板
+                            </a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/Content/resource/XLSSSendTemplate2007.xls" target="_blank" class="label label-warning">点击下载excel2007模板</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="/Content/resource/XLSSSendTemplate.csv" target="_blank" class="label label-warning">点击下载CSV模板</a>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">选择文件</th>
+                <td class="formValue">
+                    <div class="col-md-12">
+                        <input id="file" type="file" name="file" class="btn btn-upload" />
+                        (上传的文件的格式为.xls、.xlsx、.csv格式）
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">发送时间</th>
+                <td class="formValue">
+                    <div class="ckbox">
+                        @*<input id="Is_Timer" name="Is_Timer" type="checkbox" /><label for="Is_Timer" onclick="change()">定时发送（默认即时发送）</label>*@
+                        <input id="F_IsTimer" name="F_IsTimer" type="checkbox" /><label for="F_IsTimer" onclick="change()">定时发送（默认即时发送）</label>
+                     </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle"></th>
+                <td class="formValue">
+                    <div class="formValue">
+                        <input id="F_SendTime" name="F_SendTime" type="text" class="form-control input-wdatepicker required" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd HH:mm:ss', minDate: '%y-%M-%d-%H-%m-%s' })" style="width: 200px; display:none" />
+                    </div>
+                </td>
+            </tr>
+            <!--
+            <tr>
+                <th class="formTitle">发送时间</th>
+                <td class="formValue">
+                    <input id="F_SendTime" name="F_SendTime" type="text" class="form-control input-wdatepicker required" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd HH:mm:ss', startDate: '%y-%M-%d-%H-%m-%s', minDate: '%y-%M-%d-%H-%m-%s' })" style="width: 200px;" />
+                </td>
+            </tr>
+                -->
+            @*<tr>
+                    <th class="formTitle">发送通道</th>
+                    <td class="formValue">
+                        <div class="rdio"><input id="F_SendChannl" name="F_SendChannl" type="radio" checked><label for="F_SendChannl">全网通道</label>&nbsp;&nbsp;<span>【单价10.00分，通道正常，无时间限制，该通道发送之前请一定先测试能否收到】</span></div>
+                    </td>
+                </tr>*@
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+        <table id="table1" class="form">
+            <tr>
+                <th class="formTitle">发送通道</th>
+            </tr>
+        </table>
+
+        <div class="mail-body" style="text-align: center ;">
+            <input id="ButtonUpload" type="submit" value="直接发送" class="btn btn-primary" style="position:absolute;top:90%;left:50%;" />
+            <!--
+                <a onclick="submitForm()" class="btn btn-primary" style="margin-right: 5px;">直接发送</a>
+            -->
+            @*<a href="javascript:void()" class="btn btn-warning">预览效果</a>*@
+        </div>
+        <div>
+            注意事项:<br />
+            一、本功能主要为不同的手机号发送不同的内容；<br />
+            二、请上传excel格式文件，A列为手机号码，B列为短信内容，请参照模版说明<br />
+            三、短信内容不得包含涉嫌诈骗、色情、反动、政治等非法字眼的词组，否则将可能造成您的短信无法正常发送。 <br />
+        </div>
+    </div>
+</form>

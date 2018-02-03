@@ -1,0 +1,165 @@
+﻿@{
+    ViewBag.Title = "通讯录选择";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<script>
+    $(function () {
+        var userid = "@NFine.Code.OperatorProvider.Provider.GetCurrent().UserId";//取得userid
+        $("#GroupId").bindSelect({
+            url: "/TXLManage/PheGrup/GetTreeGroupJson"
+        });
+        gridList();
+    })
+    //根据组编号取得组名
+
+    $(function () {
+        $("#Province").bindSelect({ url: "/SystemManage/Area/GetProvinceJson" });
+        gridList();
+    })
+    //根据编号取得省份名
+
+    function getFullName(Province) {
+        var F_FullName = "";
+        var init = function () {
+            $.ajax({
+                url: "/SystemManage/Area/GetProvinceDataJson",
+                data: { keyValue: Province },
+                datatype: "json",
+                async: false,
+                success: function (data) {
+                    var jsondata = JSON.parse(data); //这里传来的是json字符串，所以还要再转成json。这里的值是不对的。
+                    F_FullName = jsondata["ProGrup"]["FullName"];
+                }
+            })
+        }
+        init();
+        return F_FullName;
+    }
+
+    function getgrupname(groupid) {
+        var GroupName = "";
+        var init = function () {
+            $.ajax({
+                url: "/TXLManage/PheGrup/GetPheGrupDataJson",
+                data: { keyValue: groupid },
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    //alert(JSON.stringify(data));
+                    GroupName = data["PheGrup"]["GroupName"];
+                }
+            });
+        }
+        init();
+        return GroupName;
+    }
+
+    function gridList() {
+        var $gridList = $("#gridList");
+        $gridList.dataGrid({
+            url: "/TXLManage/PheInfo/GetGridJson",
+            height: $(window).height() - 128,
+            colModel: [
+                { label: '主键', name: 'F_Id', hidden: true },
+                { label: '手机', name: 'Mobile', width: 100, align: 'center' },
+                {
+                    label: '组名', name: 'GroupId', width: 80, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var grupname = getgrupname(cellvalue);//转为组名
+                        return grupname;
+                    }
+                },
+                { label: '姓名', name: 'Name', width: 80, align: 'center' },
+                {
+                    label: '省', name: 'Province', width: 60, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var F_FullName = getFullName(cellvalue);//转为省份名
+                        return F_FullName;
+                    }
+                },
+                { label: '市', name: 'City', width: 60, align: 'center' },
+                { label: '运营商', name: 'Operator', width: 60, align: 'center' }
+            ],
+            pager: "#gridPager",
+            sortname: 'F_CreatorTime desc',
+            rownumber: true,
+            multiselect: true,
+            multiboxonly: true,
+            beforeSelectRow: beforeSelectRow,//js方法
+            viewrecords: true
+        });
+
+        $("#btn_search").click(function () {
+            //查询参数
+            var queryJson = {
+                GroupId:$("#GroupId").val(), //分组ID
+                Sex: $("#Sex").val(),   //性别
+                SF:$("#Province").val(),//省份
+                Operator: $("#Operator").val(), //运营商
+                State: $("#F_StateId").val(),   //状态
+                keyword: $("#txt_keyword").val()    //关键词
+            }
+            $gridList.jqGrid('setGridParam', {
+                postData: { queryJson: JSON.stringify(queryJson) },
+            }).trigger('reloadGrid');
+        });
+    }
+
+    function beforeSelectRow() {
+        //alert("===");
+        $("#jqgridId").jqGrid('resetSelection');
+        return (true);
+    }
+</script>
+<div class="topPanel">
+    <div class="toolbar">
+        <div class="btn-group">
+            <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+        </div>
+    </div>
+    <div class="search">
+        <table>
+            <tr>
+                <td>
+                    <div class="input-group">
+                        <select id="GroupId" name="GroupId" class="form-control required" style="width: 90px;">
+                            <option value="">请选择分组</option>
+                        </select>
+                        <input id="txt_keyword" type="text" class="form-control" placeholder="请输入姓名或电话" style="width: 100px;">
+
+                        <select id="Sex" name="Sex" class="form-control required" style="width: 45px;">
+                            <option value="">性别</option>
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                        </select>
+
+                       
+
+                        <select id="Province" name="Province" class="form-control required" style="width: 70px;">
+                            <option value="">省份</option>
+                        </select>
+                        <select id="F_StateId" name="F_StateId" class="form-control" style="width: 90px;">
+                            <option value="">手机状态</option>
+                            <option value="1">正常</option>
+                            <option value="0">未知</option>
+                        </select>
+                        <select id="Operator" name="Operator" class="form-control" style="width: 90px;">
+                            <option value="">号码类型</option>
+                            <option value="移动">移动</option>
+                            <option value="联通">联通</option>
+                            <option value="电信">电信</option>
+                        </select>
+                        <span class="input-group-btn">
+                            <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i></button>
+                        </span>
+
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="gridPanel" id="gridPanel">
+    <table id="gridList"></table>
+    <div id="gridPager"></div>
+</div>

@@ -1,0 +1,109 @@
+2017/4/9 11:48:30
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"118"}]
+2017/4/9 11:49:53
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sys_User
+select F_Id, Id,F_Account,F_Depth
+                                from Sys_User 
+                                where F_IsAdministrator = 0 and F_Id=@F_Id 参数：[{"key":"@F_Id","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"}]
+2017/4/9 11:52:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sys_User
+select F_Id, Id,F_Account,F_Depth
+                                from Sys_User 
+                                where F_IsAdministrator = 0 and F_Id=@F_Id 参数：[{"key":"@F_Id","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"}]
+2017/4/9 11:52:43
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sys_User
+select F_Id, Id,F_Account,F_Depth
+                                from Sys_User 
+                                where F_IsAdministrator = 0 and F_Id=@F_Id 参数：[{"key":"@F_Id","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"}]
+2017/4/9 11:54:07
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sys_User
+select F_Id, Id,F_Account,F_Depth
+                                from Sys_User 
+                                where F_IsAdministrator = 0 and F_Id=@F_Id 参数：[{"key":"@F_Id","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"}]
+2017/4/9 11:56:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sys_User
+select F_Id, Id,F_Account,F_Depth
+                                from Sys_User 
+                                where F_IsAdministrator = 0 and F_Id=@F_Id 参数：[{"key":"@F_Id","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"}]
+2017/4/9 11:56:44
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sys_User
+select F_Id, Id,F_Account,F_Depth
+                                from Sys_User 
+                                where F_IsAdministrator = 0 and F_Id=@F_Id 参数：[{"key":"@F_Id","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"}]
+2017/4/9 12:01:55
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sys_User
+select F_Id, Id,F_Account,F_Depth
+                                from Sys_User 
+                                where F_IsAdministrator = 0 and F_Id=@F_Id 参数：[{"key":"@F_Id","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"}]
+2017/4/9 12:08:39
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sys_User
+select F_Id, Id,F_Account,F_Depth
+                                from Sys_User 
+                                where F_IsAdministrator = 0 and F_Id=@F_Id 参数：[{"key":"@F_Id","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"}]
+2017/4/9 12:11:47
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sys_User
+select F_Id, Id,F_Account,F_Depth
+                                from Sys_User 
+                                where F_IsAdministrator = 0 and F_Id=@F_Id 参数：[{"key":"@F_Id","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"}]
+2017/4/9 12:12:05
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sys_User
+select F_Id, Id,F_Account,F_Depth
+                                from Sys_User 
+                                where F_IsAdministrator = 0 and F_Id=@F_Id 参数：[{"key":"@F_Id","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"}]
+2017/4/9 12:15:48
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sys_User
+select F_Id, Id,F_Account,F_Depth
+                                from Sys_User 
+                                where F_IsAdministrator = 0 and F_Id=@F_Id 参数：[{"key":"@F_Id","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"}]
+2017/4/9 12:18:26
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sys_User
+select F_Id, Id,F_Account,F_Depth
+                                from Sys_User 
+                                where F_IsAdministrator = 0 and F_Id=@F_Id 参数：[{"key":"@F_Id","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"}]
+2017/4/9 12:22:16
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--Sys_User
+select F_Id, Id,F_Account,F_Depth
+                                from Sys_User 
+                                where F_IsAdministrator = 0 and F_Id=@F_Id 参数：[{"key":"@F_Id","value":"9f2ec079-7d0f-4fe2-90ab-8b09a8302aba"}]

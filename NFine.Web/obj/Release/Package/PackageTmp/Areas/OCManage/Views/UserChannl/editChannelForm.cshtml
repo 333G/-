@@ -1,0 +1,160 @@
+﻿@{
+    ViewBag.Title = "editChannelForm";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+<script>
+    var keyValue = $.request("keyValue");
+
+    $(function () {
+        $("#F_MobileChannel").bindSelect({ url: "/OCManage/BaseChannel/GetTreeSelectJson?keyvalue=" + 1 });//移动
+        $("#F_UnicomChannel").bindSelect({ url: "/OCManage/BaseChannel/GetTreeSelectJson?keyvalue=" + 2 });//联通
+        $("#F_TelecomChannel").bindSelect({ url: "/OCManage/BaseChannel/GetTreeSelectJson?keyvalue=" + 3 });//电信
+        $("#F_ChannelXLT").bindSelect({ url: "/OCManage/BaseChannel/GetTreeSelectJson?keyvalue=" + 3 });//小灵通
+        initControl();
+        if (!!keyValue) {
+            $.ajax({
+                url: "/OCManage/UserChannl/GetFormJson",
+                data: {keyValue:keyValue },
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    $("#form1").formSerialize(data);
+                }
+            });
+        }
+
+    });
+
+
+    function initControl() {
+        $("#F_UserId").val(keyValue);
+        $("#F_ManagerId").bindSelect({
+            url: "/SystemManage/User/GetSalesJson"
+        });
+    }
+
+    function submitForm() {
+      //  alert($("#form1").formSerialize());
+        if (!$('#form1').formValid()) {
+            return false;
+        }
+        $.submitForm({
+            url: "/OCManage/UserChannl/SubmitGropuChannelForm?keyValue=" + keyValue,
+            param: $("#form1").formSerialize(),
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+
+</script>
+<form id="form1">
+    <div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#">基本信息</a></li>
+        </ul>
+        <div style="padding-top: 20px; margin-right: 30px;">
+            <table class="form">
+                <tr>
+                    <th class="formTitle">用户ID：</th>
+                    <td class="formValue">
+                        <input id="F_UserId" name="F_UserId" type="text" class="form-control required" readonly />
+                    </td>
+                    <th class="formTitle">通道类别：</th>
+                    <td class="formValue">
+                        <input id="F_ChannelType" name="F_ChannelType" type="text" class="form-control required" value="短信" readonly />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">通道名称：</th>
+                    <td class="formValue">
+                        <input id="F_ChannelName" name="F_ChannelName" type="text" class="form-control required" placeholder="通道名称" />
+                    </td>
+                    <th class="formTitle">通道价格：</th>
+                    <td class="formValue">
+                        <input id="F_ChannelPrice" name="F_ChannelPrice" type="number" class="form-control required" placeholder="30" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">移动通道ID：</th>
+                    <td class="formValue">
+                        <select id="F_MobileChannel" name="F_ChannelMobile" class="form-control">
+                            <option value="">==请选择==</option>
+                        </select>
+                    </td>
+                    <th class="formTitle">联通通道ID：</th>
+                    <td class="formValue">
+                        <select id="F_UnicomChannel" name="F_ChannelUnicom" class="form-control">
+                            <option value="">==请选择==</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">电信通道ID：</th>
+                    <td class="formValue">
+                        <select id="F_TelecomChannel" name="F_ChannelTelecom" class="form-control">
+                            <option value="">==请选择==</option>
+                        </select>
+                    </td>
+                    <th class="formTitle">小灵通通道ID：</th>
+                    <td class="formValue">
+                        <select id="F_ChannelXLT" name="F_ChannelXLT" class="form-control">
+                            <option value="">==请选择==</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">发送率：</th>
+                    <td class="formValue">
+                        <input id="F_SendRate" name="F_SendRate" type="text" class="form-control required" placeholder="发送率" />
+                    </td>
+                    <th class="formTitle">成功率：</th>
+                    <td class="formValue">
+                        <input id="F_SuccessRate" name="F_SuccessRate" type="text" class="form-control required" placeholder="成功率" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">优先级：</th>
+                    <td class="formValue">
+                        <input id="F_Priority" name="F_Priority" type="number" class="form-control required" placeholder="80" />
+                    </td>
+                    <th class="formTitle">是否是隐藏通道：</th>
+                    <td class="formValue">
+                        <select id="F_State" name="F_State" class="form-control">
+                            <option value="1">显示</option>
+                            <option value="0">隐藏</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">行业类型：</th>
+                    <td class="formValue">
+                        <select id="F_TradeType" name="F_TradeType" class="form-control">
+                            <option value="">==请选择==</option>
+                            <option value="1">行业</option>
+                            <option value="2">短信</option>
+                            <option value="3">验证码</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle" valign="top" style="padding-top: 5px;">
+                        管理员备注：
+                    </th>
+                    <td class="formValue" colspan="3">
+                        <textarea id="F_AdminMark" name="F_AdminMark" class="form-control" style="height: 60px;"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle" valign="top" style="padding-top: 5px;">
+                        用户备注：
+                    </th>
+                    <td class="formValue" colspan="3">
+                        <textarea id="F_UserMark" name="F_UserMark" class="form-control" style="height: 60px;"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,1417 @@
+2017/5/14 13:02:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"262"}]
+2017/5/14 13:02:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"262"}]
+2017/5/14 13:03:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"253a6dd7-4087-4e6c-829a-a12a4b80d994"}]
+2017/5/14 13:03:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"253a6dd7-4087-4e6c-829a-a12a4b80d994"}]
+2017/5/14 13:03:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"bce166df-9a56-4aed-bd42-1063db4b6acf"}]
+2017/5/14 13:03:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"b9544d5c-f31b-45c8-a07a-ec334fb38ee5"}]
+2017/5/14 13:03:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"bce166df-9a56-4aed-bd42-1063db4b6acf"}]
+2017/5/14 13:03:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"b9544d5c-f31b-45c8-a07a-ec334fb38ee5"}]
+2017/5/14 13:03:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"253a6dd7-4087-4e6c-829a-a12a4b80d994"}]
+2017/5/14 13:03:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"253a6dd7-4087-4e6c-829a-a12a4b80d994"}]
+2017/5/14 13:03:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"253a6dd7-4087-4e6c-829a-a12a4b80d994"}]
+2017/5/14 13:03:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"253a6dd7-4087-4e6c-829a-a12a4b80d994"}]
+2017/5/14 13:03:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"253a6dd7-4087-4e6c-829a-a12a4b80d994"}]
+2017/5/14 13:03:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"253a6dd7-4087-4e6c-829a-a12a4b80d994"}]
+2017/5/14 13:03:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"253a6dd7-4087-4e6c-829a-a12a4b80d994"}]
+2017/5/14 13:03:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"253a6dd7-4087-4e6c-829a-a12a4b80d994"}]
+2017/5/14 13:03:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:19
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"253a6dd7-4087-4e6c-829a-a12a4b80d994"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"253a6dd7-4087-4e6c-829a-a12a4b80d994"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"253a6dd7-4087-4e6c-829a-a12a4b80d994"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"253a6dd7-4087-4e6c-829a-a12a4b80d994"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:21
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:21
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:21
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:21
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"12bedb42-ca7a-4d28-a335-f2f575a1f701"}]
+2017/5/14 13:03:21
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"419c1d36-4ee3-43fb-9f41-22da59fa842b"}]
+2017/5/14 13:03:21
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"12bedb42-ca7a-4d28-a335-f2f575a1f701"}]
+2017/5/14 13:03:21
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"419c1d36-4ee3-43fb-9f41-22da59fa842b"}]
+2017/5/14 13:03:21
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"12bedb42-ca7a-4d28-a335-f2f575a1f701"}]
+2017/5/14 13:03:21
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"419c1d36-4ee3-43fb-9f41-22da59fa842b"}]
+2017/5/14 13:03:21
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_Id]  = @F_Id101)     参数：[{"key":"@F_Id101","value":"12bedb42-ca7a-4d28-a335-f2f575a1f701"}]
+2017/5/14 13:03:21
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:03:29
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [Sev_SendDateDetail]   WHERE 1=1    参数：
+2017/5/14 13:03:29
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_Id desc ) FROM [Sev_SendDateDetail]   WHERE 1=1   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/5/14 13:03:31
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--OC_GroupChannel
+select * from OC_GroupChannel 参数：
+2017/5/14 13:03:31
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [Sev_SendDateDetail]   WHERE 1=1    参数：
+2017/5/14 13:03:31
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_Id desc ) FROM [Sev_SendDateDetail]   WHERE 1=1   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/5/14 13:03:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:03:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:03:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:03:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:03:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:03:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"419c1d36-4ee3-43fb-9f41-22da59fa842b"}]
+2017/5/14 13:03:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"419c1d36-4ee3-43fb-9f41-22da59fa842b"}]
+2017/5/14 13:03:34
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:03:35
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"419c1d36-4ee3-43fb-9f41-22da59fa842b"}]
+2017/5/14 13:03:35
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"419c1d36-4ee3-43fb-9f41-22da59fa842b"}]
+2017/5/14 13:03:35
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:03:35
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:03:35
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:03:35
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:03:35
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:03:35
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:03:35
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:03:35
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:03:35
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:03:35
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:03:36
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:03:36
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:03:36
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:03:36
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:03:36
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:03:36
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:04:23
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:06:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:09:02
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:10:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:10:36
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:11:29
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:11:37
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:11:51
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:12:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"2"}]
+2017/5/14 13:14:46
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"2"}]
+2017/5/14 13:15:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"2"}]
+2017/5/14 13:15:17
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"2"}]
+2017/5/14 13:16:29
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"2"}]
+2017/5/14 13:16:55
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"2"}]
+2017/5/14 13:17:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:20:55
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:21:07
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:22:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:22:27
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"262"}]
+2017/5/14 13:22:27
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"262"}]
+2017/5/14 13:23:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"266"}]
+2017/5/14 13:23:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"266"}]
+2017/5/14 13:23:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"266"}]
+2017/5/14 13:23:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"257"}]
+2017/5/14 13:23:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"257"}]
+2017/5/14 13:23:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"257"}]
+2017/5/14 13:23:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"256"}]
+2017/5/14 13:23:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"256"}]
+2017/5/14 13:23:01
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"256"}]
+2017/5/14 13:23:02
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--OC_GroupChannel
+select * from OC_GroupChannel 参数：
+2017/5/14 13:23:02
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [Sev_SendDateDetail]   WHERE 1=1    参数：
+2017/5/14 13:23:02
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT * FROM ( SELECT * ,row_index=ROW_NUMBER() OVER(ORDER BY F_Id desc ) FROM [Sev_SendDateDetail]   WHERE 1=1   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/5/14 13:23:02
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:02
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:02
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:02
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:02
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:02
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:02
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:02
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:02
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:03
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"}]
+2017/5/14 13:23:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:23:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:23:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:23:05
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:23:05
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"419c1d36-4ee3-43fb-9f41-22da59fa842b"}]
+2017/5/14 13:23:05
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"419c1d36-4ee3-43fb-9f41-22da59fa842b"}]
+2017/5/14 13:23:05
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:23:05
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"419c1d36-4ee3-43fb-9f41-22da59fa842b"}]
+2017/5/14 13:23:05
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"419c1d36-4ee3-43fb-9f41-22da59fa842b"}]
+2017/5/14 13:23:05
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:23:05
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:23:05
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:23:05
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:23:05
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:23:05
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:23:06
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:23:06
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:23:06
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:23:06
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:23:06
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:23:06
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:23:06
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:23:06
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:23:06
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:23:06
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_ID]  = @F_ID101)     参数：[{"key":"@F_ID101","value":"9f606c76-fba3-4e0e-bda2-f089fd5b24ed"}]
+2017/5/14 13:23:14
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"256"}]
+2017/5/14 13:23:14
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_GroupChannel]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"256"}]
+2017/5/14 13:23:26
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:24:04
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:25:51
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:26:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:30:50
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:31:30
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:32:09
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:32:36
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:37:53
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:40:48
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:41:20
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:41:58
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:42:45
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:43:07
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:45:37
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:46:14
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:47:10
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:47:56
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]
+2017/5/14 13:50:21
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sev_SendDateDetail]   WHERE 1=1  AND ( ( (1=1)  AND   ([F_ChannelId]  = @F_ChannelId101)  )  AND   ([F_Report]  = @F_Report102)  )    参数：[{"key":"@F_ChannelId101","value":"106a36e3-67d7-4e39-81fa-b212b29e7a72"},{"key":"@F_Report102","value":"0"}]

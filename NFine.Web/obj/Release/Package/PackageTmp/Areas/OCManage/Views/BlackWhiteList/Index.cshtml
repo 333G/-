@@ -1,0 +1,203 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+
+<style>
+    .topPanel, .search, .input-group, .form-control{
+        margin-left:7px;
+    }
+    .topPanel, .search{
+        margin-left:-7px;
+    }
+</style>
+
+<script>
+    $(function () {
+        gridList();
+    })
+
+    function gridList() {
+        var $gridList = $("#gridList");
+        $gridList.dataGrid({
+            url: "/OCManage/BlackWhiteList/GetGridJson",
+            height: $(window).height() - 128,
+            colModel: [
+                { label: '主键', name: 'Id', hidden: true },
+                { label: '手机号码', name: 'F_Mobile', width: 200, align: 'center' },
+                {
+                    label: '类型', name: 'F_Sign', width: 180, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var grupname = cellvalue;
+                        if (cellvalue == true)
+                            cellvalue = "黑名单";
+                        else cellvalue = "白名单";
+                        return cellvalue;
+                    }
+                },
+                { label: '级别', name: 'F_Level', width: 180, align: 'center' },
+                { label: '创建时间', name: 'F_CreatorTime', width: 200, align: 'center' },
+                { label: '备注', name: 'F_Description', width: 200, align: 'center' },
+                {
+                    label: '操作', name: 'm_operate', width: 300, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var retstr = '<a onclick="btn_edit(\'' + rowObject["Id"] + '\')" style="cursor:pointer">修改</a>&nbsp;&nbsp;';
+                        retstr += '<a onclick="btn_delete(\'' + rowObject["Id"] + '\')" style="cursor:pointer">删除</a>';
+                        return retstr;
+                    }
+                }
+            ],
+            pager: "#gridPager",
+            sortname: 'F_CreatorTime desc',
+            rownumber: true,
+            multiselect: true,
+            multiboxonly: true,
+            beforeSelectRow: beforeSelectRow,//js方法
+            viewrecords: true
+        });
+
+        $("#btn_search").click(function () {
+            //查询参数
+            var queryJson = {
+                F_Mobile: $("#F_Mobile").val(),
+                F_Sign: $("#F_Sign").val(),
+                F_Level: $("#F_Level").val()
+            }
+            $gridList.jqGrid('setGridParam', {
+                postData: { queryJson: JSON.stringify(queryJson) },
+            }).trigger('reloadGrid');
+        });
+    }
+    function beforeSelectRow() {
+        $("#jqgridId").jqGrid('resetSelection');
+        return (true);
+    }
+    function btn_add() {
+        $.modalOpen({
+            id: "Form",
+            title: "新增黑白名单",
+            url: "/OCManage/BlackWhiteList/Form",
+            width: "700px",
+            height: "450px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    function btn_edit(fid) {
+        var id = $("#gridList").jqGridRowValue().Id;
+        if (fid != undefined)
+            id = fid;
+        $.modalOpen({
+            id: "Form",
+            title: "修改黑白名单",
+            url: "/OCManage/BlackWhiteList/Form?id=" + id,
+            width: "700px",
+            height: "410px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    function btn_delete(fid) {
+        var ids = rtn_grilid();
+        if (fid != undefined)
+            ids = fid;
+        $.deleteForm({
+            url: "/OCManage/BlackWhiteList/DeleteForm",
+            param: { ids: ids },
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+    function btn_details() {
+        var id = $("#gridList").jqGridRowValue().Id;
+        $.modalOpen({
+            id: "Details",
+            title: "查看黑白名单",
+            url: "/OCManage/BlackWhiteList/Details?id=" + id,
+            width: "700px",
+            height: "550px",
+            btn: null,
+        });
+    }
+    //导出
+    function btn_exp() {
+        var F_Mobile = $("#F_Mobile").val();
+        var F_Sign = $("#F_Sign").val();
+        var F_Level = $("#F_Level").val();
+        //查询参数
+        $.download("/OCManage/BlackWhiteList/Export", "F_Mobile=" + F_Mobile + "&F_Sign=" + F_Sign + "&F_Level=" + F_Level, 'post');
+    }
+    //返回多选的记录id
+    function rtn_grilid() {
+        var selarrrow = $("#gridList").jqGrid('getGridParam', 'selarrrow'); //取得多选行号
+        var keyValue = "";
+        var ret;
+        //取得多选项目的F_Id
+        selarrrow.forEach(function (e) {
+            ret = $("#gridList").jqGrid('getRowData', e);
+            keyValue += ret.Id + ",";
+        })
+        return keyValue;
+    }
+    //导入功能实现
+    function ShowImport() {
+        $.modalOpen({
+            id: "Form",
+            title: "导入黑白名单",
+            url: "/OCManage/BlackWhiteList/BatchImport",
+            width: "500px",
+            height: "310px",
+            btn: null
+        });
+    }
+</script>
+<div class="topPanel">
+    <div class="toolbar">
+        <div class="btn-group">
+            <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+        </div>
+        <div class="btn-group">
+            <a id="NU-add" authorize="yes" class="btn btn-primary dropdown-text" onclick="btn_add()"><i class="fa fa-plus"></i>添加黑白名单</a>
+        </div>
+        <div class="btn-group">
+            <a id="NU-import" authorize="yes" class="btn btn-primary" onclick="javascript:ShowImport()"><i class="fa fa-cloud-upload"></i>导入</a>
+        </div>
+        <div class="btn-group">
+            <a id="NU-exp" authorize="yes" class="btn btn-primary" onclick="btn_exp()"><i class="fa fa-cloud-download"></i>导出</a>
+        </div>
+        <div class="operate">
+            <ul class="nav nav-pills">
+                <li><a id="NU-delete" authorize="yes" onclick="btn_delete()"><i class="fa fa-trash-o"></i>删除黑白名单</a></li>
+            </ul>
+            <a href="javascript:;" class="close"></a>
+        </div>
+    </div>
+
+    <div class="search">
+        <table>
+            <tr>
+                <td>
+                    <div class="input-group">
+                        <input id="F_Mobile" type="text" class="form-control" placeholder="请输入手机号码" style="width: 150px;">
+                        <select id="F_Sign" name="F_Sign" class="form-control" style="width: 150px;">
+                            <option value="">请选择名单类型</option>
+                            <option value="true">黑名单</option>
+                            <option value="false">白名单</option>
+                        </select>
+                        <input id="F_Level" name="F_Level" type="text" class="form-control" style="width: 150px;" placeholder="请输入级别" />
+                        <span class="input-group-btn">
+                            <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="gridPanel" id="gridPanel">
+    <table id="gridList"></table>
+    <div id="gridPager"></div>
+</div>

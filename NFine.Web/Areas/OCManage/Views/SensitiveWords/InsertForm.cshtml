@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "InsertForm";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+<script>
+    $(function () {
+        var userid = "@NFine.Code.OperatorProvider.Provider.GetCurrent().UserId";//取得userid
+        $("#F_ChannelId").bindSelect({ url: "/OCManage/SendDateDetail/GetAllChannelJson" });
+    })
+    function Word()
+    {
+        var W = document.getElementById("F_SensitiveWords").value;
+        var Count = 0;
+        var arr = W.split(/;|:|,|，|；| |\r|\n/);
+        var str = "";
+        //alert(W);
+        // alert(arr);
+        for (i = 0; i < arr.length; i++) {
+            str += arr[i] + ",";
+            Count=i;
+        }
+        document.getElementById("F_SensitiveWords").value = arr;
+        $("#sbnum").html(Count);
+    }
+
+
+    function submitForm() {
+        //  alert($("#form1").formSerialize());
+        if (!$('#form1').formValid()) {
+            return false;
+        }
+        $.submitForm({
+            url: "/OCManage/SensitiveWords/InsertForm",
+            param: $("#form1").formSerialize(),
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+
+    function funcTest() {
+        //每隔0.001秒执行一次checkValue方法
+        window.setInterval("checkValue()", 1);
+    }
+    function checkValue() {//选为系统敏感词时，隐藏通道下拉框
+        var channel = document.getElementById("F_ChannelId");
+        if (document.getElementById("F_IsChannelKeyWord").value == 'true')
+            channel.disabled = false;
+            //channel.disabled = false;
+            //else if (document.getElementById("F_IsChannelKeyWord").value == false)
+        else
+            channel.disabled = true;
+    }
+    window.onload = funcTest;
+</script>
+<form id="form1">
+    <div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+        <div style="padding-top: 20px; margin-right: 30px;">
+
+            <table class="form">
+                <tr>
+                    <th class="formTitle">敏感词分类</th>
+                    <td class="formValue">
+                        <div class="ckbox">
+                            <select id="F_IsChannelKeyWord" name="F_IsChannelKeyWord" class="form-control" style="width: 150px;margin-left:6px;">
+                                <option value="">请选择敏感词类别</option>
+                                <option value="false">系统敏感词</option>
+                                <option value="true">通道敏感词</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle"></th>
+                    <td class="formValue">
+                        <div class="formValue">
+                            <select id="F_ChannelId" name="F_ChannelId" class="form-control" style="width: 90px;">
+                                <option value="">全部通道</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">敏感词<span class="text-danger">*</span></th>
+                    <td class="formValue">
+                        <textarea id="F_SensitiveWords" style="resize:none; width:500px; height:230px;" name="F_SensitiveWords" type="text" class="form-control required" placeholder="请输入敏感词，每个敏感词之间用','隔开，并以','结束" onkeyup="Word()"></textarea>
+                        <div style="padding:5px">已输入(<font id="sbnum"></font>)个敏感词</div>
+                     </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</form>
+

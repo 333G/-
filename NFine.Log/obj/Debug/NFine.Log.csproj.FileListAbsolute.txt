@@ -1,0 +1,6 @@
+E:\17_2_20\Project1\NFine.Log\bin\Debug\NFine.Log.dll
+E:\17_2_20\Project1\NFine.Log\bin\Debug\NFine.Log.pdb
+E:\17_2_20\Project1\NFine.Log\bin\Debug\log4net.dll
+E:\17_2_20\Project1\NFine.Log\bin\Debug\log4net.xml
+E:\17_2_20\Project1\NFine.Log\obj\Debug\NFine.Log.dll
+E:\17_2_20\Project1\NFine.Log\obj\Debug\NFine.Log.pdb

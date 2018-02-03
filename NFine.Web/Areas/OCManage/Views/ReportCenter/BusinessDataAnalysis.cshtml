@@ -1,0 +1,162 @@
+﻿@{
+    ViewBag.Title = "BusinessDataAnalysis";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+
+<style>
+    .topPanel .search .input-group .btn {
+        padding: 0px 5px;
+        line-height: 27px;
+    }
+
+    .topPanel .toolbar .operate {
+        height: 50px;
+        margin-left: 7px;
+    }
+
+    .topPanel, .search, .input-group, .form-control {
+        margin-left: 7px;
+    }
+
+    .topPanel, .search {
+        margin-left: -28px;
+    }
+
+    .topPanel {
+        padding-left: 4.7em;
+    }
+
+    .cxjl {
+        float: left;
+        font-size: 13px;
+        line-height: 30px;
+        font-weight: bold;
+    }
+</style>
+<link href="/Content/js/datepicker/skin/WdatePicker.css" rel="stylesheet" />
+<script src="/Content/js/datepicker/WdatePicker.js"></script>
+
+<script>
+    $(function () {
+        var userid = "@NFine.Code.OperatorProvider.Provider.GetCurrent().UserId";//取得userid
+        gridList();
+    })
+    function gridList()
+    {
+        var $gridList = $("#gridList");
+        $gridList.dataGrid({
+            url: "/OCManage/ReportCenter/GetBusinessGridJson",
+            height: $(window).height() - 128,
+            colModel: [
+            { label: '用户Id', name: 'F_UserId', width: 120, align: 'center' },
+            { label: '提交数量', name: 'F_SubmitCount', width: 120, align: 'center' },
+            { label: '发送数量', name: 'F_SendCount', width: 120, align: 'center' },
+            { label: '成功数量', name: 'F_SuccessCount', width: 120, align: 'center' },
+            { label: '失败数量', name: 'F_ErrorCount', width: 120, align: 'center' },
+            { label: '未知数量', name: 'F_UnknownCount', width: 120, align: 'center' },
+            { label: '金额', name: 'F_Cost', width: 120, align: 'center' },
+            { label: '显示金额', name: 'F_ShowCost', width: 120, align: 'center' },
+            { label: '实际金额', name: 'F_RealCost', width: 120, align: 'center' },
+            { label: '返款金额', name: 'F_BackCost', width: 120, align: 'center' },
+            { label: '未支付金额', name: 'F_UnPayCost', width: 120, align: 'center' },
+            { label: '移动', name: 'F_MobileSendCount', width: 120, align: 'center' },
+            { label: '联通', name: 'F_UnicomSendCount', width: 120, align: 'center' },
+            { label: '电信', name: 'F_TelecomSendCount', width: 120, align: 'center' },
+            { label: '通道利润', name: 'F_ChanneProfit', width: 120, align: 'center' },
+            { label: '实际利润', name: 'F_RealProfit', width: 120, align: 'center' },
+
+            ],
+            pager: "#gridPager",
+            sortname: 'F_SendDate desc',
+            rownumber: true,
+            multiselect: true,
+            multiboxonly: false,
+            beforeSelectRow: beforeSelectRow,//js方法
+            viewrecords: true
+        });
+
+        $("#btn_search").click(function () {
+            //查询参数
+            var queryJson = getqueryjson();
+            $gridList.jqGrid('setGridParam', {
+                postData: { queryJson: JSON.stringify(queryJson) },
+            }).trigger('reloadGrid');
+        });
+    }
+    function beforeSelectRow() {
+        //alert("===");
+        $("#jqgridId").jqGrid('resetSelection');
+        return (true);
+    }
+
+    function rtn_grilid() {
+        var selarrrow = $("#gridList").jqGrid('getGridParam', 'selarrrow'); //取得多选行号
+        var keyValue = "";
+        var ret;
+        //取得多选项目的F_Id
+        selarrrow.forEach(function (e) {
+            ret = $("#gridList").jqGrid('getRowData', e);
+            keyValue += ret.F_Id + ",";
+        })
+        return keyValue;
+    }
+
+    function rtn_grilField(fieldname) {                      //取到选择字段值，可多选
+        var selarrrow = $("#gridList").jqGrid('getGridParam', 'selarrrow');//取得多选行号
+        var keyValue = "";
+        var ret;
+        //取得多选项目的Mobile
+        selarrrow.forEach(function (e) {
+            ret = $("#gridList").jqGrid('getRowData', e);
+            keyValue += ret[fieldname] + ",";
+            // alert(keyValue); 能获取到数据
+        })
+        keyValue = keyValue.substr(0, keyValue.length - 1);//去掉最后一位字符
+        return keyValue;
+    }
+
+
+    function getqueryjson() {//获取查询条件
+        var queryJson = {
+            //Operator: $("#Operator").val()
+            F_UserId: $("#F_UserId").val(),  //用户id
+            F_SendTimeStart: $("#F_SendTimeStart").val(),  //手机号
+            F_SendTimeEnd: $("#F_SendTimeEnd").val(),
+        }
+        return queryJson;
+    }
+</script>
+
+<div class="topPanel">
+    <div class="toolbar">
+        <div class="btn-group">
+            <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i>查询</button>
+        </div>
+        <div class="btn-group">
+            <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+        </div>
+    </div>
+    <div class="search">
+        <table>
+            <tr>
+                <td>
+                    <div class="input-group">
+                        <div style="padding-right:2px;float:left;width:4em;line-height:30px;text-align:right;">用户ID:</div>
+                        <input id="F_UserId" name="F_UserId" type="text" class="form-control" placeholder="请输入用户ID" style="width: 81px;" />
+                        <div style="padding-right:2px;float:left;width:4em;line-height:30px;text-align:right;">日期:从</div>
+                        <input id="F_SendTimeStart" name="F_SendTimeStart" type="text" placeholder="请输入日期" class="form-control input-wdatepicker required" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd' })" style="width: 120px;" />
+                        <div style="padding-right:2px;float:left;width:4em;line-height:30px;text-align:right;">到:</div>
+                        <input id="F_SendTimeEnd" name="F_SendTimeEnd" type="text" placeholder="请输入日期" class="form-control input-wdatepicker required" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd' })" style="width: 120px;" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div>
+    <textarea id="UserSubInfo" name="UserSubInfo" style="resize:none;width:99%" readonly >总提交数量： 总发送数量 ：总是被数量： 总未知数量： 总金额：  【充值】： 显示总金额：实际总金额： 返款总金额： 通道利润：0 实际利润：0 未支付显示总金额：0 位支付实际金额：0</textarea>
+</div>
+<div class="gridPanel" id="gridPanel">
+    <table id="gridList"></table>
+    <div id="gridPager"></div>
+</div>

@@ -1,0 +1,148 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+
+}
+<script src="~/Content/js/form/jquery.form.js"></script> 
+<style>
+.listbox{
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    content: '';
+    display: inline-block;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+.choosebox{
+    margin-top:10px;
+}
+.choosebox input{
+    border-radius:4px;
+    padding:0px 4px ;
+    float:left;
+}
+    </style>
+
+<script>
+    var keyValue = $.request("keyValue");
+
+    $(function () {
+        getgrupall();
+    })
+    //取得当前所有
+    function getgrupall() {
+        $.ajax({
+            url: "/SystemManage/User/GetTreeUserJson",
+            // data: { userId: userId },
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                //alert(JSON.stringify(data));
+                //生成html
+                var chkhtml = ['<div><input id="F_SelAll" type="button" onclick="selectAll()" value="全选" />'];
+                chkhtml.push('<input id="F_SelAllNot" type="button" onclick="selectAllNot()"  value="全不选" />');
+                chkhtml.push('<input id="F_SelInvert" type="button" onclick="selectInvert()"  value="反选" /></div>');
+                for (i = 0; i < data.length; i++) {
+                    chkhtml.push('<div class="ckbox"style="height: 20px;width: 80px;"><input id="F_Sel_' + i + '"  name="F_Sel" type="checkbox"  value="' + data[i].id + '"/><label for="F_Sel_' + i + '">' + data[i].text + '</label></div>');
+                }
+                $("#selgroup").html(chkhtml.join(''));
+            }
+        });
+    }
+
+    //全选
+    function selectAll() {
+        var boxes = document.getElementsByName("F_Sel");
+            for (i = 0; i < boxes.length; i++) {
+                boxes[i].checked = true;
+               // boxes[i].attr("checked", "checked");
+            }
+    }
+    //全不选
+    function selectAllNot() {
+        var boxes = document.getElementsByName("F_Sel");
+            for (i = 0; i < boxes.length; i++) {
+                boxes[i].checked = false;
+                //boxes[i].removeAttr("checked");
+        }
+    }
+    //反选
+    function selectInvert() {
+        var boxes = document.getElementsByName("F_Sel");
+            for (i = 0; i < boxes.length; i++) {
+                boxes[i].checked = !boxes[i].checked;
+        }
+    }
+ 
+    //短信提交
+    function submitForm() {
+        if (!$('#form1').formValid()) {
+            return false;
+        }
+        $.loading(true, "正在提交数据...");
+
+        var boxes = document.getElementsByName("F_Sel");
+        keyValue = "";
+        for (i = 0; i < boxes.length; i++) {
+            if (boxes[i].checked == true) {
+                keyValue += boxes[i].value + ",";//收件人fid
+            }
+        }
+        keyValue = keyValue.substr(0, keyValue.length - 1);//去掉最后一位字符 ：',' 
+
+        var formjson = $("#form1").formSerialize();
+        var data = $("#form1").formSerialize2();//此处与framework-ui.js有冲突，所以要改成2,用于取上传附件，后期或许可以再优化下。
+        formjson["data"] = data;
+         
+        var options = {
+            url: "/SiteMailManage/SiteMail/SubmitForm?keyValue=" + keyValue, //后台的处理，也就是form里的action
+            type: "POST",
+            data: formjson,
+            dataType: "json", //数据格式，有XML，html，json，默认为文本
+            success: function (msg) {
+                //msg为接受后台的反馈信息。将他格式化为文本。也许我的代码的问题，后台返回的一直带有HTML标记的文本，所以我将他格式成文本。
+                if (msg.state == "success") {
+                    $.modalMsg(msg.message, msg.state);
+                } else {
+                    $.modalAlert(data.message, data.state);
+                }
+                $.reload();//刷新
+            }
+        };
+        $("#form1").ajaxSubmit(options);
+        return false;//为了防止刷新
+    }
+    
+</script>
+<form id="form1" enctype="multipart/form-data" method="post">
+    <div style="margin-left:10px; margin-right:10px;"> 
+                <table class="form">
+                    <tr>
+                        <th class="formTitle">选择收件人</th>
+                        <td class="formValue" id="selgroup"></td>
+                    </tr>
+                    <tr>
+                        <th class="formTitle">内容</th>
+                        <td class="formValue">
+                            <textarea id="F_Message" name="F_Message" class="form-control required" style="height: 100px;"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="formTitle" style="padding-top:2px;">选择附件</th>
+                        <td>
+                            <div class="choosebox">
+                                <input type="file" name="fileField" id="fileField" size="28" />      <span style="margin-left:10%;float:left">附件允许格式为:gif,jpg,bmp,png,zip,rar,txt,doc,docx,xls,xlsx</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="mail-body" style="text-align: left;padding-left:5%;">
+                    <a href="javascript:void;/" onclick="submitForm()" class="btn btn-primary" style="margin-right: 5px;">发送短消息</a>
+                  
+                </div>
+
+            </div>
+        </form>

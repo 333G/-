@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<script>
+    //keyValue：客户F_Id
+    var customerId = $.request("customerId"); //获取传递数据customerId
+    var recordId = $.request("recordId"); //获取传递数据recordId
+     
+    $(function () {
+        if (!!customerId) {
+            $.ajax({
+                url: "/CRMManage/Customers/GetFormJson",
+                data: { keyValue: customerId },
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    $("#form1").formSerialize(data);
+                }
+            });
+        }
+        if (!!recordId) {
+            $.ajax({
+                url: "/CRMManage/Customers/GetRecordFormJson",
+                data: { keyValue: recordId },
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    $("#form1").formSerialize(data);
+                }
+            });
+        } 
+    });
+    //表单数据提交
+    function submitForm() { 
+        if (!$('#form1').formValid()) {
+            return false;
+        }
+        var json = $("#form1").formSerialize();
+        json["F_CustomeId"] = customerId
+        $.submitForm({
+            url: "/CRMManage/Customers/RecordSubmitForm?keyValue=" + recordId,
+            param: json,
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+
+</script>
+<form id="form1">
+    <div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+        <div style="padding-top: 20px; margin-right: 30px;">
+            <table class="form">
+                <tr>
+                    <th class="formTitle" style="padding-right:8px;">客户信息:</th>
+                    <td class="formValue" style="width:100%;">
+                        <textarea id="F_CustInfo" name="F_CustInfo" class="form-control required"  readOnly="readonly"   style="height: 100px;width: 100%;"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle" style="padding-right:8px;">处理记录:</th>
+                    <td class="formValue" style="width:100%;">
+                        <textarea id="F_Record" name="F_Record" class="form-control required" placeholder="记录可以自己组织语言输入" style="height: 100px;width:100%;"></textarea>
+                    </td>
+                </tr> 
+            </table>
+            
+        </div>
+    </div>
+</form>

@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "DataAnalysisIndex";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+
+<style>
+    .topPanel, .search {
+        height: 75px;
+    }
+
+    .nav-tabs {
+        border-bottom: 1px solid #ddd;
+        margin-top: 40px;
+        width: 96%;
+        margin-left: 20px;
+    }
+
+        .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+            color: #555;
+            cursor: default;
+            background: none;
+            border: none;
+            border-bottom-color: transparent;
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 24px;
+        }
+
+    .form {
+        margin-top: 10px;
+    }
+
+        .form .formTitle {
+            text-align: center;
+        }
+</style>
+<link href="/Content/js/datepicker/skin/WdatePicker.css" rel="stylesheet" />
+<script src="/Content/js/datepicker/WdatePicker.js"></script>
+<div class="topPanel">
+    <div class="search">
+        <table>
+            <tr>
+                <td>
+                    <div class="input-group">
+                        <div style="padding-right:2px;float:left;width:4.5em;line-height:30px;text-align:right;">日期：从</div>
+                        <div style="width:12em;float:left;">
+                            <input id="F_CreatorTimeFrom" name="F_CreatorTimeFrom" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd HH:mm:ss' })" style="float:left;width:12em;" />
+                        </div>
+                        <div style="padding-right:2px;float:left;width:2.5em;line-height:30px;text-align:right;">到</div>
+                        <div style="width:16em;float:left;">
+                            <input id="F_CreatorTimeEnd" name="F_CreatorTimeEnd" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd HH:mm:ss' })" style="float:left;width:12em;" />
+                        </div>
+                        <!--下拉框字段名字待定-->
+                        <select id="F_State" name="F_State" class="form-control" style="width:10em;float:left;">
+                            <option value="">总数据分析</option>
+                            <option value="1">默认组</option>
+                            <option value="2">会员</option>
+                            <option value="3">他他他</option>
+                        </select>
+                        <div style="padding-right:2px;float:left;width:2.5em;line-height:30px;">
+                            <span class="input-group-btn">
+                                <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                        <div style="padding-right:2px;float:left;width:250px;line-height:30px;text-align:right;">
+                            （显示的数据是三天前的数据）
+                            <a id="NU-delete" authorize="yes" onclick="btn_delete()">下载数据</a>
+                        </div>
+
+
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<form id="form1">
+    <div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+        <ul class="nav nav-tabs" style="margin-top:0px;margin-left :50%;">
+            <li class="active"><a href="#">总统数据分析</a></li>
+        </ul>
+        <table class="form">
+            <tr>
+                <td class="formValue" style="width:100%;">
+                    <textarea id="F_CustInfoTemp" name="F_CustInfoTemp" class="form-control required" style="height: 100px;width: 100%;"></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>
+<form id="form2">
+    <div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+        <ul class="nav nav-tabs" style="margin-top:0px;margin-left :50%;">
+            <li class="active"><a href="#">数据成功率分析</a></li>
+        </ul>
+        <table class="form">
+            <tr>
+                <td class="formValue" style="width:100%;">
+                    <textarea id="F_CustInfoTemp" name="F_CustInfoTemp" class="form-control required" style="height: 100px;width: 100%;"></textarea>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</form>

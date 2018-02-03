@@ -1,0 +1,174 @@
+﻿@{
+    ViewBag.Title = "EditForm";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+<script>
+    var keyvalue = $.request("QueryJson");//RootId和UserId均可以，后台会处理的
+    var Arr = new Array();
+    Arr = keyvalue.split(";");//数组是查询条件参数[0]:UserId  [1]:状态  [2]通道ID  [3]电话号码  [4]查询内容  [5]黑白名单  [6]是否扣量 [7]开始时间 [8]结束时间 [9]省份
+    var Id = Arr[0];
+    var senddata = "";
+    $(function () {
+        //获取通道并且在页面自增
+        GetSev_SendDataDetail();
+    })
+
+    //页面表格数据(选择通道)添加，扩展
+    function addToTable(SMC_F_Id) {
+        //console.log(ProvinceId);//debug时候查看值
+        $("#table1").append(
+             "<tr>"
+              + "<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>"
+             //存通道Id
+             + "<td class=\"formValue\"> <select id=\"F_ChannelId" + SMC_F_Id + "\" name=\"F_ChannelId" + SMC_F_Id + "\" class=\"form-control\" style=\"width:8em;float:left;\"><option value=\"\">请选择通道</option></select></td>"
+            // + "<td class=\"formValue\"> <div class=\"radio\"><input id=\"" + SMC_F_Id + "\" name=\"F_GroupChannelName"+ SMC_F_Id +"\"  type=\"radio\" value= \"" + F_ID + "\"><label for=\"F_GroupChannelId\">" + ChannelName + "\</label>&nbsp;&nbsp;<span>【" + UserMark + "】</span></div></td>"
+             + "<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>"
+             + "</tr>"
+             + "<tr style=\"height:40px\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tr>"
+             );
+        $("#F_ChannelId" + SMC_F_Id).bindSelect({ url: "/OCManage/SendDateDetail/GetChannelJson" });
+    }
+
+    function divideChannel(SMC_F_Id) {
+        $("#table1").append(
+            "<tr>"
+             + "<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>"
+             + "<td class=\"formValue\" colspan=\"2\">批次编号:<input readonly style=\"width:320px\" value= \"" + SMC_F_Id + "\"></td>"
+             + "</tr>"
+             );
+    }
+
+    function GetSev_SendDataDetail()
+    {
+        var queryJson = GetqueryJson();
+        $.ajax({
+            url: "/OCManage/SendDateDetail/GetDateDetail",
+            data: { queryJson: JSON.stringify(queryJson) },
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                if (data.state == "error") {
+                    alert("发生错误：" + data.message + ",请联系管理员！");
+                    divideChannel(data.message);
+                }
+                else {
+                    //console.log(JSON.stringify(data));                 
+                    senddata = data;
+                    for (var o in data)
+                    {
+                        divideChannel(o);
+                        addToTable(o);
+                       // for (var i in data[o]) {
+                           // divideChannel(o);
+                           // console.log(JSON.stringify(data[o][i][0].F_Id));
+                           // getChannel(o, data[o][i][0].F_UserId);
+                        //}
+                    }
+                }
+            }
+        });
+    }
+    function GetqueryJson()
+    {
+        var queryJson = {
+            //Operator: $("#Operator").val(),
+            F_UserId: Arr[0],//用户id
+            F_Report: Arr[1],//状态
+            F_ChannelId: Arr[2],//通道ID
+            F_PhoneCode: Arr[3],//电话号码 
+            F_SmsContent: Arr[4],//查询内容！
+            F_BlackWhite: Arr[5],//黑白名单
+            F_Buckle: Arr[6],//是否扣量
+            F_CreatorTimeFrom: Arr[7],//开始时间段
+            F_CreatorTimeEnd: Arr[8],//结束时间段
+            F_Province: Arr[9],//省份
+            F_Operator: Arr[10],//运营商
+            F_Synchro: Arr[11],//同步
+        }
+        return queryJson;
+    }
+
+    function ChangeChannel()//按照批次修改数据中的通道
+    {
+        for (var o in senddata) {
+            //console.log(JSON.stringify(senddata[o]));                      
+            for (var i in senddata[o]) {
+                alert($("#F_ChannelId" + o).val());
+                //alert(document.getElementById("F_ChannelId" + o).value);
+                //alert(senddata[o][i][0].F_ChannelId);
+                if ($("#F_ChannelId" + o).val() != "") {
+                    //alert(senddata[o][i][0].F_ChannelId);
+                    senddata[o][i][0].F_ChannelId = $("#F_ChannelId" + o).val();//修改通道
+                    //alert(senddata[o][i][0].F_ChannelId);
+                }
+                else {
+                    if (!confirm("有通道未选择，是否继续提交？"))
+                    { return false;}
+                }
+            }
+        }
+    }
+
+        //function btn_ChangeChannel()
+        //{
+        //        if (!$("#form1").formSerialize())
+        //            return false;
+        //        var queryJson = GetqueryJson();
+        //        $.ajax({
+        //            url: "/OCManage/SendDateDetail/ChangeChannel?keyValue=" + 222,
+        //            data: { queryJson: JSON.stringify(queryJson) },
+        //            type:"post",
+        //            dataType: "json",
+        //            async: false,
+        //            success: function (data) {
+        //                if (data.state == "error") {
+        //                    alert("发生错误：" + data.message + ",请联系管理员！");
+        //                    return false;
+        //                }
+        //                else {
+        //                    alert(data.message);
+        //                   // $.currentWindow().$("#gridList").resetSelection();
+        //                   // $.currentWindow().$("#gridList").trigger("reloadGrid");
+        //                }
+        //            }
+        //        });
+        //}
+    function submitForm() {
+        if (ChangeChannel() == false)
+            return false;
+        if (!$("#form1").formSerialize())
+            return false;
+        //alert(senddata);
+        //alert(JSON.stringify($("#form1").formSerialize()));
+       // var queryJson = GetqueryJson();
+        $.ajax({
+            url: "/OCManage/SendDateDetail/ChangeChannel?keyValue=" + 222,
+            type: "post",
+            data: { queryJson: JSON.stringify(senddata) },
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                if (data.state == "error") {
+                    alert("发生错误：" + data.message + ",请联系管理员！");
+                    return false;
+                }
+                else {
+                    alert(data.message);
+                  //  $.currentWindow().$("#gridList").resetSelection();
+                  //  $.currentWindow().$("#gridList").trigger("reloadGrid");
+                }
+            }
+        });
+    }
+</script>
+<form id="form1">
+    <table id="table1" class="form">
+        <tr>
+            <th class="formTitle">分批次修改发送通道:</th>
+        </tr>
+    </table>
+    @*<div class="btn-group">
+        <a id="NU-add" authorize="yes" class="btn btn-primary dropdown-text" onclick="btn_ChangeChannel()"><i class="fa fa-plus"></i>修改通道</a>
+    </div>*@
+</form>

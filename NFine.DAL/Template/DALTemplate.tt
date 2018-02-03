@@ -1,0 +1,417 @@
+﻿<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Linq" #>
+<#+
+// <copyright file="DALTemplate.tt" company="">
+//  Copyright © . All Rights Reserved.
+// </copyright>
+
+public class DALTemplate : CSharpTemplate
+{
+	//数据库连接语句
+	private string DBConnectionStr;
+	//数据库名称
+	private string DBName;
+	//表名
+	private	string TableName;
+	//表描述
+	private string TableDescription;
+	//列数据
+	private List<ColumnModel> ColumnList;
+	public DALTemplate(string dbConnectionStr,string dbName,string tableName,string tableDescription)
+    {
+		DBConnectionStr=dbConnectionStr;
+		DBName=dbName;
+		TableName=tableName;
+		TableDescription=tableDescription;
+
+		SqlConnection conn=new SqlConnection(dbConnectionStr);
+		conn.Open();
+		//查询数据库中所有的表
+
+		string selectQuery=@"SELECT 
+a.colorder 字段序号,a.name 字段名, 
+(case when COLUMNPROPERTY( a.id,a.name,'IsIdentity')=1 then '√'else '' end) 标识, 
+(case when (SELECT count(*) FROM sysobjects  
+WHERE (name in (SELECT name FROM sysindexes  
+WHERE (id = a.id) AND (indid in  
+(SELECT indid FROM sysindexkeys  
+WHERE (id = a.id) AND (colid in  
+(SELECT colid FROM syscolumns WHERE (id = a.id) AND (name = a.name)))))))  
+AND (xtype = 'PK'))>0 then '√' else '' end) 主键,b.name 类型,a.length 占用字节数,  
+COLUMNPROPERTY(a.id,a.name,'PRECISION') as 长度,  
+isnull(COLUMNPROPERTY(a.id,a.name,'Scale'),0) as 小数位数,(case when a.isnullable=1 then '√'else '' end) 允许空,  
+isnull(e.text,'') 默认值,isnull(g.[value], ' ') AS [说明]
+FROM  syscolumns a 
+left join systypes b on a.xtype=b.xusertype  
+inner join sysobjects d on a.id=d.id and d.xtype='U' and d.name<>'dtproperties' 
+left join syscomments e on a.cdefault=e.id  
+left join sys.extended_properties g on a.id=g.major_id AND a.colid=g.minor_id
+left join sys.extended_properties f on d.id=f.class and f.minor_id=0
+where b.name is not NULL AND d.name='"+tableName+"'";
+		SqlCommand command=new SqlCommand(selectQuery,conn);
+	
+		SqlDataAdapter ad=new SqlDataAdapter(command);
+
+		DataSet ds=new DataSet();
+		ad.Fill(ds);
+		conn.Close();
+
+		ColumnList=new List<ColumnModel>();
+        foreach (DataRow itemRow in ds.Tables[0].Rows)
+        {
+			ColumnModel model=new ColumnModel();
+			model.ColumnName=itemRow["字段名"].ToString();
+			model.PrimaryKey=itemRow["主键"].ToString()=="√";
+			model.AlowNull=itemRow["允许空"].ToString()=="√";
+			model.ColumnDescription=itemRow["说明"].ToString();
+			model.ColumnType=itemRow["类型"].ToString();
+			model.DefaultValue=itemRow["默认值"].ToString()=="(NULL)"?"":itemRow["默认值"].ToString();
+			model.ColumnLength=Convert.ToInt32(itemRow["长度"]);
+			ColumnList.Add(model);
+        }
+    }
+
+	public override string TransformText()
+	{
+		base.TransformText();
+#>
+/*-------------------------------------------------------------------------
+ * 版本号：v1.0
+ * 本类主要用途描述：
+ *  -------------------------------------------------------------------------*/
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using NFine.Entity;
+using SqlSugar;
+using NFine.Code;
+using System.Linq.Expressions;
+using System.Data.SqlClient;
+
+namespace NFine.DAL
+{
+    /// <summary>
+    /// 测试
+    /// </summary>
+    public partial class <#= TableName #>DAL
+    {
+        #region 单例模式
+        private static <#= TableName #>DAL instance;
+        private static object _lock = new object();
+
+        private <#= TableName #>DAL()
+        {
+        }
+
+        public static <#= TableName #>DAL Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    lock (_lock)
+                    {
+                        if (instance == null)
+                        {
+                            instance = new <#= TableName #>DAL();
+                        }
+                    }
+                }
+                return instance;
+            }
+        }
+        #endregion 单例模式
+
+        /// <summary>
+        /// 添加
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public object Add(<#= TableName #> model)
+        {
+            using (var db=DBHelper.GetWriteInstance())
+            {
+                return db.Insert(model);
+            }
+        }
+
+        public List<object> Add(List<<#= TableName #>> entitys)
+        {
+            using (var db = DBHelper.GetWriteInstance())
+            {
+                return db.InsertRange(entitys);
+            }
+        }
+        /// <summary>
+        /// 更新
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public bool Update(<#= TableName #> model)
+        {
+            using (var db=DBHelper.GetWriteInstance())
+            {
+                return db.Update(model);
+            }
+        }
+		/// <summary>
+        /// 批量更新
+        /// </summary>
+        /// <param name="list">数组</param>
+        /// <returns></returns>
+        public List<bool> UpdateRange(List<<#= TableName #>> list)
+        {
+            using (var db=DBHelper.GetWriteInstance())
+            {
+                return db.UpdateRange(list);
+            }
+        }
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public bool Delete(Expression<Func<<#= TableName #>, bool>> predicate)
+        {
+            using (var db = DBHelper.GetWriteInstance())
+            {
+                return db.Delete(predicate);
+            }
+        }
+        /// <summary>
+        /// 查询单个实体
+        /// </summary>
+        /// <param name="predicate">lamda表达式</param>
+        /// <returns></returns>
+        public <#= TableName #> FindEntity(Expression<Func<<#= TableName #>, bool>> predicate)
+        {
+            using (var db = DBHelper.GetReadInstance())
+            {
+                return db.Queryable<<#= TableName #>>().Single(predicate);
+            }
+        }
+        /// <summary>
+        /// 直接写sql查询
+        /// </summary>
+        /// <param name="strSql">sql语句</param>
+        /// <returns></returns>
+        public List<<#= TableName #>> FindList(string strSql)
+        {
+            using (var db = DBHelper.GetReadInstance())
+            {
+                return db.SqlQuery<<#= TableName #>>(strSql);
+            }
+        }
+        /// <summary>
+        /// 动态参数拼sql形式查询
+        /// </summary>
+        /// <param name="strSql">sql语句</param>
+        /// <param name="pars">参数数组</param>
+        /// <returns></returns>
+        public List<<#= TableName #>> FindList(string strSql,List<SqlParameter> pars)
+        {
+            using (var db = DBHelper.GetReadInstance())
+            {
+                return db.SqlQuery<<#= TableName #>>(strSql, pars);
+            }
+        }
+        /// <summary>
+        /// 根据查询条件，查询列表数据
+        /// </summary>
+        /// <param name="predicate">lamda表达式</param>
+        /// <returns></returns>
+        public List<<#= TableName #>> FindList(Expression<Func<<#= TableName #>, bool>> predicate)
+        {
+            using (var db = DBHelper.GetReadInstance())
+            {
+                return db.Queryable<<#= TableName #>>().Where(predicate).ToList();
+            }
+        }
+        /// <summary>
+        /// 根据查询条件，查询列表数据，并排序
+        /// </summary>
+        /// <param name="predicate">lamda表达式</param>
+        /// <param name="orderbyPredicate">排序lamda表达式</param>
+        /// <param name="ordertype">排序方式</param>
+        /// <returns></returns>
+        public List<<#= TableName #>> FindList(Expression<Func<<#= TableName #>, bool>> predicate, Expression<Func<<#= TableName #>, object>> orderbyPredicate, OrderByType ordertype = OrderByType.Asc)
+        {
+            using (var db = DBHelper.GetReadInstance())
+            {
+                return db.Queryable<<#= TableName #>>().Where(predicate).OrderBy(orderbyPredicate, ordertype).ToList();
+            }
+        }
+        /// <summary>
+        /// 分页查询
+        /// </summary>
+        /// <param name="predicate">查询条件</param>
+        /// <param name="pagination">分页组件</param>
+        /// <returns></returns>
+        public List<<#= TableName #>> FindPageList(Expression<Func<<#= TableName #>, bool>> predicate, Pagination pagination)
+        {
+            using (var db=DBHelper.GetReadInstance())
+            {
+                var tempData = db.Queryable<<#= TableName #>>().Where(predicate).OrderBy(pagination.sidx);
+                pagination.records = tempData.Count();
+                return tempData.ToPageList(pagination.page, pagination.rows);
+            }
+        }
+        /// <summary>
+        /// 分页查询
+        /// </summary>
+        /// <param name="pagination">分页组件</param>
+        /// <returns></returns>
+        public List<<#= TableName #>> FindPageList(Pagination pagination)
+        {
+            using (var db = DBHelper.GetReadInstance())
+            {
+                var tempData = db.Queryable<<#= TableName #>>().OrderBy(pagination.sidx);
+                pagination.records = tempData.Count();
+                return tempData.ToPageList(pagination.page, pagination.rows);
+            }
+        }
+        /// <summary>
+        /// 检查是否存在记录，存在返回true,否则返回false
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public bool Exists(Expression<Func<<#= TableName #>, bool>> predicate)
+        {
+            using (var db=DBHelper.GetReadInstance())
+            {
+                return db.Queryable<<#= TableName #>>().Any(predicate);
+            }
+        }
+    }
+}
+<#+
+        return this.GenerationEnvironment.ToString();
+	}
+}
+#>
+<#+ 
+    /// <summary>
+    /// 列实体
+    /// </summary>
+    public class ColumnModel
+    {
+        /// <summary>
+        /// 列类型
+        /// </summary>
+        public string ColumnType { get; set; }
+        /// <summary>
+        /// 列名称
+        /// </summary>
+        public string ColumnName { get; set; }
+        /// <summary>
+        /// 列描述
+        /// </summary>
+        public string ColumnDescription { get; set; }
+        /// <summary>
+        /// 是否允许为空（允许为空则为true）
+        /// </summary>
+        public bool AlowNull { get; set; }
+        /// <summary>
+        /// 是否为主键（主键则为true）
+        /// </summary>
+        public bool PrimaryKey { get; set; }
+        /// <summary>
+        /// 默认值
+        /// </summary>
+        public string DefaultValue { get; set; }
+        /// <summary>
+        /// 列的类型
+        /// </summary>
+		public SqlDbType DbType{get;set;}
+		/// <summary>
+        /// 列的长度
+        /// </summary>
+		public int ColumnLength{get;set;}
+    }
+
+	public class ColumnHelper
+    {
+		public static string GetDbType(string columnType)
+        {
+            columnType = columnType.ToLower();
+            string commonType="SqlDbType.NVarChar";
+            switch (columnType)
+            {
+                case "bigint": commonType = "SqlDbType.BigInt"; break;
+                case "binary": commonType = "SqlDbType.Binary"; break;
+                case "bit": commonType = "SqlDbType.Bit"; break;
+                case "char": commonType = "SqlDbType.Char"; break;
+                case "date": commonType = "SqlDbType.Date"; break;
+                case "datetime": commonType = "SqlDbType.DateTime"; break;
+                case "datetime2": commonType = "SqlDbType.DateTime2"; break;
+                case "datetimeoffset": commonType = "SqlDbType.DateTimeOffset"; break;
+                case "decimal": commonType = "SqlDbType.Decimal"; break;
+                case "float": commonType = "SqlDbType.Float"; break;
+                case "image": commonType = "SqlDbType.Image"; break;
+                case "int": commonType = "SqlDbType.Int"; break;
+                case "money": commonType = "SqlDbType.Money"; break;
+                case "nchar": commonType = "SqlDbType.NChar"; break;
+                case "ntext": commonType = "SqlDbType.NText"; break;
+                case "numeric": commonType = "SqlDbType.Decimal"; break;
+                case "nvarchar": commonType = "SqlDbType.NVarChar"; break;
+                case "real": commonType = "SqlDbType.Real"; break;
+                case "smalldatetime": commonType = "SqlDbType.SmallDateTime"; break;
+                case "smallint": commonType = "SqlDbType.SmallInt"; break;
+                case "smallmoney": commonType = "SqlDbType.SmallMoney"; break;
+                case "sql_variant": commonType = "SqlDbType.Variant"; break;
+                case "text": commonType = "SqlDbType.Text"; break;
+                case "time": commonType = "SqlDbType.Time"; break;
+                case "timestamp": commonType = "SqlDbType.Timestamp"; break;
+                case "tinyint": commonType = "SqlDbType.TinyInt"; break;
+                case "uniqueidentifier": commonType = "SqlDbType.UniqueIdentifier"; break;
+                case "varbinary": commonType = "SqlDbType.VarBinary"; break;
+                case "varchar": commonType = "SqlDbType.VarChar"; break;
+                case "xml": commonType = "SqlDbType.Xml"; break;
+            }
+            return commonType;
+        }
+		
+		public static string GetColumnTypeCSharp(string columnType)
+        {
+			columnType = columnType.ToLower();
+            string commonType="string";
+            switch (columnType)
+            {
+                case "bigint": commonType = "long"; break;
+                case "binary": commonType = "byte[]"; break;
+                case "bit": commonType = "bool"; break;
+                case "char": commonType = "string"; break;
+                case "date": commonType = "DateTime"; break;
+                case "datetime": commonType = "DateTime"; break;
+                case "datetime2": commonType = "DateTime"; break;
+                case "datetimeoffset": commonType = "DateTime"; break;
+                case "decimal": commonType = "decimal"; break;
+                case "float": commonType = "double"; break;
+                case "image": commonType = "byte[]"; break;
+                case "int": commonType = "int"; break;
+                case "money": commonType = "decimal"; break;
+                case "nchar": commonType = "string"; break;
+                case "ntext": commonType = "string"; break;
+                case "numeric": commonType = "decimal"; break;
+                case "nvarchar": commonType = "string"; break;
+                case "real": commonType = "float"; break;
+                case "smalldatetime": commonType = "DateTime"; break;
+                case "smallint": commonType = "short"; break;
+                case "smallmoney": commonType = "decimal"; break;
+                case "text": commonType = "string"; break;
+                case "time": commonType = "DateTime"; break;
+                case "timestamp": commonType = "DateTime"; break;
+                case "tinyint": commonType = "byte"; break;
+                case "uniqueidentifier": commonType = "Guid"; break;
+                case "varbinary": commonType = "byte[]"; break;
+                case "varchar": commonType = "string"; break;
+            }
+            return commonType;
+        }
+    }
+ #>

@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+@section header{
+    <script src="~/Content/js/jquery-form/jquery.form.js"></script>
+    <script>
+        var groupId = $.request("GroupId");
+        $(function () {
+            initControl();
+                $("#form1").ajaxForm
+                    ({
+                        success: function (data) {
+                            var json = JSON.parse(data);
+                            $.modalAlert(json.message, json.type);
+                            $("#form1").resetForm();//重置form表单
+                            $.reload();
+                        },
+                        error: function (data) {
+                            var json = JSON.parse(data);
+                            $.modelAlert(json.message, json.type);
+                        }
+                    });
+        });
+
+        function initControl() {
+            $("#GroupId").bindSelect({
+                url: "/TXLManage/PheGrup/GetTreeSelectJson?groupId=" + groupId + "&t=true"
+            });
+        }
+
+        function getchange()
+        {
+            var objS = document.getElementById("GroupId");
+            var groupID = objS.options[objS.selectedIndex].value;
+            //alert(grade); //测试选择框数据改变之后是否有变化
+            if (groupID != "") {
+                $.ajax({
+                    url: "/TXLManage/PheGrup/getGroupId",
+                    data: { keyValue: groupID },//将获取到的groupid传到控制器
+                    dataType: "text",
+                    async: false,
+                    //    success: function (data) { alert(data); }
+
+                });
+            }
+            else { alert("请选择群组!"); }
+        }
+    </script>
+
+}
+
+<form id="form1" action="/TXLManage/PheGrup/UploadFile" enctype="multipart/form-data" method="post">
+    <div style="margin-left:10px; margin-right:10px;">
+        <table class="form">
+            <tr>
+                <th class="formTitle">文件模板</th>
+                <td class="formValue">
+                    <div style="padding:5px" id="showFileName">
+                        <span>
+                            <br /><a href="/Content/resource/PheInfoModel.xlsx" target="_blank" class="label label-warning">
+                                点击下载excel模板</a>
+                                      &nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="/Content/resource/PheInfoModel.csv" target="_blank" class="label label-warning">点击下载CSV模板</a>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">选择群组</th>
+                <td class="formValue">
+                    <select id="GroupId" name="GroupId" class="form-control required" onchange="getchange()">
+                        <option value="">==请选择==</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">选择文件</th>
+                <td class="formValue">
+                 <!--    
+                 <div class="file">
+                点击这里选择EXCEL文件
+                <input id="F_SelXls" name="file" type="file" />
+            </div>
+                  -->
+                    <div class="col-md-12">
+                        <input id="file" type="file" name="file" class="btn btn-upload" />
+                    </div>
+                     
+                </td>
+            </tr>
+
+        </table>
+
+        <div class="mail-body" style="text-align: right;">
+            <input id="ButtonUpload" type="submit" value="确认导入" class="btn btn-primary" style="margin-right: 5px;" />
+            <!--
+            <a onclick="submitForm()" class="btn btn-primary" style="margin-right: 5px;">确认</a>
+        -->
+        </div>
+        <div>
+            注意事项:<br />
+            一、本功能主要为大量用户批量上传提供途径；<br />
+            二、请上传excel格式文件，请参照模版说明<br />
+        </div>
+
+    </div>
+</form>

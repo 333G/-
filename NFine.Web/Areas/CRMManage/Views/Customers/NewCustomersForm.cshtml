@@ -1,0 +1,162 @@
+﻿@{
+    ViewBag.Title = "NewCustomersForm";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<style>
+    .nav-tabs {
+        border-bottom: 1px solid #ddd;
+        margin-top: 40px;
+        width: 96%;
+        margin-left: 20px;
+    }
+    .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #555;
+    cursor: default;
+    background: none;
+    border: none;
+    border-bottom-color: transparent;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 24px;
+}
+    .form{
+        margin-top:10px;
+    }
+    .form .formTitle{
+        text-align:center;
+    }
+</style>
+
+<script type="text/javascript"> 
+    var number = 0;//待添加客户数量
+    //批量数据提交
+    function batchSubmitForm() {
+       // $('#form2').formValid();//true
+        if (number==0) {
+            alert("您未添加任何数据，请先填写并添加。");
+            return false;
+        }
+        else { //获取form2表单数据并提交
+            var customersList = {};
+            var j = 0;
+            var i = 0;
+            var array = $("#form2").serializeArray();//对象数组
+            //将待添加数据加入对象数组customersList
+            while (i < array.length) {
+                j = i / 5;
+                customersList["[" + j + "].F_CustInfo"] = array[i].value;
+                customersList["[" + j + "].F_Record"] = array[i + 1].value;
+                customersList["[" + j + "].F_MobilePhone"] = array[i + 2].value;
+                customersList["[" + j + "].F_StateId"] = array[i + 3].value;
+                customersList["[" + j + "].F_CallTime"] = array[i + 4].value;
+                i = i + 5;
+                j++;
+            }
+            $.submitForm({
+                url: "/CRMManage/Customers/BatchSubmitForm",
+                param: customersList,
+                success: function () {
+                }
+            })
+        } 
+    }
+      //表单添加
+    function addToTable(){
+        if (!$('#form1').formValid()) {
+            alert("还有必填字段未填写！请完善！");
+            return false;
+        }
+        //获取对应id值 
+        var custInfo = $("#F_CustInfoTemp").val();
+        var record = $("#F_RecordTemp").val();
+        var mobilePhone = $("#F_MobilePhoneTemp").val();
+        var stateId = $("#F_StateIdTemp").val();
+        var callTime = $("#F_CallTimeTemp").val();
+        //alert(custInfo+"+"+custRecord+"+"+mobilePhone+"+"+stateId+"+"+callTime);//提示信息，待删除
+        //页面表格数据添加，扩展
+        //----------------------------扩展上限待定
+        $("#table1").append(
+             "<tr>"
+             + "<td class=\"formTitle\"><input id=\"F_CustInfo\" name=\"F_CustInfo\" type=\"text\" class=\"form-control required\" value=\"" + custInfo + "\" readonly=\"readonly\" /></td>"
+             + "<td class=\"formTitle\"><input id=\"F_Record\" name=\"F_Record\" type=\"text\" class=\"form-control required\" value=\"" + record + "\" readonly=\"readonly\" /><td/>"
+             + "<td class=\"formTitle\"><input id=\"F_MobilePhone\" name=\"F_MobilePhone\" type=\"text\" class=\"form-control required\" value=\"" + mobilePhone + "\" readonly=\"readonly\" /><td/>"
+             + "<td class=\"formTitle\"><input id=\"F_StateId\" name=\"F_StateId\" type=\"text\" class=\"form-control required\" value=\"" + stateId + "\" readonly=\"readonly\" /><td/>"
+             + "<td class=\"formTitle\"><input id=\"F_CallTime\" name=\"F_CallTime\" type=\"text\" class=\"form-control required\" value=\"" + callTime + "\" readonly=\"readonly\" /></td>"
+             + "<td class=\"formTitle\"><input type=\"button\" value=\"删除\" onclick=\"del(this);\" /></td>"
+             +"</tr>"
+             ); 
+        $("#form1 :input").val("");//form1清空 
+        number++;
+    } 
+  //表单移除
+function del(v) { // 删除已添加的对象信息
+    $(v).parent().parent().remove(); 
+    return;
+}
+
+
+
+</script>
+
+<form id="form1">
+    <div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+        <div style="padding-top: 0px; margin-right: 30px;">
+            <table class="form">
+                <!--更改说明：处理记录字段id name 待定暂时与客户信息字段一致-->
+                <tr>
+                    <th class="formTitle" style="padding-right:8px;">客户信息:</th>
+                    <td class="formValue" style="width:100%;">
+                        <textarea id="F_CustInfoTemp" name="F_CustInfoTemp" class="form-control required" placeholder="姓名、地址、QQ等" style="height: 100px;width: 100%;"></textarea>
+                    </td>
+                    <th class="formTitle" style="padding-right:8px;">处理记录:</th>
+                    <td class="formValue" style="width:100%;">
+                        <textarea id="F_RecordTemp" name="F_RecordTemp" class="form-control required" placeholder="记录可以自己组织语言输入" style="height: 100px;width:100%;"></textarea>
+                    </td>
+                </tr>
+                <tr style="padding-top:1em;">
+                    <td colspan="4" style="width:100%;height:50px;padding:1em 0em;">
+                        <div class="formTitle" style="padding-right:12px;float:left;width:7.9em;line-height:30px;">手机号:</div>
+                        <div style="width:20em;float:left;">
+                            <input id="F_MobilePhoneTemp" name="F_MobilePhoneTemp" type="text" class="form-control required" placeholder="请输入手机号码" style="width:20em;float:left;" />
+                        </div>
+                        <div style="width:90px;float:left;width:7.9em;line-height:30px;padding-right:12px;text-align:right;">状态:</div>
+                        <div style="width:20em;float:left;">
+                            <select id="F_StateIdTemp" name="F_StateIdTemp" class="form-control" style="width:20em;float:left;">
+                                <option value="一级客户">一级客户</option>
+                                <option value="二级客户">二级客户</option>
+                                <option value="三级客户">三级客户</option>
+                                <option value="四级客户">四级客户</option>
+                            </select>
+                        </div>
+                        <div style="padding-right:4px;float:left;width:8.5em;line-height:30px;text-align:right;">提醒时间：</div>
+                        <div style="width:16em;float:left;">
+                            <input id="F_CallTimeTemp" name="F_CallTimeTemp" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd HH:mm:ss' })" style="float:left;width:16em;" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</form> 
+<div class="customers-body" style="text-align: left;padding-left:5%;float:right;">
+    <a href="javascript:void;/" onclick="addToTable()" class="btn btn-primary" style="margin-right: 8px;padding:5px 30px;">添加到表</a> 
+</div>
+<form id="form2">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#">数据提交表</a></li>
+    </ul> 
+    <table id="table1" class="form">
+        <tr>
+            <td class="formTitle">客户信息</td>
+            <td class="formTitle">处理记录</td>
+            <td class="formTitle">手机号</td>
+            <td class="formTitle">状态</td>
+            <td class="formTitle">提醒时间</td>
+            <td class="formTitle">操作</td>
+        </tr>        
+    </table> 
+</form>
+<div class="customers-body" style="text-align: left;padding-left:5%;float:right;">
+    <a href="javascript:void;/" onclick="batchSubmitForm()" class="btn btn-primary" style="margin-right: 8px;padding:5px 30px;">提交保存</a>
+</div>
+ 

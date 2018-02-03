@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "AddCRMForm";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<script>
+    var F_UserFId = $.request("F_UserFId");//UserF_Id
+
+    $(function () {
+        $.ajax({
+            url: "/CRMManage/Customers/GetCrmIdText",
+            data: { keyValue: F_UserFId },
+            dataType: "text",
+            async: false,
+            success: function (data) {
+                document.getElementById("F_CRMId").value = data;
+            }
+        })
+    });
+
+    function submitForm() {
+        if ($("#F_CRMId").val() == "")
+        {
+            alert("请输入有效Id！");
+            return false;
+        }
+        var queryJson = {
+            F_UserFId: F_UserFId,
+            F_CRMId: $("#F_CRMId").val(),
+        }
+        $.ajax({
+            url: "/OCManage/UserInfo/AddCRM",
+            data: { queryJson: JSON.stringify(queryJson) },
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                alert(data["message"]);
+            }
+        })
+    }
+</script>
+
+<div style="padding-top: 20px; margin-right: 30px;">
+    <table class="form">
+        <tr>
+            <th class="formTitle">用户CRM_Id:</th>
+            <td class="formValue">
+                <input id="F_CRMId" name="F_CRMId" type="text" class="form-control required" placeholder="请输入用户CRM_Id" />
+            </td>
+        </tr>
+        </table>
+</div>

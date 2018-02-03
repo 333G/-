@@ -1,0 +1,435 @@
+﻿@{
+    ViewBag.Title = "DataAnalysisIndex";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+    <style>
+        .topPanel, .search {
+            height: 75px;
+        }
+
+        .nav-tabs {
+            border-bottom: 1px solid #ddd;
+            margin-top: 40px;
+            width: 96%;
+            margin-left: 20px;
+        }
+
+            .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+                color: #555;
+                cursor: default;
+                background: none;
+                border: none;
+                border-bottom-color: transparent;
+                font-size: 12px;
+                font-weight: bold;
+                line-height: 24px;
+            }
+
+        .form {
+            margin-top: 10px;
+        }
+
+            .form .formTitle {
+                text-align: center;
+            }
+    </style>
+    <script src="~/Content/js/highcharts/highcharts.js"></script>
+    <script>
+        var keyValue;
+        var F_UserFId = "@NFine.Code.OperatorProvider.Provider.GetCurrent().UserId";//F_ID
+        $(function () {
+            GetData();
+        });
+//===========================================================================总数据统计=====================================================================================
+        function GetData() {
+            //日期参数，点击查询按键时赋值
+            keyValue = {
+                StartTime: $("#F_CreatorTimeFrom").val(),
+                EndTime: $("#F_CreatorTimeEnd").val(),
+                F_UserFId: F_UserFId,
+            }
+            var Date = [];
+            $.ajax({
+                url: "/ReportManage/DataAnalysis/GetMainDataJson",
+                data: { keyValue: JSON.stringify(keyValue) },
+                dataType: "json",
+                async: true,
+                success: function (data) {
+                    //alert(JSON.stringify(data));
+                    var MobileData = [];
+                    var UnicomData = [];
+                    var TelecomData = [];
+                    var CountData = [];
+                    for (var o in data["移动"])
+                    {
+                        Date += " '"+ o +" '" + ",";
+                    }
+                    for (var o in data["移动"])
+                    {
+                        MobileData += data["移动"][o]+ ",";
+                    }
+                    //alert(MobileData);
+                    for (var o in data["联通"]) {
+                        UnicomData += data["联通"][o] + ",";
+                    }
+                    for (var o in data["电信"]) {
+                        TelecomData += data["电信"][o]+ ",";
+                    }
+                    for (var o in data["总金额"]) {
+                        CountData += data["总金额"][o] + ",";
+                    }
+                    $('#MainDatelinegraphs').highcharts({
+                        chart: {
+                            type: 'column',
+                            zoomType: 'x'
+                        },
+                        title: {
+                            text: ' '
+                        },
+                        subtitle: {
+                            text: document.ontouchstart === undefined ?
+                                '' :
+                                ''
+                        },
+                        xAxis: {
+                            categories: eval("[" + Date + "]")
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: '￥ (元)'
+                            }
+                        },
+                        tooltip: {
+                            headerFormat: '<span>{point.key}</span><table>',
+                            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                                '<td style="padding:0"><b>{point.y:.1f} 元</b></td></tr>',
+                            footerFormat: '</table>',
+                            shared: true,
+                            useHTML: true
+                        },
+                        plotOptions: {
+                            column: {
+                                pointPadding: 0.2,
+                                borderWidth: 0
+                            }
+                        },
+                        series: [{
+                            name: '移动',
+                            data: eval("[" + MobileData + "]")
+
+                        }, {
+                            name: '联通',
+                            data: eval("[" + UnicomData + "]")
+
+                        }, {
+                            name: '电信',
+                            data: eval("[" + TelecomData + "]")
+
+                        },
+                        {
+                            type: 'spline',
+                            name: '总金额',
+                            data: eval("[" + CountData + "]"),
+                            marker: {
+                                lineWidth: 2,
+                                lineColor: Highcharts.getOptions().colors[3],
+                                fillColor: 'white'
+                            }
+                        },
+                        ]
+                    });
+                }
+
+            });
+
+            //===========================================================================成功率分析=====================================================================================
+
+            $.ajax({
+                url: "/ReportManage/DataAnalysis/GetSuccessRateDataJson",
+                data: { keyValue: JSON.stringify(keyValue) },
+                dataType: "json",
+                async: true,
+                success: function (Ratedata) {
+                    var SucceedData = [];
+                    var FailedData = [];
+                    var UnknownData = [];
+                    //alert(JSON.stringify(Ratedata));
+                    for (var o in Ratedata["成功"]) {
+                        SucceedData += Ratedata["成功"][o] + ",";
+                    }
+                    for (var o in Ratedata["失败"]) {
+                        FailedData += Ratedata["失败"][o] + ",";
+                    }
+                    for (var o in Ratedata["未知"]) {
+                        UnknownData += Ratedata["未知"][o] + ",";
+                    }
+                    $('#SuccessRatelinechart').highcharts({
+                        chart: {
+                            zoomType: 'x'
+                        },
+                        title: {
+                            text: ' ',
+                        },
+                        subtitle: {
+                            text: document.ontouchstart === undefined ?
+                                '' :
+                                ''
+                        },
+                        xAxis: {
+                            categories: eval("[" + Date + "]")
+                        },
+                        yAxis: {
+                            title: {
+                                text: '成功率 (%)'
+                            },
+                            plotLines: [{
+                                value: 0,
+                                width: 1,
+                                color: '#808080'
+                            }]
+                        },
+                        tooltip: {
+                            valueSuffix: '%'
+                        },
+                        plotOptions: {
+                            series: {
+                                cursor: 'pointer',
+                                point: {
+                                    events: {
+                                        click: function () {
+                                            alert(this.series.name + "," + this.x + "," + this.y)
+                                        }
+                                    }
+                                },
+                                marker: {
+                                    lineWidth: 1
+                                }
+                            }
+                        },
+                        series: [{
+                            name: '成功',
+                            data: eval("[" + SucceedData + "]")
+                        }, {
+                            name: '失败',
+                            data: eval("[" + FailedData + "]")
+                        }, {
+                            name: '未知',
+                            data: eval("[" + UnknownData + "]")
+                        }]
+                    });
+                }
+            });
+
+
+            //===============================================================地区数据分析=================================================================================================
+
+            $.ajax({
+                url: "/ReportManage/DataAnalysis/GetAreaDataJson",
+                data: { keyValue: JSON.stringify(keyValue) },
+                dataType: "json",
+                async: true,
+                success: function (data) {
+                    var SumData = [];
+                    for (var o in data)
+                    {
+                        SumData += data[o] + ",";
+                    }
+                   // var Province=['上海','江苏','浙江','安徽','北京','天津','广东','河北','河南','山东','湖北','湖南','江西','福建','四川','重庆','广西','山西','辽宁','吉林','黑龙江','贵州','陕西','云南','内蒙古','甘肃','青海','宁夏','新疆','海南','西藏','香港','澳门','台湾'];
+                    $('#AreaDatelinegraphs').highcharts({
+                        chart: {
+                            type: 'column',
+                            zoomType: 'x'
+                        },
+                        title: {
+                            text: ''
+                        },
+                        subtitle: {
+                            text: document.ontouchstart === undefined ?
+                                '' :
+                                ''
+                        },
+                        xAxis: {
+                            categories: ['上海', '江苏', '浙江', '安徽', '北京', '天津', '广东', '河北', '河南', '山东', '湖北', '湖南', '江西', '福建', '四川', '重庆', '广西', '山西', '辽宁', '吉林', '黑龙江', '贵州', '陕西', '云南', '内蒙古', '甘肃', '青海', '宁夏', '新疆', '海南', '西藏', '香港', '澳门', '台湾','其他']
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: '(K)'
+                            }
+                        },
+                        tooltip: {
+                            headerFormat: '<span>{point.key}</span><table>',
+                            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                                '<td style="padding:0"><b>{point.y:.1f} K</b></td></tr>',
+                            footerFormat: '</table>',
+                            shared: true,
+                            useHTML: true
+                        },
+                        plotOptions: {
+                            column: {
+                                pointPadding: 0.2,
+                                borderWidth: 0
+                            }
+                        },
+                        series: [{
+                            name: '数量',
+                            data: eval("[" + SumData + "]")
+
+                        }]
+                    });
+                }
+            });
+
+            $.ajax({
+                url: "/ReportManage/DataAnalysis/GetOperatorDataJson",
+                data: { keyValue: JSON.stringify(keyValue) },
+                dataType: "json",
+                async: true,
+                success: function (data) {
+                    //alert(JSON.stringify(data));
+                    var chart;
+                    // Build the chart
+                    $('#Areapiechart').highcharts({
+                        chart: {
+                            plotBackgroundColor: null,
+                            plotBorderWidth: null,
+                            plotShadow: false
+                        },
+                        title: {
+                            text: '运营商总数据'
+                        },
+                        tooltip: {
+                            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                        },
+                        plotOptions: {
+                            pie: {
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                dataLabels: {
+                                    enabled: true,
+                                    color: '#000000',
+                                    connectorColor: '#000000',
+                                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                                },
+                                showInLegend: true
+                            }
+                        },
+                        series: [{
+                            type: 'pie',
+                            name: '数量：',
+                            data: [
+                                ['移动', data["移动"]],
+                                {
+                                    name: '联通',
+                                    y: data["联通"],
+                                    sliced: true,
+                                    selected: true
+                                },
+                                ['电信', data["电信"]],
+                                ['其他', data["其他"]],
+                            ]
+                        }]
+                    });
+                }
+            });
+        };
+
+        $(function () {
+            $("#btn_search").click(function () {//查询按钮功能
+               // alert(JSON.stringify(keyValue));
+                GetData();
+            });
+        });
+
+        function btn_download()
+        {
+
+        }
+    </script>
+    @*<link href="/Content/js/datepicker/skin/WdatePicker.css" rel="stylesheet" />
+    <script src="/Content/js/datepicker/WdatePicker.js"></script>*@
+    <div class="topPanel">
+        <div class="search">
+            <table>
+                <tr>
+                    <td>
+                        <div class="input-group">
+                            <div style="padding-right:2px;float:left;width:4.5em;line-height:30px;text-align:right;">日期：从</div>
+                            <div style="width:12em;float:left;">
+                                <!--原时间下拉框控件和图标控件冲突，换了时间控件-->
+                                @*<input id="F_CreatorTimeFrom" name="F_CreatorTimeFrom" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd HH:mm:ss' })" style="float:left;width:12em;" />*@
+                                <input id="F_CreatorTimeFrom" name="F_CreatorTimeFrom" type="date" value="" min="2000-01-01" max="2999-12-31" style="float:left;width:12em;height:28px"/>
+                             </div>
+                            <div style="padding-right:2px;float:left;width:2.5em;line-height:30px;text-align:right;">到</div>
+                            <div style="width:16em;float:left;">
+                                @*<input id="F_CreatorTimeEnd" name="F_CreatorTimeEnd" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd HH:mm:ss' })" style="float:left;width:12em;" />*@
+                                <input id="F_CreatorTimeEnd" name="F_CreatorTimeEnd" type="date" value="" min="2000-01-01" max="2999-12-31" style="float:left;width:12em;height:28px" />
+                            </div>
+                            <!--下拉框字段名字待定-->
+                            <select id="F_State" name="F_State" class="form-control" style="width:10em;float:left;">
+                                <option value="">总数据分析</option>
+                                <option value="1">默认组</option>
+                                <option value="2">会员</option>
+                                <option value="3">他他他</option>
+                            </select>
+                            <div style="padding-right:2px;float:left;width:2.5em;line-height:30px;">
+                                <span class="input-group-btn">
+                                    <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i></button>
+                                    <button class="btn btn-primary" onclick="$.reload()"><i class="glyphicon glyphicon-refresh"></i></button>
+                                </span>
+                            </div>
+                            <div style="padding-right:2px;float:left;width:250px;line-height:30px;text-align:right;">
+                                   （显示的数据为三天以前的数据）
+                                <a id="NU-delete" authorize="yes" onclick="btn_download()">下载数据</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <form id="form1">
+        <div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+            <ul class="nav nav-tabs" style="margin-top:0px;margin-left :50%;">
+                <li class="active"><a href="#">总数据分析</a></li>
+            </ul>
+            <table class="form">
+                <tr>
+                    <td class="formValue" style="width:100%;">
+                        <div id="MainDatelinegraphs" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+    <form id="form2">
+        <div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+            <ul class="nav nav-tabs" style="margin-top:0px;margin-left :50%;">
+                <li class="active"><a href="#">数据成功率分析</a></li>
+            </ul>
+            <table class="form">
+                <tr>
+                    <td class="formValue" style="width:100%;">
+                        <div id="SuccessRatelinechart" style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </form>
+    <form id="form3">
+        <div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+            <ul class="nav nav-tabs" style="margin-top:0px;margin-left :50%;">
+                <li class="active"><a href="#">区域数据分析</a></li>
+            </ul>
+            <table class="form">
+                <tr>
+                    <td class="formValue" style="width:100%;">
+                        <div id="Areapiechart" style="min-width: 150px; height: 300px; margin: 0 auto"></div>
+                        <div id="AreaDatelinegraphs" style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+  </form>

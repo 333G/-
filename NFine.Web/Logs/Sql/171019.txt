@@ -1,0 +1,241 @@
+2017/10/19 15:34:51
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"262"}]
+2017/10/19 15:34:52
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"262"}]
+2017/10/19 15:34:52
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--OC_UserInfo
+select F_Id from OC_UserInfo  参数：
+2017/10/19 15:45:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"262"}]
+2017/10/19 15:45:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"262"}]
+2017/10/19 15:48:29
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"262"}]
+2017/10/19 15:48:29
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"262"}]
+2017/10/19 15:48:37
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"262"}]
+2017/10/19 15:48:37
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"262"}]
+2017/10/19 15:48:40
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"262"}]
+2017/10/19 15:48:41
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"262"}]
+2017/10/19 15:48:41
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"262"}]
+2017/10/19 15:51:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT COUNT(1)  FROM [SMC_SendSms]   WHERE 1=1    参数：
+2017/10/19 15:51:13
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT SUBSTRING(F_MobileList,0,100) as F_MobileList,F_Id,F_GroupChannelId,F_IsTimer,F_CreatorUserId,F_RootId,F_SmsContent,F_SendSign,F_SendState,F_DealState,F_OperateState,F_SendTime,F_Priority,F_Price FROM ( SELECT SUBSTRING(F_MobileList,0,100) as F_MobileList,F_Id,F_GroupChannelId,F_IsTimer,F_CreatorUserId,F_RootId,F_SmsContent,F_SendSign,F_SendState,F_DealState,F_OperateState,F_SendTime,F_Priority,F_Price ,row_index=ROW_NUMBER() OVER(ORDER BY F_CreatorTime desc ) FROM [SMC_SendSms]   WHERE 1=1   ) t WHERE t.row_index BETWEEN 1 AND 50 参数：
+2017/10/19 15:53:00
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--VPheGrup
+ select distinct g.F_Id as F_Id, g.GroupName as GroupName, (select count(1) from TXL_PhoneInfo  where GroupId  =g.F_Id ) as F_MemberNumber, g.IsDefault as IsDefault,g.F_Description as Description
+                                from TXL_PhoneGroup g  
+                                  参数：
+2017/10/19 15:56:53
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--VPheGrup
+ select distinct g.F_Id as F_Id, g.GroupName as GroupName, (select count(1) from TXL_PhoneInfo  where GroupId  =g.F_Id ) as F_MemberNumber, g.IsDefault as IsDefault,g.F_Description as Description
+                                from TXL_PhoneGroup g  
+                                  参数：
+2017/10/19 15:57:10
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--VPheGrup
+ select distinct g.F_Id as F_Id, g.GroupName as GroupName, (select count(1) from TXL_PhoneInfo  where GroupId  =g.F_Id ) as F_MemberNumber, g.IsDefault as IsDefault,g.F_Description as Description
+                                from TXL_PhoneGroup g  
+                                  参数：
+2017/10/19 15:57:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--VPheGrup
+ select distinct g.F_Id as F_Id, g.GroupName as GroupName, (select count(1) from TXL_PhoneInfo  where GroupId  =g.F_Id ) as F_MemberNumber, g.IsDefault as IsDefault,g.F_Description as Description
+                                from TXL_PhoneGroup g  
+                                  参数：
+2017/10/19 15:58:43
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--VPheGrup
+ select distinct g.F_Id as F_Id, g.GroupName as GroupName, (select count(1) from TXL_PhoneInfo  where GroupId  =g.F_Id ) as F_MemberNumber, g.IsDefault as IsDefault,g.F_Description as Description
+                                from TXL_PhoneGroup g  
+                                  参数：
+2017/10/19 15:59:18
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--VPheGrup
+ select distinct g.F_Id as F_Id, g.GroupName as GroupName, (select count(1) from TXL_PhoneInfo  where GroupId  =g.F_Id ) as F_MemberNumber, g.IsDefault as IsDefault,g.F_Description as Description
+                                from TXL_PhoneGroup g  
+                                  参数：
+2017/10/19 16:00:39
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--VPheGrup
+ select distinct g.F_Id as F_Id, g.GroupName as GroupName, (select count(1) from TXL_PhoneInfo  where GroupId  =g.F_Id ) as F_MemberNumber, g.IsDefault as IsDefault,g.F_Description as Description
+                                from TXL_PhoneGroup g  
+                                  参数：
+2017/10/19 16:01:05
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--VPheGrup
+ select distinct g.F_Id as F_Id, g.GroupName as GroupName, (select count(1) from TXL_PhoneInfo  where GroupId  =g.F_Id ) as F_MemberNumber, g.IsDefault as IsDefault,g.F_Description as Description
+                                from TXL_PhoneGroup g  
+                                  参数：
+2017/10/19 16:01:27
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--VPheGrup
+ select distinct g.F_Id as F_Id, g.GroupName as GroupName, (select count(1) from TXL_PhoneInfo  where GroupId  =g.F_Id ) as F_MemberNumber, g.IsDefault as IsDefault,g.F_Description as Description
+                                from TXL_PhoneGroup g  
+                                  参数：
+2017/10/19 16:02:24
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"262"}]
+2017/10/19 16:02:24
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"262"}]
+2017/10/19 16:03:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"262"}]
+2017/10/19 16:03:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"262"}]
+2017/10/19 16:03:33
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--OC_UserInfo
+select F_Id from OC_UserInfo  参数：
+2017/10/19 16:05:05
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--VPheGrup
+ select distinct g.F_Id as F_Id, g.GroupName as GroupName, (select count(1) from TXL_PhoneInfo  where GroupId  =g.F_Id ) as F_MemberNumber, g.IsDefault as IsDefault,g.F_Description as Description
+                                from TXL_PhoneGroup g  
+                                  参数：
+2017/10/19 16:06:12
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--VPheGrup
+ select distinct g.F_Id as F_Id, g.GroupName as GroupName, (select count(1) from TXL_PhoneInfo  where GroupId  =g.F_Id ) as F_MemberNumber, g.IsDefault as IsDefault,g.F_Description as Description
+                                from TXL_PhoneGroup g  
+                                  参数：
+2017/10/19 16:08:35
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--VPheGrup
+ select distinct g.F_Id as F_Id, g.GroupName as GroupName, (select count(1) from TXL_PhoneInfo  where GroupId  =g.F_Id ) as F_MemberNumber, g.IsDefault as IsDefault,g.F_Description as Description
+                                from TXL_PhoneGroup g  
+                                  参数：
+2017/10/19 16:11:32
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--VPheGrup
+ select distinct g.F_Id as F_Id, g.GroupName as GroupName, (select count(1) from TXL_PhoneInfo  where GroupId  =g.F_Id ) as F_MemberNumber, g.IsDefault as IsDefault,g.F_Description as Description
+                                from TXL_PhoneGroup g  
+                                  参数：
+2017/10/19 16:14:44
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--VPheGrup
+ select distinct g.F_Id as F_Id, g.GroupName as GroupName, (select count(1) from TXL_PhoneInfo  where GroupId  =g.F_Id ) as F_MemberNumber, g.IsDefault as IsDefault,g.F_Description as Description
+                                from TXL_PhoneGroup g  
+                                  参数：
+2017/10/19 16:14:59
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--VPheGrup
+ select distinct g.F_Id as F_Id, g.GroupName as GroupName, (select count(1) from TXL_PhoneInfo  where GroupId  =g.F_Id ) as F_MemberNumber, g.IsDefault as IsDefault,g.F_Description as Description
+                                from TXL_PhoneGroup g  
+                                  参数：
+2017/10/19 16:15:28
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--VPheGrup
+ select distinct g.F_Id as F_Id, g.GroupName as GroupName, (select count(1) from TXL_PhoneInfo  where GroupId  =g.F_Id ) as F_MemberNumber, g.IsDefault as IsDefault,g.F_Description as Description
+                                from TXL_PhoneGroup g  
+                                  参数：
+2017/10/19 16:38:15
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [Sys_User]   WHERE 1=1  AND  ([Id]  = @Id101)     参数：[{"key":"@Id101","value":"262"}]
+2017/10/19 16:38:15
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:SELECT *  FROM [OC_UserInfo]   WHERE 1=1  AND  ([F_UserId]  = @F_UserId101)     参数：[{"key":"@F_UserId101","value":"262"}]
+2017/10/19 16:38:16
+用户Agent信息：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+客户端IP：::1
+服务端IP：::1
+详细信息：执行的sql:--OC_UserInfo
+select F_Id from OC_UserInfo  参数：

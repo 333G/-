@@ -1,0 +1,405 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+<script>
+
+    var keyvalue = $.request("keyValue");//keyvalue是Id+F_Id值。二者合一。目的是用F_Id取出ChannelConfig表中的数值
+    var strs = new Array();
+    strs = keyvalue.split(",");
+    keyValue = strs[0];
+    F_Id = strs[1];//分割keyvalue，分别获得Id和F_Id
+    $(function () {
+        getfromjson();       
+        getProvince();
+        ShowOrHidden_SF();
+    });
+    //隐藏省份框内容，新建通道时不显示，在编辑通道时才显示框
+    function ShowOrHidden_SF()
+    {
+        var tr = document.getElementById("SF");
+        if (!!keyValue)
+            tr.style.display = 'block';       
+    }
+
+    //在省份框中获取省份通道号数据
+    function getProvince()
+    {
+        if (!!keyValue) {
+            $.ajax({
+                url: "/OCManage/BaseChannel/GetProvinceName",
+                data: { keyValue: F_Id },
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    var str_provincename = "其他(";
+                    for (var o in data) {
+                        if (data[o].F_ChannelId == 0)
+                            continue;
+                        //判断是否有转移通道，若有，显示在“其他（）”中。
+                        if (data[o].F_SwitchChannelId && data[o].F_SwitchChannelId != data[o].F_ChannelId) {
+                            str_provincename += data[o].F_ProvinceName + data[o].F_SwitchChannelId + ",";
+                        }}
+                    str_provincename = str_provincename + ")";
+
+                    for (var o in data) {
+                        //没有通道转移，正常显示
+                        if (data[o].F_SwitchChannelId == 0 || data[o].F_SwitchChannelId == data[o].F_ChannelId) {
+                            str_provincename += data[o].F_ProvinceName + "(" + data[o].F_ChannelId + ")" + ",";
+                        }
+                    }        
+                    $("#textarea_p").val(str_provincename);
+                }
+            });
+        }
+    }
+
+    function getfromjson() {      
+        if (!!keyValue) {//判断是否有id值，进行插入或者更新
+            $.ajax({
+                url: "/OCManage/BaseChannel/GetFormJson",
+                data: { keyValue: keyValue },
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    $("#form1").formSerialize(data);
+                    //editor.$txt.html(data.F_Description);
+                }
+            });
+            $.ajax({
+                url: "/OCManage/BaseChannel/GetSecondFormJson",
+                data: { keyValue: F_Id },
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    $("#form1").formSerialize(data);
+                }
+            });
+        }
+    };
+    function submitForm() {
+        //alert(parseFloat(document.getElementById("F_MaxSmsNumber").value) + ";;" + document.getElementById("F_CharacterCount").value);
+        if (parseFloat(document.getElementById("F_LongSmsNumber").value) <parseFloat(document.getElementById("F_CharacterCount").value))
+        {
+            alert("最大长字符数小于字符数，请检查！")
+            return false;
+        }
+        if (!$('#form1').formValid()) {
+            return false;
+        }
+        var postData = $("#form1").formSerialize();
+        $.submitForm({            
+            url: "/OCManage/BaseChannel/newSubmitForm?keyValue=" + keyValue,
+            param: postData,
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+
+    function funcTest() {
+        //每隔0.001秒执行一次checkValue方法
+        window.setInterval("checkValue()", 1);
+    }
+    function checkValue() {//选为HTTP时，隐藏【网管ip、拨入号、企业代码、企业节点代码】；选为其他时，隐藏URL
+        if (document.getElementById("F_ProtocolType").value==1)
+        {     
+            document.getElementById("T_url").style.display = 'block';
+            document.getElementById("url").style.display = 'block';
+
+            document.getElementById("T_WGIP").style.display = 'none';
+            document.getElementById("wgip").style.display = 'none';
+
+            document.getElementById("F_AccessNumber").style.visibility = "hidden";
+            document.getElementById("jrh").style.visibility = "hidden";
+
+            document.getElementById("F_CompanyCode").style.visibility = "hidden";
+            document.getElementById("qydm").style.visibility = "hidden";
+
+            document.getElementById("F_CompanyNodeCode").style.visibility = "hidden";
+            document.getElementById("qyjddm").style.visibility = "hidden";
+
+            
+        }
+        else {
+            document.getElementById("T_url").style.display = 'none';
+            document.getElementById("url").style.display = 'none';
+
+            document.getElementById("T_WGIP").style.display = 'block';
+            document.getElementById("wgip").style.display = 'block';
+
+            document.getElementById("F_AccessNumber").style.visibility = "visible";
+            document.getElementById("jrh").style.visibility = "visible";
+            
+            document.getElementById("F_CompanyCode").style.visibility = "visible";
+            document.getElementById("qydm").style.visibility = "visible";
+
+            document.getElementById("F_CompanyNodeCode").style.visibility = "visible";
+            document.getElementById("qyjddm").style.visibility = "visible";
+        }
+    }
+    window.onload = funcTest;
+
+    function btn_edit_p() {      
+        $.modalOpen({
+            id: "ProvinceForm",
+            title: "修改省份通道",
+            url: "/OCManage/BaseChannel/ProvinceList?keyvalue="+ F_Id,//传F_Id
+            width: "650px",
+            height: "1000px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        });
+    }
+
+
+    function shengfen() {
+        var s = document.getElementById("textarea_p").value;
+        //alert(s);
+        
+        $("#shengfen").html(s + " ");
+    }
+</script>
+<body>
+    <form id="form1">
+        <div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+            <div style="margin-right: 30px;">
+                <h2>通道基础配置</h2>
+                <table class="form">
+                    <tr>
+                        <th class="formTitle">名称</th>
+                        <td class="formValue">
+                            <input id="F_ChannelName" name="F_ChannelName" type="text" class="form-control required" placeholder="请输入通道名称" />
+                        </td>
+                        <th class="formTitle">运营商</th>
+                        <td class="formValue">
+                            <select id="F_Operator" name="F_Operator" class="form-control required">
+                                <option value="1">移动</option>
+                                <option value="2">联通</option>
+                                <option value="3">电信</option>
+                                <option value="4">其他</option>
+                            </select>
+                        </td>
+                        <th class="formTitle">状态</th>
+                        <td class="formValue">
+                            <select id="F_ChannelState" name="F_ChannelState" class="form-control required">
+                                <option value="1">正常</option>
+                                <option value="0">暂停</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="formTitle">启用时间</th>
+                        <td class="formValue">
+                            <input id="F_StartTime" name="F_StartTime" value="00:00:00" type="text" class="form-control required Wdate" placeholder="启用时间" onfocus="WdatePicker({dateFmt:'H:mm:ss',minDate:'0:00:00',maxDate:'23:59:00'})" />
+                        </td>
+                        <th class="formTitle">终止时间</th>
+                        <td class="formValue">
+                            <input id="F_EndTime" name="F_EndTime" type="text" value="00:00:00" class="form-control required Wdate" placeholder="终止时间" onfocus="WdatePicker({dateFmt:'H:mm:ss',minDate:'0:00:00',maxDate:'23:59:00'})" />
+                        </td>
+                        <th class="formTitle">通道单价(分)</th>
+                        <td class="formValue">
+                            <input id="F_Price" name="F_Price" type="number" class="form-control required" placeholder="通道单价(分)" onKeypress="if (event.keyCode < 46 || event.keyCode > 57 || event.keyCode == 47) event.returnValue = false;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="formTitle">通道余额(元)</th>
+                        <td class="formValue">
+                            <input id="F_ChaBalance" name="F_ChaBalance" type="number" class="form-control required" placeholder="通道余额(元)" onKeypress="if (event.keyCode < 46 || event.keyCode > 57 || event.keyCode==47) event.returnValue = false;" />
+                        </td>
+                        <th class="formTitle">剩余条数</th>
+                        <td class="formValue">
+                            <input id="F_SurplusNum" name="F_SurplusNum" type="number" class="form-control required" placeholder="剩余条数" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" />
+                        </td>
+                        <th class="formTitle">已发条数</th>
+                        <td class="formValue">
+                            <input id="F_SendedNum" name="F_SendedNum" type="number" class="form-control required" placeholder="已发条数" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="formTitle">字符数</th>
+                        <td class="formValue">
+                            <input id="F_CharacterCount" name="F_CharacterCount" type="number" class="form-control" value="70" />
+                        </td>
+                        <th class="formTitle">支持长短信</th>
+                        <td class="formValue">
+                            <select class="form-control" id="F_LongSmsSign" name="F_LongSmsSign">
+                                <option value="true">支持</option>
+                                <option value="false">不支持</option>
+                            </select>
+                        </td>
+                        <th class="formTitle" id="maxcontent">最大长字符数</th>
+                        <td class="formValue" id="F_maxcontent">
+                            <input class="form-control required" id="F_LongSmsNumber" name="F_LongSmsNumber"type="number"  placeholder="请填写数字" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="formTitle">计费字数</th>
+                        <td class="formValue">
+                            <input type="text" class="form-control" name="F_ChargeNumber" id="F_ChargeNumber" placeholder="计费字数，请填写数字" value="67" />
+                        </td>
+                        <th class="formTitle">签名类型</th>
+                        <td class="formValue">
+                            <select class="form-control" id="F_autograph" name="F_autograph">
+                                <option value="1">前置签名</option>
+                                <option value="2">后置签名</option>
+                                <option value="3">无需签名</option>
+                            </select>
+                        </td>
+                        <th class="formTitle">是否退订</th>
+                        <td class="formValue">
+                            <input type="text" class="form-control" name="F_unsubscribe" id="F_unsubscribe" placeholder="为空则不退订" value="" />
+                        </td>
+                    </tr>
+                                        @*<tr>
+            <th class="formTitle" id="F_Description" style="padding-top: 5px;">
+                备注
+            </th>
+            <td class="wangEditor-container" colspan="5">
+                <div id="div1"></div>
+                F_autographContent
+            </td>
+        </tr>*@
+                    <tr>
+                        <th class="formTitle">签名</th>
+                        <td class="formValue">
+                            <textarea id="F_autographContent" name="F_autographContent" class="form-control" style="height: 35px;width: 536px"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="formTitle">备注</th>
+                        <td class="formValue">
+                            <textarea id="F_Description" name="F_Description" class="form-control required" style="height: 100px;width: 536px"></textarea>
+                        </td>
+                    </tr>
+                   
+                    <tr id="SF" style="display:none;">
+                        <th class="formTitle" id="sftitle" style="padding-top: 5px;position:absolute;left:11px;top:430px;">
+                            省份
+                        </th>
+                        <td class="formValue" colspan="5">
+                            <div class="formValue">
+                                <textarea id="textarea_p" name="textarea_p" onclick="shengfen()" style="resize: none;padding-top: 5px;height: 125px; width:536px;position:absolute;left:90px" readonly="readonly"></textarea>                                                            
+                             </div>
+                            <div class="btn-group" style="margin-left:1px;margin-bottom: 115px;">
+                               <a id="NU-edit" style="margin-left:1px;margin-bottom: 60px;position:absolute;left:560px;top:87px;" authorize="yes" class="btn btn-primary dropdown-text" onclick="btn_edit_p()"><i class="fa fa-edit"></i>修改</a> 
+                            </div>
+                            <a href="javascript:;" class="close"></a>
+                        </td>
+                    </tr>
+                </table>               
+                <h2>通道接口配置</h2>
+                <table class="form">
+                    <tr>
+                        <th class="formTitle">协议类型</th>
+                        <td class="formValue">
+                            <select id="F_ProtocolType" name="F_ProtocolType" class="form-control required">
+                                <option value="1">HTTP</option>
+                                <option value="2">CCMP</option>
+                                <option value="3">SGMP</option>
+                                <option value="4">SGIP</option>
+
+                            </select>
+                        </td>
+                        <th class="formTitle">用户名</th>
+                        <td class="formValue">
+                            <input id="F_UserName" name="F_UserName" type="text" class="form-control" placeholder="用户名" />
+                        </td>
+                        <th class="formTitle">密码</th>
+                        <td class="formValue">
+                            <input id="F_UserPwd" name="F_UserPwd" type="password" class="form-control" placeholder="密码" />
+                        </td>
+                       
+                    </tr>
+                    <tr>
+                        <th class="formTitle">网关端口</th>
+                        <td class="formValue">
+                            <input type="text" class="form-control" id="F_GatewayPort" name="F_GatewayPort" placeholder="端口号" />
+                        </td>
+                        <th class="formTitle">
+                            <div id="T_url">URL</div>
+                            <div id="T_WGIP">网关IP</div>
+                        </th>
+                        <td class="formValue">
+                            <div id="url">
+                                <input id="F_Url" name="F_Url" type="text" class="form-control" placeholder="URL" />
+                            </div>
+                            <div id="wgip">
+                                <input id="F_GatewayIP" name="F_GatewayIP" type="text" class="form-control" placeholder="IP" />
+                            </div>
+                        </td>
+                                              
+                       <th class="formTitle" id="jrh">接入号</th>
+                        <td class="formValue">
+                            <input id="F_AccessNumber" name="F_AccessNumber" type="text" class="form-control" placeholder="接入号" />
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <th class="formTitle" id="Version">版本号</th>
+                        <td class="formValue">
+                            <input id="F_Version" name="F_Version" type="text" class="form-control" placeholder="版本号" />
+                        </td>
+                        <th class="formTitle" id="CurrentSpeed">流速限制</th>
+                        <td class="formValue">
+                            <input id="F_CurrentSpeed" name="F_CurrentSpeed" type="text" class="form-control" placeholder="流速限制" />
+                        </td>
+                    </tr>
+                    <tr>                        
+                        <th class="formTitle" id="qydm">企业代码</th>
+                        <td class="formValue">
+                            <input id="F_CompanyCode" name="F_CompanyCode" type="text" class="form-control" placeholder="企业代码" />
+                        </td>
+                        <th class="formTitle" id="qyjddm">业务代码</th>
+                        <td class="formValue">
+                            <input id="F_CompanyNodeCode" name="F_CompanyNodeCode" type="text" class="form-control" placeholder="业务代码" />
+                        </td>
+                    </tr>
+                    @*<tr>
+                        <th class="formTitle" id="Version">版本号</th>
+                        <td class="formValue">
+                            <input id="F_Version" name="F_Version" type="text" class="form-control" placeholder="版本号" />
+                        </td>
+                        <th class="formTitle" id="CurrentSpeed">流速限制</th>
+                        <td class="formValue">
+                            <input id="F_CurrentSpeed" name="F_CurrentSpeed" type="text" class="form-control" placeholder="流速限制" />
+                        </td>
+                    </tr>*@
+                </table>
+                <h2>监控配置</h2>
+                <table class="form">
+                    <tr>
+                        <th class="formTitle">监控状态</th>
+                        <td class="formValue">
+                            <select class="form-control" id="F_MonitorState" name="F_MonitorState">
+                                <option value="false">禁用</option>
+                                <option value="true">启用</option>
+                            </select>
+                        </td>
+                        <th class="formTitle">监控时长</th>
+                        <td class="formValue">
+                            <input type="text" class="form-control" name="F_MonitorTime" id="F_MonitorTime" value="0" placeholder="请填写数字" />
+                        </td>
+                        <th class="formTitle">监控人手机号</th>
+                        <td class="formValue">
+                            <input type="text" class="form-control" name="F_MonitorMobile" id="F_MonitorMobile" placeholder="请输入手机号" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </form>
+</body>
+@section footer{
+
+    @*<script src="~/Content/js/wangEditor/js/wangEditor.js"></script>
+    <script type="text/javascript">
+        var editor = new wangEditor('div1');
+        // 上传图片
+        editor.config.uploadImgUrl = '/Home/Upload';
+        editor.create();
+    </script>*@
+}

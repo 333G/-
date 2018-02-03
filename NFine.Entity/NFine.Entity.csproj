@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{26D14DDE-4109-46D6-904D-8641B9BE7409}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NFine.Entity</RootNamespace>
+    <AssemblyName>NFine.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SqlSugar">
+      <HintPath>..\Lib\sqlsugar\SqlSugar.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\CRM_CustomeRecords.cs" />
+    <Compile Include="Models\CRM_Customers.cs" />
+    <Compile Include="Models\CRM_Task.cs" />
+    <Compile Include="Models\IFDoc_SyncAddress.cs" />
+    <Compile Include="Models\OC_AutoReviewTemplete.cs" />
+    <Compile Include="Models\OC_BaseChannel.cs" />
+    <Compile Include="Models\OC_BlackList.cs" />
+    <Compile Include="Models\OC_ChannelConfig.cs" />
+    <Compile Include="Models\OC_ChannelProvince.cs" />
+    <Compile Include="Models\OC_ChannelRechargeRecord.cs" />
+    <Compile Include="Models\OC_GroupChannel.cs" />
+    <Compile Include="Models\OC_ManualReviewTemplete.cs" />
+    <Compile Include="Models\OC_RechargeRecord.cs" />
+    <Compile Include="Models\OC_SMSInstructions.cs" />
+    <Compile Include="Models\OC_UserInfo.cs" />
+    <Compile Include="Models\Sev_BusinessDataAnalysis.cs" />
+    <Compile Include="Models\Sev_DailyChannelData.cs" />
+    <Compile Include="Models\Sev_FinalSendDetail.cs" />
+    <Compile Include="Models\Sev_SendDateDetail.cs" />
+    <Compile Include="Models\SMail_Message.cs" />
+    <Compile Include="Models\SMail_MessageText.cs" />
+    <Compile Include="Models\SMC_RceiveSms.cs" />
+    <Compile Include="Models\SMC_SendSms.cs" />
+    <Compile Include="Models\SMS_SensitiveWords.cs" />
+    <Compile Include="Models\SMS_SubTest.cs" />
+    <Compile Include="Models\SMS_Test.cs" />
+    <Compile Include="Models\Sys_Area.cs" />
+    <Compile Include="Models\Sys_DbBackup.cs" />
+    <Compile Include="Models\Sys_FilterIP.cs" />
+    <Compile Include="Models\Sys_Items.cs" />
+    <Compile Include="Models\Sys_ItemsDetail.cs" />
+    <Compile Include="Models\Sys_Log.cs" />
+    <Compile Include="Models\Sys_Module.cs" />
+    <Compile Include="Models\Sys_ModuleButton.cs" />
+    <Compile Include="Models\Sys_ModuleForm.cs" />
+    <Compile Include="Models\Sys_ModuleFormInstance.cs" />
+    <Compile Include="Models\Sys_Organize.cs" />
+    <Compile Include="Models\Sys_PhoneNumAreaInfo.cs" />
+    <Compile Include="Models\Sys_Role.cs" />
+    <Compile Include="Models\Sys_RoleAuthorize.cs" />
+    <Compile Include="Models\Sys_User.cs" />
+    <Compile Include="Models\Sys_UserLogOn.cs" />
+    <Compile Include="Models\TXL_BlackList.cs" />
+    <Compile Include="Models\TXL_CusSmsTemplate.cs" />
+    <Compile Include="Models\TXL_PhoneGroup.cs" />
+    <Compile Include="Models\TXL_PhoneInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Template\SugarTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SugarTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BaseChannelAddParam.cs" />
+    <Compile Include="Views\ChannelRechargeRecordAddParam.cs" />
+    <Compile Include="Views\VBaseChannelParam.cs" />
+    <Compile Include="Views\VChannelConfigParam.cs" />
+    <Compile Include="Views\VCustomersMessage.cs" />
+    <Compile Include="Views\VOCUserInfo.cs" />
+    <Compile Include="Views\VPheGrup.cs" />
+    <Compile Include="Views\VReceiveSms.cs" />
+    <Compile Include="Views\VSevFinalSendDetail.cs" />
+    <Compile Include="Views\VSevSendDateDetail.cs" />
+    <Compile Include="Views\VSMailMessage.cs" />
+    <Compile Include="Views\VSMCRceiveSms.cs" />
+    <Compile Include="Views\VSMCSendSms.cs" />
+    <Compile Include="Views\VTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Template\SugarTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SugarTemplate.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

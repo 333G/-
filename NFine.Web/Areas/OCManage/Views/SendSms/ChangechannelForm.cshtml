@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<script>
+    var keyvalue = $.request("keyValue");//RootId和UserId均可以，后台会处理的
+    var Arr = new Array();
+    Arr = keyvalue.split(";");//数组是查询条件参数[0]:UserId  [1]:RootId  [2]内容  [3]发送类型  [4]发送状态  [5]审核状态  [6]处理状态
+    var Id = Arr[0];
+    $(function () {
+        //获取通道并且在页面自增
+        getChannel();
+    })
+
+    //roll出通道，添加到对应的选择区
+    function getChannel() {
+        $.ajax({
+            url: "/OCManage/UserChannl/GetChannel",
+            data: { keyvalue: Id },
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                //rollChannel进页面
+                if (data != "") {
+                    for (var o in data) {
+                        var ChannelName = data[o].F_ChannelName;
+                        var UserMark = data[o].F_UserMark;
+                        var F_ID = data[o].F_ID;
+                        addToTable(ChannelName, UserMark, F_ID);
+                    }
+                }
+                else {
+                    NoneToTable();
+                }
+            }
+        });
+    }
+
+    //页面表格数据(选择通道)添加，扩展
+    function addToTable(ChannelName, UserMark, F_ID) {
+        //console.log(ProvinceId);//debug时候查看值
+        $("#table1").append(
+             "<tr>"
+             + "<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>"
+             //存通道Id
+             + "<td class=\"formValue\"> <div class=\"radio\"><input id=\"F_GroupChannelId\" name=\"F_GroupChannelId\"  type=\"radio\" value= \"" + F_ID + "\"><label for=\"F_GroupChannelId\">" + ChannelName + "\</label>&nbsp;&nbsp;<span>【" + UserMark + "】</span></div></td>"
+             + "</tr>"
+             );
+    }
+
+    function NoneToTable() {
+        $("#table1").append(
+            "<tr>"
+             + "<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;没有可用通道，请联系管理员！</td>"
+             + "</tr>"
+             );
+    }
+    function btn_ChangeChannel()
+    {
+        if (!$("#form1").formSerialize())
+            return false;
+        var queryJson = {
+            //Operator: $("#Operator").val(),
+            F_UserId: Arr[0],//用户id
+            F_RootId: Arr[1],//祖宗id
+            F_SmsContent: Arr[2],//内容
+            F_SendSign: Arr[3],//发送类型！
+            F_SendState: Arr[4],//发送状态！
+            F_DealState: Arr[5],//审核状态！
+            F_OperateState: Arr[6],//处理状态！
+            F_GroupChannelId: $('input:radio:checked').val()//通道
+        }
+        alert(queryJson["F_GroupChannelId"]);
+        $.ajax({
+            url: "/SMCManage/SMCSend/ChangeChannel?keyValue=" + Id,
+            data: { queryJson: JSON.stringify(queryJson) },
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                if (data.state == "Error") {
+                    alert("发生错误：" + data.message + ",请联系管理员！");
+                }
+                else {
+                    alert(data.message);
+                    $.currentWindow().$("#gridList").resetSelection();
+                    $.currentWindow().$("#gridList").trigger("reloadGrid");
+                }
+            }
+        });
+    }
+</script>
+<form id="form1">
+    <table id="table1" class="form">
+        <tr>
+            <th class="formTitle">发送通道</th>
+        </tr>
+    </table>
+    <div class="btn-group">
+        <a id="NU-add" authorize="yes" class="btn btn-primary dropdown-text" onclick="btn_ChangeChannel()"><i class="fa fa-plus"></i>修改通道</a>
+    </div>
+</form>

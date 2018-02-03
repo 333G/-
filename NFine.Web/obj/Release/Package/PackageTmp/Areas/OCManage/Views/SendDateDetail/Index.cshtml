@@ -1,0 +1,534 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+
+
+<style>
+    .topPanel, .search {
+        height: 75px;
+    }
+
+        .topPanel .search .input-group .btn {
+            padding: 0px 5px;
+            line-height: 27px;
+        }
+    .topPanel .toolbar .operate {
+        height: 75px;
+        margin-left :7px;
+    }
+    .topPanel, .search, .input-group, .form-control {
+        margin-left: 7px;
+    }
+
+    .topPanel, .search {
+        margin-left: -28px;
+    }
+
+    .topPanel {
+        padding-left: 4.7em;
+    }
+
+    .cxjl {
+        float: left;
+        font-size: 13px;
+        line-height: 30px;
+        font-weight: bold;
+    }
+</style>
+<link href="/Content/js/datepicker/skin/WdatePicker.css" rel="stylesheet" />
+<script src="/Content/js/datepicker/WdatePicker.js"></script>
+
+<script>
+
+    //根据编号取得省份名和根据编号取得通道名
+    $(function () {
+        var userid = "@NFine.Code.OperatorProvider.Provider.GetCurrent().UserId";//取得userid
+        //$("#GroupId").bindSelect({
+        //    url: "/TXLManage/PheGrup/GetTreeGroupJson"
+        //});
+        $("#F_Province").bindSelect({ url: "/SystemManage/Area/GetProvinceJson" });
+        $("#F_ChannelId").bindSelect({ url: "/OCManage/SendDateDetail/GetAllChannelJson" });
+        gridList();
+    })
+    function getqueryjson() {
+        var queryJson = {
+            //Operator: $("#Operator").val()
+            F_UserId: $("#F_UserId").val(),  //用户id
+            F_PhoneCode: $("#F_PhoneCode").val(),  //手机号
+            F_SmsContent: $("#F_SmsContent").val(),
+            F_CreatorTimeFrom: $("#F_CreatorTimeFrom").val(),
+            F_CreatorTimeEnd: $("#F_CreatorTimeEnd").val(),
+            F_Province: $("#F_Province").val(),
+            F_ChannelId: $("#F_ChannelId").val(),
+            F_Report: $("#F_Report").val(),
+            F_Operator: $("#F_Operator").val(),
+            F_Synchro: $("#F_Synchro").val(),
+            F_Buckle: $("#F_Buckle").val(),
+            F_BlackWhite: $("#F_BlackWhite").val(),
+            F_Reissue: $("#F_Reissue").val()
+        }
+        return queryJson;
+    }
+
+    ////取得组名
+    //function getgrupname(groupid) {
+    //    var GroupName = "";
+    //    var init = function () {
+    //        $.ajax({
+    //            url: "/SMCManage/SMCSend/GetPheGrupDataJson",
+    //            data: { keyValue: groupid },
+    //            dataType: "json",
+    //            async: false,
+    //            success: function (data) {
+    //                //alert(JSON.stringify(data));
+    //                GroupName = data["PheGrup"]["GroupName"];
+    //            }
+    //        });
+    //    }
+    //    init();
+    //    return GroupName;
+    //}
+
+    ////根据parentid取省份
+    //function getPFullName(F_Province,rowObject) {
+    //    var F_FullName = "";
+    //    $.ajax({
+    //        url: "/SystemManage/Area/GetnewProvinceDataJson",
+    //        data: { keyValue: F_Province },
+    //        datatype: "json",
+    //        async: true,
+    //        success: function (data) {
+    //            var jsondata = JSON.parse(data);
+    //            F_FullName = jsondata["ProGrup"]["FullName"];
+    //            //alert(F_FullName);
+    //            rowObject["F_Province"].value = F_FullName;
+    //            return F_FullName;
+    //        }
+    //    })
+    //}
+
+
+    ////新建一个数组，存放已勾选的id
+    //var arrayNewList = new Array();
+
+    function gridList() {
+        var $gridList = $("#gridList");
+        $gridList.dataGrid({
+            url: "/OCManage/SendDateDetail/GetGridJson",
+            height: $(window).height() - 128,
+            colModel: [
+                { label: '主键', name: 'F_Id', hidden: true },
+                { label: '用户ID', name: 'F_UserId', width: 80, align: 'center' },
+                {
+                    label: '黑白', name: 'F_BlackWhite', width: 70, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var grupname = cellvalue;
+                        if (cellvalue == 0)
+                            cellvalue = "白名单";
+                        else if (cellvalue == 1)
+                            cellvalue = "黑名单";
+                        else cellvalue = "无";
+                        return cellvalue;
+                    }
+                },
+                { label: '通道', name: 'F_ChannelId', width: 100, align: 'center' },
+                {
+                    label: '发送时间', name: 'F_SendTime', width: 120, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        if (rowObject["F_SendTime"] == null)
+                            return "未发送";
+                        else return rowObject["F_SendTime"];
+                    }
+                },
+                { label: '手机号', name: 'F_PhoneCode', width: 120, align: 'center' },
+                {
+                    label: '类型', name: 'F_Operator', width: 100, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var grupname = cellvalue;
+                        if (cellvalue == 1)
+                            cellvalue = "移动";
+                        else if (cellvalue == 2)
+                            cellvalue = "联通";
+                        else if (cellvalue == 3)
+                            cellvalue = "电信";
+                        else cellvalue = "未知";
+                        return cellvalue;
+                    }
+                },
+                {
+                    label: '省份', name: 'F_Province', width: 100, align: 'center',
+                    //formatter: function (cellvalue, options, rowObject) {
+                    //    var F_FullName = getPFullName(cellvalue,rowObject);//转为省份名
+                    //    if (F_FullName == "")
+                    //    {
+                    //        return "未识别";
+                    //    }
+                    //    else
+                    //        return F_FullName;
+                    //}
+                },
+                { label: '报告', name: 'F_Report', width: 100, align: 'center' },
+                {
+                    label: '同步', name: 'F_Synchro', width: 80, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var grupname = cellvalue;
+                        if (cellvalue == 1)
+                            cellvalue = "已同步";
+                        else cellvalue = "未同步";
+                        return cellvalue;
+                    }
+                },
+                {
+                    label: '扣量', name: 'F_Buckle', width: 80, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var grupname = cellvalue;
+                        if (cellvalue == 1)
+                            cellvalue = "扣";
+                        else cellvalue = "未";
+                        return cellvalue;
+                    }
+                },
+                { label: '补发', name: 'F_Reissue', width: 50, align: 'center' },
+                { label: '级别', name: 'F_Level', width: 70, align: 'center' },
+                { label: '发送内容', name: 'F_SmsContent', width: 240, align: 'center' },
+                //{
+                //    label: '发送状态', name: 'F_SendState', width: 100, align: 'center',
+                //    formatter: function (cellvalue, options, rowObject) {
+                //        if (cellvalue == 1) {
+                //            return '<span class=\"label label-success\">发送成功</span>';
+                //        } else if (cellvalue == 0) {
+                //            return '<span class=\"label label-default\">待发送</span>';
+                //        }
+                //        else return '<span class=\"label label-default\">发送失败</span>';
+                //    }
+                //},
+                //{
+                //    label: '处理状态', name: 'F_DealState', width: 100, align: 'center',
+                //    formatter: function (cellvalue, options, rowObject) {
+                //        if (cellvalue == 1) {
+                //            return '<span class=\"label label-success\">已审核</span>';
+                //        } else if (cellvalue == 0) {
+                //            return '<span class=\"label label-default\">未审核</span>';
+                //        }
+                //        else return '<span class=\"label label-default\">待审核</span>';
+                //    }
+                //},
+                //{ label: '金额', name: 'F_Price', width: 120, align: 'center' },
+                //{
+                //    label: '操作', name: 'm_operate', width: 160, align: 'center',
+                //    formatter: function (cellvalue, options, rowObject) {
+                //        var retstr = '<a onclick="btn_delete(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">删除</a>';
+                //        //var retstr = '<a onclick="btn_edit(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">修改</a>&nbsp;&nbsp;';
+                //        //retstr += '<a onclick="btn_delete(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer">删除</a>';
+                //        return retstr;
+                //    }
+                //}
+            ],
+            pager: "#gridPager",
+            sortname: 's2.F_PhoneCode asc',
+            rownumber: true,
+            multiselect: true,
+            multiboxonly: false,
+            beforeSelectRow: beforeSelectRow,//js方法
+            viewrecords: true
+        });
+
+        $("#btn_search").click(function () {
+            //查询参数
+            var queryJson = getqueryjson();
+            $gridList.jqGrid('setGridParam', {
+                postData: { queryJson: JSON.stringify(queryJson) },
+            }).trigger('reloadGrid');
+        });
+    }
+    function beforeSelectRow() {
+        //alert("===");
+        $("#jqgridId").jqGrid('resetSelection');
+        return (true);
+    }
+   
+    function btn_add() {
+        $.modalOpen({
+            id: "Form",
+            title: "新增用户",
+            url: "/SMCManage/SMCSend/Form",
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    function btn_edit(fid) {
+        var keyValue = $("#gridList").jqGridRowValue().F_Id;
+        if (fid != undefined)
+            keyValue = fid;
+        $.modalOpen({
+            id: "Form",
+            title: "修改用户",
+            url: "/SMCManage/SMCSend/SendEditForm?keyValue=" + keyValue,
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    function btn_delete(fid) {
+        var keyValue = rtn_grilid();
+        if (fid != undefined)
+            keyValue = fid;
+        $.deleteForm({
+            url: "/OCManage/SendDateDetail/DeleteForm",
+            param: { keyValue: keyValue },
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+
+    //导出
+    function btn_exp() {
+        var F_UserId = $("#F_UserId").val();
+        var F_BlackWhite = $("#F_BlackWhite").val();
+        var F_ChannelId = $("#F_ChannelId").val();
+        //var F_SendTime = $("#F_SendTime").val();
+        var F_PhoneCode = $("#F_PhoneCode").val();
+        var F_Operator = $("#F_Operator").val();
+        var F_Province = $("#F_Province").val();
+        var F_Report = $("#F_Report").val();
+        var F_Synchro = $("#F_Synchro").val();
+        var F_Buckle = $("#F_Buckle").val();
+        var F_Reissue = $("#F_Reissue").val();
+        //var F_Level = $("#F_Level").val();
+        var F_SmsContent = $("#F_SmsContent").val();
+        
+        //查询参数
+        //$.download("/OCManage/SendDateDetail/Export", "F_UserId=" + F_UserId + "&F_BlackWhite=" + F_BlackWhite + "&F_ChannelId=" + F_ChannelId + "&F_SendTime=" + F_SendTime + "&F_PhoneCode=" + F_PhoneCode + "&F_Operator=" + F_Operator + "&Province=" + Province + "&F_Report=" + F_Report + "&F_Synchro=" + F_Synchro + "&F_Buckle=" + F_Buckle + "&F_Reissue=" + F_Reissue + "&F_Level=" + F_Level + "&F_SmsContent=" + F_SmsContent, 'post');
+        $.download("/OCManage/SendDateDetail/Export", "F_UserId=" + F_UserId + "&F_BlackWhite=" + F_BlackWhite + "&F_ChannelId=" + F_ChannelId + "&F_PhoneCode=" + F_PhoneCode + "&F_Operator=" + F_Operator + "&F_Province=" + F_Province + "&F_Report=" + F_Report + "&F_Synchro=" + F_Synchro + "&F_Buckle=" + F_Buckle + "&F_Reissue=" + F_Reissue + "&F_SmsContent=" + F_SmsContent, 'post');
+    }
+    function btn_details() {
+        var keyValue = $("#gridList").jqGridRowValue().F_Id;
+        $.modalOpen({
+            id: "Details",
+            title: "查看用户",
+            url: "/SMCManage/SMCSend/Details?keyValue=" + keyValue,
+            width: "700px",
+            height: "550px",
+            btn: null,
+        });
+    }
+
+    //按条件批量补发
+    function btn_reissue() {
+        var queryJson = getqueryjson();
+        //  alert(queryJson["F_UserId"] + ";" + queryJson[F_Report] + ";" + queryJson[F_ChannelId]);
+        if (queryJson["F_ChannelId"] == "" || queryJson["F_Report"] == "")
+        {
+            alert("通道和发送状态必选！");
+            return false
+        }
+        var QueryJson = queryJson["F_UserId"] + ";" + queryJson["F_Report"] + ";" + queryJson["F_ChannelId"] + ";" + queryJson["F_PhoneCode"] + ";"
+            + queryJson["F_SmsContent"] + ";" + queryJson["F_BlackWhite"] + ";" + queryJson["F_Buckle"] + ";" + queryJson["F_CreatorTimeFrom"] + ";"
+            + queryJson["F_CreatorTimeEnd"] + ";" + queryJson["F_Province"] + ";" + queryJson["F_Operator"] + ";" + queryJson["F_Synchro"];
+        $.modalOpen({
+            id: "EditForm",
+            title: "修改页",
+            url: "/OCManage/SendDateDetail/EditForm?QueryJson=" + QueryJson,
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+
+        //$.submitForm({
+        //    url: "/OCManage/SendDateDetail/Reissue",
+        //    param: { queryJson: JSON.stringify(queryJson) },
+        //    success: function () {
+        //        //alert(JSON.stringify(data));
+        //        $.currentWindow().$("#gridList").resetSelection();
+        //        $.currentWindow().$("#gridList").trigger("reloadGrid");
+        //    }
+        //})
+    } 
+    
+    ////选中重发
+    //function btn_retransmission(fid) {
+    //    var F_UserId = document.getElementById("F_UserId").value;
+    //    var F_PhoneCode = document.getElementById("F_PhoneCode").value;
+    //    if (F_UserId == "" && F_PhoneCode == "") {
+    //        alert("用户ID  或  手机号 须填其一! ");
+    //        return false;
+    //    }
+    //    else if (F_UserId != "")
+    //    {        
+    //        var keyValue = rtn_grilid();  
+    //        if (fid != undefined)
+    //            keyValue = fid;
+    //        $.submitForm({
+    //            url: "/OCManage/SendDateDetail/Retransmission",
+    //            param: { keyValue: keyValue },
+    //            success: function () {
+    //                $.currentWindow().$("#gridList").resetSelection();
+    //                $.currentWindow().$("#gridList").trigger("reloadGrid");
+    //            }
+    //        })
+    //    }
+    //    else {
+    //        var keyValue = rtn_grilid();  
+    //        if (fid != undefined)
+    //            keyValue = fid;
+    //        $.submitForm({
+    //            url: "/OCManage/SendDateDetail/Retransmission",
+    //            param: { keyValue: keyValue },
+    //            success: function () {
+    //                $.currentWindow().$("#gridList").resetSelection();
+    //                $.currentWindow().$("#gridList").trigger("reloadGrid");
+    //            }
+    //        })
+    //    }      
+    //}
+
+    //选中重发
+    function btn_retransmission(fid) {
+        var keyValue = rtn_grilid();
+        if (fid != undefined)
+            keyValue = fid;
+        $.submitForm({
+            url: "/OCManage/SendDateDetail/Retransmission",
+            param: { keyValue: keyValue },
+            success: function () {
+                $.currentWindow().$("#gridList").resetSelection();
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+
+    //返回多选的记录id
+    function rtn_grilid() {
+        var selarrrow = $("#gridList").jqGrid('getGridParam', 'selarrrow'); //取得多选行号
+        var keyValue = "";
+        var ret;
+        //取得多选项目的F_Id
+        selarrrow.forEach(function (e) {
+            ret = $("#gridList").jqGrid('getRowData', e);
+            keyValue += ret.F_Id + ",";
+        })
+        return keyValue;
+    }
+</script>
+<div class="topPanel">
+    <div class="toolbar">
+        <div class="btn-group">
+            <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i></button>
+        </div>
+        <div class="btn-group">
+            <a id="NU-exp" authorize="yes" class="btn btn-primary" onclick="btn_exp()"><i class="fa fa-plus"></i>导出</a>
+        </div>
+        @*<div class="btn-group">
+        <a id="NU-exp" authorize="yes" class="btn btn-primary" onclick="btn_exp()">分析</a>
+    </div>*@
+           
+         <div class="btn-group">        
+             <a id="NU-exp" authorize="yes" class="btn btn-primary" onclick="btn_reissue()"><i class="fa fa-mail-reply-all"></i>按条件批量补发</a>   
+         </div>
+        <div class="btn-group">
+            <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+        </div>
+
+        <div class="operate">
+            <ul class="nav nav-pills">
+                @*<li class="first">已选中<span>1</span>项</li>*@
+                <li class="first">&nbsp</li>
+                <li><a id="NU-delete" authorize="yes" onclick="btn_analysis()">分析</a></li>
+                <li class="split"></li>
+                @*<li><a id="NR-review" authorize="yes" onclick="btn_reissue()">批量补发</a></li>
+                     <li class="split"></li>*@
+                <li><a id="NR-manage" authorize="yes" onclick="btn_retransmission()">选中重发</a></li>
+            </ul>
+            <a href="javascript:;" class="close"></a>
+        </div>    
+    </div>
+        <div class="search">
+            <table>
+                <tr>
+                    <td>
+                        <div class="input-group">
+                            @*<select id="Operator" name="Operator" class="form-control" style="width: 150px;float:left;padding-left:10px;">
+                                    <option value="">查询所有记录</option>
+                                    <option value="0">查询七天内记录</option>
+                                    <option value="1">查询七天前记录</option>
+                                </select>*@
+                            <div style="padding-right:2px;float:left;width:2em;line-height:30px;text-align:right;">ID:</div>
+                            <input id="F_UserId" name="F_UserId" type="text" class="form-control" style="width: 60px;" placeholder="请输入ID" />
+                            <div style="padding-right:2px;float:left;width:4em;line-height:30px;text-align:right;">手机号:</div>
+                            <input id="F_PhoneCode" name="F_PhoneCode" type="text" class="form-control" placeholder="请输入手机号" style="width: 81px;" />
+                            <div style="padding-right:2px;float:left;width:3em;line-height:30px;text-align:right;">内容:</div>
+                            <input id="F_SmsContent" name="F_SmsContent" type="text" class="form-control" style="width: 81px;" placeholder="请输入内容" />
+                            <div style="padding-right:2px;float:left;width:4.5em;line-height:30px;text-align:right;">日期：从</div>
+                            <div style="width:12em;float:left;">
+                                <input id="F_CreatorTimeFrom" name="F_CreatorTimeFrom" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd' })" style="float:left;width:10.25em;" />
+                            </div>
+                            <div style="padding-right:1.5px;float:left;width:1.5em;line-height:30px;text-align:right;">到</div>
+                            <div style="width:16em;float:left;">
+                                <input id="F_CreatorTimeEnd" name="F_CreatorTimeEnd" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd' })" style="float:left;width:10.25em;" />
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <select id="F_Province" name="F_Province" class="form-control" style="width:130px;float:left;">
+                                <option value="">全部省份</option>
+                            </select>
+                            <select id="F_ChannelId" name="F_ChannelId" class="form-control" style="width:130px;float:left;">
+                                <option value="">全部通道</option>
+                            </select>
+                            <select id="F_Report" name="F_Report" class="form-control" style="width:130px;float:left;">
+                                <option value="">发送状态</option>
+                                <option value="0">等待</option>
+                                <option value="1">成功</option>
+                                <option value="2">失败</option>
+                                <option value="4">余额不足</option>
+                                <option value="5">超过发送次数限制</option>
+                                <option value="6">超过通道长度限制</option>
+                            </select>
+                            <select id="F_Operator" name="F_Operator" class="form-control" style="width: 70px;">
+                                <option value="">号码类型</option>
+                                <option value="1">移动</option>
+                                <option value="2">联通</option>
+                                <option value="3">电信</option>
+                            </select>
+                            <select id="F_Synchro" name="F_Synchro" class="form-control" style="width:70px;float:left;">
+                                <option value="">同步</option>
+                                <option value="0">未同步</option>
+                                <option value="1">已同步</option>
+                            </select>
+                            <select id="F_Buckle" name="F_Buckle" class="form-control" style="width:70px;float:left;">
+                                <option value="">扣量选择</option>
+                                <option value="0">未</option>
+                                <option value="1">扣</option>
+                            </select>
+                            <select id="F_BlackWhite" name="F_BlackWhite" class="form-control" style="width:70px;float:left;">
+                                <option value="">黑/白</option>
+                                <option value="1">无</option>
+                                <option value="2">黑名单</option>
+                                <option value="3">白名单</option>
+                            </select>
+                            @*<select id="F_Reissue" name="F_Reissue" class="form-control" style="width:8em;float:left;display:none">
+                                <option value="">补发</option>
+                                <option value="1">0</option>
+                                <option value="2">1</option>
+                                <option value="3">2</option>
+                            </select>*@
+
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+<div class="gridPanel" id="gridPanel">
+    <table id="gridList"></table>
+    <div id="gridPager"></div>
+</div>
+

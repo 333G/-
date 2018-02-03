@@ -1,0 +1,44 @@
+<#@ template language="C#" debug="True" #>
+<#@ output extension="cs" #>
+<#@ include file="T4Toolbox.tt" #>
+
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Data" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Configuration" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Configuration" #>
+<#@ include file="DALTemplate.tt" #>
+<#
+// <copyright file="DALScript.tt" company="">
+//  Copyright © . All Rights Reserved.
+// </copyright>
+		string projectPath = Host.ResolveAssemblyReference("$(ProjectDir)");
+		string dbName="NFineBase";
+			string strconnectiong="server=139.196.214.53;uid=sa;pwd=sms123456;database=NFineBase";
+			SqlConnection conn=new SqlConnection(strconnectiong);
+			conn.Open();
+			//查询数据库中所有的表
+			string selectQuery="SELECT s.name,g.value FROM sysobjects s LEFT JOIN sys.extended_properties g ON s.id=g.major_id AND g.minor_id=0  WHERE s.xtype='U' AND s.name<>'dtproperties'";
+			SqlCommand command=new SqlCommand(selectQuery,conn);
+	
+			SqlDataAdapter ad=new SqlDataAdapter(command);
+
+			DataSet ds=new DataSet();
+			ad.Fill(ds);
+			conn.Close();
+			string tableName;
+			string tableDescription;
+			foreach (DataRow item in ds.Tables[0].Rows)
+			{
+				tableName=item["name"].ToString();
+				tableDescription=item["value"].ToString();
+				
+				DALTemplate t=new DALTemplate(strconnectiong,dbName,tableName,tableDescription);
+				t.Output.File=projectPath+"\\base\\"+tableName+"DAL.cs";
+				t.Render();
+			}
+#>

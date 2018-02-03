@@ -1,0 +1,399 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+
+<style>
+    .topPanel, .search, .input-group, .form-control {
+        margin-left: 7px;
+    }
+
+    .topPanel, .search {
+        margin-left: -7px;
+    }
+</style>
+
+<script>
+    
+    $(function () {
+        gridList();
+    })
+
+    function gridList() {
+        var $gridList = $("#gridList");
+        $gridList.dataGrid({
+            url: "/OCManage/BaseChannel/GetGridJson",
+            height: $(window).height() - 128,
+            //colNames: ['F_Id', '通道ID', '名称', '运营商', '状态', '字符', '启用时间', '终止时间', '通道单价(分)', '通道余额(元)', '剩余条数', '已用条数', '签名', '退订', '备注', '操作'],
+            colModel: [
+                { label: 'F_Id', name: 'F_Id', hidden: true },
+                { label: '通道ID', name: 'Id', width: 55, align: 'center' },
+                { label: '名称', name: 'F_ChannelName', width: 100, align: 'center'},
+                {
+                    label: '运营商', name: 'F_Operator', width: 55, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var grupname = cellvalue;
+                        if (cellvalue == 1)
+                            cellvalue = "移动";
+                        else if (cellvalue == 2)
+                            cellvalue = "联通";
+                        else if (cellvalue == 3)
+                            cellvalue = "电信";
+                        else cellvalue = "小灵通";
+                        return cellvalue;
+                    }
+                },
+                {
+                    label: '状态', name: 'F_ChannelState', width: 55, align: 'center',
+                    formatter: function (cellvalue, options, rowObject) {
+                        var grupname = cellvalue;
+                        if (cellvalue == 1)
+                            cellvalue = "<font color=blue>正常</font>";
+                        else cellvalue = "<font color=red>暂停</font>";
+                        return cellvalue;
+                    }
+                },
+                {
+                    label: '字符', name: 'F_CharacterCount', width: 55, align: 'center',
+                },
+
+                //{ label: '类型', name: 'F_UrlType', width:55, align: 'center' },
+                { label: '启用时间', name: 'F_StartTime', width: 70, align: 'center' },
+                { label: '终止时间', name: 'F_EndTime', width: 70, align: 'center' },
+                { label: '通道单价(分)', name: 'F_Price', width: 90, align: 'center' },
+                { label: '通道余额(元)', name: 'F_ChaBalance', width: 90, align: 'center' },
+                //{ label: '用户余额', name: '', width:70, align: 'center' },
+                { label: '剩余条数', name: 'F_SurplusNum', width: 70, align: 'center' },
+                { label: '已用条数', name: 'F_SendedNum', width: 70, align: 'center' },
+                {
+                    label: '签名', name: 'F_autograph', width: 50, align: 'center', cellvalue: "签名前置",
+                    formatter: function (cellvalue, options, rowObject) {
+                        var grupname = cellvalue;
+                        if (cellvalue == 1)
+                            cellvalue = "<font color=red>前置签名</font>";
+                        else if (cellvalue == 2)
+                            cellvalue = "<font color=red>后置签名</font>";
+                        else cellvalue = "<font color=red>无需签名</font>";
+
+                        return cellvalue;
+                    }
+                },
+                {
+                    label: '退订', name: 'F_unsubscribe', width: 60, align: 'center', cellvalue: "退订回T",
+                    formatter: function (cellvalue, options, rowObject) {
+                        var grupname = cellvalue;
+                        if (cellvalue == 1)
+                            cellvalue = "<font color=red>开启退订</font>";
+                        else cellvalue = "<font color=red>不开启退订</font>";
+                        return cellvalue;
+                    }
+                },
+                { label: '备注', name: 'F_Description', width: 100, align: 'center' },
+                {
+                    label: '操作', name: 'm_operate', width: 100, align: 'center', sortable: false, editable: true,
+                    formatter: function (cellvalue, options, rowObject) {
+                        var retstr = '<a onclick="btn_edit(\'' + rowObject["Id"] + "," + rowObject["F_Id"] + '\')" style="cursor:pointer"><font color=blue>修改</a></font>&nbsp;&nbsp;';
+                        retstr += '<a onclick="btn_recharge(\'' + rowObject["Id"] + '\')" style="cursor:pointer"><font color=blue>充值</a></font>&nbsp;&nbsp;';
+                        retstr += '<a onclick="btn_delete(\'' + rowObject["F_Id"] + '\')" style="cursor:pointer"><font color=blue>删除</a>';
+                        return retstr;
+                    }
+                }
+            ],
+            pager: "#gridPager",
+            sortname: 'F_CreatorTime desc',
+            rownumber: true,
+            multiselect: true,
+            multiboxonly: true,
+            beforeSelectRow: beforeSelectRow,//js方法
+            //viewrecords: true,
+            //grouping: false,
+            //groupingView: {
+            //    groupField: ['Id'],
+            //    groupColumnShow: [true],
+            //    groupText: ['<b>{0}</b>'],
+            //    groupCollapse: false,
+            //    groupOrder: ['asc'],
+            //    groupSummary: [true],
+            //    groupDataSorted: true
+            //},
+            //footerrow: true,
+            //userDataOnFooter: true,
+            viewrecords: true,         
+            multiselect: false,
+            subGrid: true,
+           
+        // define the icons in subgrid
+        subGridOptions: {
+            //按钮样式，待定
+            //plusicon: "ui-icon-triangle-1-e",
+            //minusicon: "ui-icon-triangle-1-s",
+            //openicon: "ui-icon-arrowreturn-1-e",
+            //不重新加载
+            "reloadOnExpand": false,
+            //加载后自动展开所有数据
+            //"expandOnLoad": true
+        },
+        
+        subGridRowExpanded: function (subgrid_id, row_id) {
+            var subgrid_table_id, pager_id;
+            subgrid_table_id = subgrid_id + "_t";
+            var keyvalue = $gridList.getRowData(row_id);//取出当前行的F_UserId，用于取出通道
+            pager_id = "P_" + subgrid_table_id;
+            $("#" + subgrid_id).html("<table id='" + subgrid_table_id + "' class='scroll'></table><div id='" + pager_id + "' class='scroll'></div>");
+            $("#" + subgrid_table_id).dataGrid({
+                url: "/OCManage/BaseChannel/GetChannelName?ChannelId=" + keyvalue["Id"],//通道Id
+                dataType: "json",
+                colNames: ['长短信标志', '最大长字符数', '计费字数', '监控手机号', '监控时长', '省份'],
+                colModel: [                   
+                    {
+                      name: "F_LongSmsSign", width: 80, align: 'center',
+                        formatter: function (cellvalue, options, rowObject) {
+                            var grupname = cellvalue;
+                            if (cellvalue == true)
+                                cellvalue = "支持";
+                            else cellvalue = "不支持";
+                            return cellvalue;
+                        }
+                    },
+                   { name: "F_LongSmsNumber", width: 80, align: 'center' },
+                   { name: "F_ChargeNumber", width: 80, align: 'center' },
+                   { name: "F_MonitorMobile", width: 100, align: 'center' },
+                   { name: "F_MonitorTime", width: 100, align: 'center' },
+                    {
+                        name: "省份:", width: 130, align: 'center', formatter: function (cellvalue, options, rowObject) {
+                            var str = '<textarea readonly="readonly"  rows="5" cols="100" style="resize:none" > ' + getProvince(rowObject["F_Id"]) + '</textarea>';
+                            return str;
+                        }
+                    },
+                ],
+                height: '100%'
+            })
+            //$("#" + subgrid_table_id).dataGrid('navGrid', "#" + pager_id, { edit: false, add: false, del: false })
+        }
+
+        });
+        jQuery("#gridList").jqGrid('navGrid', '#gridPager', { add: false, edit: false, del: false });
+    
+
+    
+        $("#btn_search").click(function () {
+            //查询参数
+            var queryJson = {
+                F_ChannelName: $("#F_ChannelName").val(),
+                F_Operator: $("#F_Operator").val(),
+                F_ChannelState: $("#F_ChannelState").val(),
+                //F_UrlType: $("#F_UrlType").val(),
+                F_ChaBalance_Up: $("#F_ChaBalance_Up").val(),
+                F_ChaBalance_Down: $("#F_ChaBalance_Down").val()
+            }
+            $gridList.jqGrid('setGridParam', {
+                postData: { queryJson: JSON.stringify(queryJson) },
+            }).trigger('reloadGrid');
+        });
+    }
+
+
+    //在省份框中获取省份通道号数据
+    function getProvince(Id) {//F_Id
+        var result_str=" ";
+        $.ajax({
+                url: "/OCManage/BaseChannel/GetProvinceName",
+                data: { keyValue: Id },
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    var str_provincename = "其他(";
+                    for (var o in data) {
+                        //如果省份被删除了，则不显示
+                        if (data[o].F_ChannelId == 0)
+                            continue;
+                        //判断是否有转移通道，若有，显示在“其他（）”中。
+                        if (data[o].F_SwitchChannelId && data[o].F_SwitchChannelId != data[o].F_ChannelId) {
+                            str_provincename += data[o].F_ProvinceName + data[o].F_SwitchChannelId + ",";
+                        }
+                    }
+                    str_provincename = str_provincename + ")";
+                    for (var o in data) {
+                        //如果省份被删除了，则不显示
+                        if (data[o].F_ChannelId == 0)
+                            continue;
+                        //没有通道转移，正常显示
+                        if (data[o].F_SwitchChannelId == 0 || data[o].F_SwitchChannelId == data[o].F_ChannelId) {
+                            str_provincename += data[o].F_ProvinceName + "(" + data[o].F_ChannelId + ")" + ",";
+                        }
+                    }
+                    result_str=str_provincename;
+                }
+        });
+        return result_str;
+    }
+
+    //根据通道Id取长字符数
+    //function GetLongSmsNumber(Id)
+    //{
+    //    var LongSmsNumber = "";     
+    //    $.ajax({
+    //        url: "/OCManage/BaseChannel/GetChannelLongSmsNumber?Id=" + Id,
+    //        data: { Id: Id },
+    //        dataType: "text",
+    //        async: false,
+    //        success: function (data) {
+    //            LongSmsNumber = data;
+    //        }
+    //    });
+    //    return LongSmsNumber;
+    //}
+
+    function beforeSelectRow() {
+        $("#jqgridId").jqGrid('resetSelection');
+        return (true);
+    }
+    function btn_add() {
+        $.modalOpen({
+            id: "Form",
+            title: "新增通道",
+            url: "/OCManage/BaseChannel/Form",
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    function btn_edit(fid) {
+        var keyValue = $("#gridList").jqGridRowValue().Id;
+        if (fid != undefined)
+            keyValue = fid;
+        $.modalOpen({
+            id: "Form",
+            title: "修改通道",
+            url: "/OCManage/BaseChannel/Form?keyValue=" + keyValue,
+            width: "700px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+    function btn_delete(fid) {
+        var keyValue = rtn_grilid();
+        if (fid != undefined)
+            keyValue = fid;
+        $.deleteForm({
+            url: "/OCManage/BaseChannel/DeleteForm",
+            param: { keyValue: keyValue },
+            success: function () {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+            }
+        })
+    }
+    //···充值···
+    function btn_recharge(fid) {
+        var keyValue = $("#gridList").jqGridRowValue().Id;
+        if (fid != undefined)
+            keyValue = fid;//ChannelId
+        $.modalOpen({
+            id: "Form",
+            title: "通道充值",
+            url: "/OCManage/BaseChannel/RechargeForm?keyValue=" + keyValue,
+            width: "500px",
+            height: "510px",
+            callBack: function (iframeId) {
+                top.frames[iframeId].submitForm();
+            }
+        });
+    }
+
+    function btn_details() {
+        //var keyValue = $("#gridList").jqGridRowValue().F_Id;
+        var keyValue = $("#gridList").jqGridRowValue().Id;
+        $.modalOpen({
+            id: "Details",
+            title: "查看通道信息",
+            url: "/OCManage/BaseChannel/Details?keyValue=" + keyValue,
+            width: "700px",
+            height: "550px",
+            btn: null,
+        });
+    }
+    //导出
+    function btn_exp() {
+        //查询参数 
+           var F_ChannelName= $("#F_ChannelName").val();
+             F_Operator= $("#F_Operator").val();
+             F_ChannelState = $("#F_ChannelState").val();
+           //var  F_UrlType= $("#F_UrlType").val();
+           //var  F_ChaBalance_Up=$("#F_ChaBalance_Up").val();
+           //var  F_ChaBalance_Down= $("#F_ChaBalance_Down").val()
+       
+           $.download("/OCManage/BaseChannel/Export", "F_ChannelName=" + F_ChannelName + "&F_Operator=" + F_Operator + "&F_ChannelState=" + F_ChannelState , 'post');
+    }
+    //返回多选的记录id
+    function rtn_grilid() {
+        var selarrrow = $("#gridList").jqGrid('getGridParam', 'selarrrow'); //取得多选行号
+        var keyValue = "";
+        var ret;
+        //取得多选项目的F_Id
+        selarrrow.forEach(function (e) {
+            ret = $("#gridList").jqGrid('getRowData', e);
+            //keyValue += ret.F_Id + ",";
+            keyValue += ret.Id + ",";
+        })
+        return keyValue;
+    }
+</script>
+<div class="topPanel">
+    <div class="toolbar">
+        <div class="btn-group">
+            <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+        </div>
+        <div class="btn-group">
+            <a id="NU-add" authorize="yes" class="btn btn-primary dropdown-text" onclick="btn_add()"><i class="fa fa-plus"></i>增加通道</a>
+        </div>
+        <div class="btn-group">
+            <a id="NU-exp" authorize="yes" class="btn btn-primary" onclick="btn_exp()"><i class="fa fa-cloud-download"></i>导出</a>
+        </div>
+        @*<div class="operate">
+            <ul class="nav nav-pills">
+                <li><a id="NU-delete" authorize="yes" onclick="btn_delete()"><i class="fa fa-trash-o"></i>删除通道</a></li>
+            </ul>
+            <a href="javascript:;" class="close"></a>
+        </div>*@
+
+    </div>
+  
+    <div class="search">
+        <table>
+            <tr>
+                <td>
+                    <div class="input-group">
+                        <input id="F_ChannelName" name="F_ChannelName" type="text" class="form-control" placeholder="请输入通道名称" style="width: 200px;"/>
+                        <select id="F_Operator" name="F_Operator" class="form-control" style="width: 100px;">
+                            <option value="">请选择运营商</option>
+                            @*<option value="全网">全网</option>*@
+                            <option value="1">移动</option>
+                            <option value="2">联通</option>
+                            <option value="3">电信</option> 
+                            <option value="4">其他</option>                            
+                        </select>
+                        <select id="F_ChannelState" name="F_ChannelState" class="form-control" style="width: 120px;">
+                            <option value="">请选择通道状态</option>
+                            <option value="1">正常</option>
+                            <option value="0">暂停</option>
+                        </select>
+                        @*<input id="F_UrlType" name="F_UrlType" type="text" class="form-control" style="width: 100px;" placeholder="请输入类型" />*@
+                        @*<input id="F_ChaBalance_Up" name="F_ChaBalance_Up" type="text" class="form-control" style="width: 100px;" placeholder="通道余额上限" />
+                        <input id="F_ChaBalance_Down" name="F_ChaBalance_Down" type="text" class="form-control" style="width: 100px;" placeholder="通道余额下限" />*@
+                        <span class="input-group-btn">
+                            <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="gridPanel" id="gridPanel">
+    <table id="gridList"></table>
+    <div id="gridPager"></div>
+</div>
